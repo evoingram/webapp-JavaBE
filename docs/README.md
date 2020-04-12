@@ -1,6 +1,6 @@
 # Transcript Web App
 
-This is a Java version of [this back end](https://github.com/evoingram/webapp-backend), work in progress, for my database online port.
+This is a Java version of [this back end](https://github.com/evoingram/webapp-backend), still in planning stages.
 This currently contains fake sample data.  Copyright 2020 Erica Ingram.
 
 ## [DB Schema](https://dbdesigner.page.link/gbEtfTr1XjgwDa2C7)

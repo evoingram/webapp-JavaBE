@@ -16,7 +16,7 @@ import java.util.List;
 
 @Loggable
 @Entity
-@Table(name = "users")
+@Table(name = "customers")
 public class User
         extends Auditable {
     @Id
@@ -142,6 +142,6 @@ public class User
 
     @Override
     public String toString() {
-        return "User{" + "userid=" + userid + ", username='" + username + '\'' + ", password='" + password + '\'' + ", primaryemail='" + primaryemail + '\'' + '}';
+        return "User{" + "customersid=" + userid + ", username='" + username + '\'' + ", password='" + password + '\'' + ", primaryemail='" + primaryemail + '\'' + '}';
     }
 }

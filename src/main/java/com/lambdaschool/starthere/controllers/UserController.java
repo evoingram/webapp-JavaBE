@@ -62,7 +62,7 @@ public class UserController {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
-        List<User> myUsers = userService.findAll(pageable);
+        List<User> myUsers = userService.getAllUsers(pageable);
         return new ResponseEntity<>(myUsers,
                                     HttpStatus.OK);
     }

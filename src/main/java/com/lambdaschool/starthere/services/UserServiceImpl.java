@@ -43,6 +43,12 @@ public class UserServiceImpl
                                                             pageable);
     }
 
+    @Transactional
+    @Override
+    public List<User> getAllUsers(Pageable pageable) {
+        return userrepos.getAllUsers(pageable);
+    }
+
     @Override
     public List<User> findAll(Pageable pageable) {
         List<User> list = new ArrayList<>();

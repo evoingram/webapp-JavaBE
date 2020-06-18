@@ -1,5 +1,3 @@
-# Transcript Web App
-
 # Transcript Web App Java Back End Product Overview
 
 ## My Role

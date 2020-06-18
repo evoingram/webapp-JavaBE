@@ -2,7 +2,7 @@
 
 ## My Role
 
-This was a solo project.
+This is a solo project in progress, still in planning stages.
 
 ## Project Description
 

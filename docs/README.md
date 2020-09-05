@@ -1,4 +1,4 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/c1474fe518ccb398d184/maintainability)](https://codeclimate.com/github/evoingram/webapp-javabe/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c6f9b278e28a7b7d126c/maintainability)](https://codeclimate.com/github/evoingram/webapp-javabe/maintainability)
 
 # Java Transcript Web App Back End Product Overview
 

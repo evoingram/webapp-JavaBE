@@ -1,43 +1,42 @@
 # App Organization
 
-## Suggested Outline:
+## Suggested Outline
 
 - src
-    - modules
-        - reducers.js
-        - users
-            - constants.js
-            - actions
-                - user_fetch.js
-                - user_login.js
-                - permissions_fetch.js
-            - reducers
-                - index.js
-                - user.js
-                - permission.js
-        -projects/
+  - modules
+    - reducers.js
+    - users
+      - constants.js
+      - actions
+        - user_fetch.js
+        - user_login.js
+        - permissions_fetch.js
+      - reducers
+        - index.js
+        - user.js
+        - permission.js
+        - projects/
     - routes
-        - home page
+      - home page
             - jurisdiction rules
             - other law resources
         - login
-            - index.js
-            - containers
+          - index.js
+          - containers
                 - login.js
             - components
-                - login.js
+              - login.js
         - dashboard/ (logged in)
-            -
+          - features/pages
         - project_list/
         - project_view/
 
-
-## features outline: 
+## features outline
 
 - home page (same endless page structure)
-    - pop-up/buttons to register/login/cancel
+  - pop-up/buttons to register/login/cancel
 
-    - login:  
+  - login:  
         - inline notifications
         - endpoints:  
         - login fields
@@ -48,27 +47,26 @@
         - forgotpw
         - register
     - register
-        - inline notifications
+      - inline notifications
         - pop-up/buttons to submit/cancel
         - endpoint:  
 
-        
 - component folder/overarching page
-    - component
+  - component
         - endpoints:  
-            -
+            - TBD
         - links:  
-            -
+            - TBD
         - buttons:  
-            -
+            - TBD
         - fields:  
-            -
+            - TBD
         - tables:  
-            -
+            - TBD
         - queries:  
-            -
+            - TBD
         - other features to enable related to this component:
-            -
+            - TBD
 
 'html: register
 'SQL tables: Customers
@@ -87,7 +85,6 @@
 'if bad jsresponse: missing required field
 'set session
 'authorize/authenticate
-
 
 'html: login
 'fields: username password
@@ -480,4 +477,3 @@
 'change user groups
 'define things each group can do or has access to
 'notifications for status changes or uploads
-                

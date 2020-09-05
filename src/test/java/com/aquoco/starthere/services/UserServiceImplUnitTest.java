@@ -1,11 +1,11 @@
-/*
+
 package com.aquoco.starthere.services;
 
 
 import com.aquoco.starthere.StartHereApplication;
 import com.aquoco.starthere.exceptions.ResourceFoundException;
 import com.aquoco.starthere.exceptions.ResourceNotFoundException;
-import com.aquoco.starthere.models.Customer;
+import com.aquoco.starthere.models.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -310,4 +310,3 @@ public class UserServiceImplUnitTest {
                                 2);
     }
 }
-*/

@@ -1,10 +1,8 @@
+/*
 package com.lambdaschool.starthere.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lambdaschool.starthere.models.Role;
-import com.lambdaschool.starthere.models.User;
-import com.lambdaschool.starthere.models.UserRoles;
-import com.lambdaschool.starthere.models.Useremail;
+import com.lambdaschool.starthere.models.Customer;
 import com.lambdaschool.starthere.services.UserService;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.After;
@@ -54,122 +52,53 @@ public class UserControllerUnitTest {
     @MockBean
     private UserService userService;
 
-    private List<User> userList;
+    private List<Customer> userList;
 
     @Before
     public void setUp() throws
             Exception {
         userList = new ArrayList<>();
 
-        Role r1 = new Role("admin");
-        r1.setRoleid(1);
-        Role r2 = new Role("user");
-        r2.setRoleid(2);
-        Role r3 = new Role("data");
-        r3.setRoleid(3);
-
         // admin, data, user
-        ArrayList<UserRoles> admins = new ArrayList<>();
-        admins.add(new UserRoles(new User(),
-                                 r1));
-        admins.add(new UserRoles(new User(),
-                                 r2));
-        admins.add(new UserRoles(new User(),
-                                 r3));
-        User u1 = new User("admin",
+        Customer u1 = new Customer("admin",
                            "ILuvM4th!",
                            "admin@lambdaschool.local",
                            admins);
 
-        u1.getUseremails()
-          .add(new Useremail(u1,
-                             "admin@email.local"));
-        u1.getUseremails()
-          .get(0)
-          .setUseremailid(10);
-
-        u1.getUseremails()
-          .add(new Useremail(u1,
-                             "admin@mymail.local"));
-        u1.getUseremails()
-          .get(1)
-          .setUseremailid(11);
-
-        u1.setUserid(101);
+        u1.setCustomersid(101);
         userList.add(u1);
 
         // data, user
-        ArrayList<UserRoles> datas = new ArrayList<>();
-        datas.add(new UserRoles(new User(),
-                                r3));
-        datas.add(new UserRoles(new User(),
-                                r2));
-        User u2 = new User("cinnamon",
+        Customer u2 = new Customer("cinnamon",
                            "1234567",
-                           "cinnamon@lambdaschool.local",
-                           datas);
+                           "cinnamon@lambdaschool.local");
 
-        u2.getUseremails()
-          .add(new Useremail(u2,
-                             "cinnamon@mymail.local"));
-        u2.getUseremails()
-          .get(0)
-          .setUseremailid(20);
-
-        u2.getUseremails()
-          .add(new Useremail(u2,
-                             "hops@mymail.local"));
-        u2.getUseremails()
-          .get(1)
-          .setUseremailid(21);
-
-        u2.getUseremails()
-          .add(new Useremail(u2,
-                             "bunny@email.local"));
-        u2.getUseremails()
-          .get(2)
-          .setUseremailid(22);
-
-        u2.setUserid(102);
+        u2.setCustomersid(102);
         userList.add(u2);
 
         // user
-        ArrayList<UserRoles> users = new ArrayList<>();
-        users.add(new UserRoles(new User(),
-                                r1));
-        User u3 = new User("testingbarn",
+        Customer u3 = new Customer("testingbarn",
                            "ILuvM4th!",
                            "testingbarn@school.lambda",
                            users);
 
-        u3.getUseremails()
-          .add(new Useremail(u3,
-                             "barnbarn@email.local"));
-        u3.getUseremails()
-          .get(0)
-          .setUseremailid(30);
-
-        u3.setUserid(103);
+        u3.setCustomersid(103);
         userList.add(u3);
 
         users = new ArrayList<>();
-        users.add(new UserRoles(new User(),
-                                r2));
-        User u4 = new User("testingcat",
+        Customer u4 = new Customer("testingcat",
                            "password",
                            "testingcat@school.lambda",
                            users);
-        u4.setUserid(104);
+        u4.setCustomersid(104);
         userList.add(u4);
 
         users = new ArrayList<>();
-        users.add(new UserRoles(new User(),
-                                r2));
-        User u5 = new User("testingdog",
+        Customer u5 = new Customer("testingdog",
                            "password",
                            "testingdog@school.lambda",
                            users);
-        u5.setUserid(105);
+        u5.setCustomersid(105);
         userList.add(u5);
 
         System.out.println("\n*** Seed Data ***");
@@ -408,14 +337,12 @@ public class UserControllerUnitTest {
 
         // build a user
         ArrayList<UserRoles> thisRole = new ArrayList<>();
-        ArrayList<Useremail> thisEmail = new ArrayList<>();
         User u1 = new User();
         u1.setUserid(100);
         u1.setUsername("tiger");
         u1.setPassword("ILuvM4th!");
         u1.setPrimaryemail("tiger@home.local");
         u1.setUserroles(thisRole);
-        u1.setUseremails(thisEmail);
 
         ObjectMapper mapper = new ObjectMapper();
         String userString = mapper.writeValueAsString(u1);
@@ -507,4 +434,4 @@ public class UserControllerUnitTest {
                .andExpect(status().is2xxSuccessful())
                .andDo(MockMvcResultHandlers.print());
     }
-}
+}*/

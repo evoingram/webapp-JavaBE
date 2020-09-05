@@ -1,12 +1,11 @@
+/*
 package com.lambdaschool.starthere.services;
+
 
 import com.lambdaschool.starthere.StartHereApplication;
 import com.lambdaschool.starthere.exceptions.ResourceFoundException;
 import com.lambdaschool.starthere.exceptions.ResourceNotFoundException;
-import com.lambdaschool.starthere.models.Role;
-import com.lambdaschool.starthere.models.User;
-import com.lambdaschool.starthere.models.UserRoles;
-import com.lambdaschool.starthere.models.Useremail;
+import com.lambdaschool.starthere.models.Customer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -25,9 +24,8 @@ import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertEquals;
 
-/**
- * I am testing UserServiceImpl so want 100% in UserServiceImpl
- */
+
+ I am testing UserServiceImpl so want 100% in UserServiceImpl
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = StartHereApplication.class)
@@ -312,3 +310,4 @@ public class UserServiceImplUnitTest {
                                 2);
     }
 }
+*/

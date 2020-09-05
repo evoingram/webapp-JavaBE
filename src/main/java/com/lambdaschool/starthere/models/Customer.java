@@ -17,11 +17,10 @@ import java.util.List;
 @Loggable
 @Entity
 @Table(name = "customers")
-public class User
-        extends Auditable {
+public class Customer extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long userid;
+    private long customersid;
 
     @Column(nullable = false,
             unique = true)
@@ -34,41 +33,26 @@ public class User
     @Column(nullable = false,
             unique = true)
     @Email
-    private String primaryemail;
+    private String email;
 
-    @OneToMany(mappedBy = "user",
-            cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("user")
-    private List<UserRoles> userroles = new ArrayList<>();
 
-    @OneToMany(mappedBy = "user",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
-    @JsonIgnoreProperties("user")
-    private List<Useremail> useremails = new ArrayList<>();
-
-    public User() {
+    public Customer() {
     }
 
-    public User(String username,
+    public Customer(String username,
                 String password,
-                String primaryemail,
-                List<UserRoles> userRoles) {
+                String email) {
         setUsername(username);
         setPassword(password);
-        this.primaryemail = primaryemail;
-        for (UserRoles ur : userRoles) {
-            ur.setUser(this);
-        }
-        this.userroles = userRoles;
+        this.email = email;
     }
 
-    public long getUserid() {
-        return userid;
+    public long getCustomersid() {
+        return customersid;
     }
 
-    public void setUserid(long userid) {
-        this.userid = userid;
+    public void setCustomersid(long customersid) {
+        this.customersid = customersid;
     }
 
     public String getUsername() {
@@ -85,16 +69,16 @@ public class User
     }
 
     public String getPrimaryemail() {
-        if (primaryemail == null) // this is possible when updating a user
+        if (email == null) // this is possible when updating a user
         {
             return null;
         } else {
-            return primaryemail.toLowerCase();
+            return email.toLowerCase();
         }
     }
 
-    public void setPrimaryemail(String primaryemail) {
-        this.primaryemail = primaryemail.toLowerCase();
+    public void setPrimaryemail(String email) {
+        this.email = email.toLowerCase();
     }
 
     public String getPassword() {
@@ -110,38 +94,21 @@ public class User
         this.password = password;
     }
 
-    public List<UserRoles> getUserroles() {
-        return userroles;
-    }
-
-    public void setUserroles(List<UserRoles> userroles) {
-        this.userroles = userroles;
-    }
-
-    public List<Useremail> getUseremails() {
-        return useremails;
-    }
-
-    public void setUseremails(List<Useremail> useremails) {
-        this.useremails = useremails;
-    }
-
     @JsonIgnore
     public List<SimpleGrantedAuthority> getAuthority() {
         List<SimpleGrantedAuthority> rtnList = new ArrayList<>();
-
-        for (UserRoles r : this.userroles) {
-            String myRole = "ROLE_" + r.getRole()
-                                       .getName()
+/*
+        for (UserType r : this.usertypes) {
+            String myRole = "ROLE_" + r.getUsername()
                                        .toUpperCase();
             rtnList.add(new SimpleGrantedAuthority(myRole));
         }
-
+*/
         return rtnList;
     }
 
     @Override
     public String toString() {
-        return "User{" + "customersid=" + userid + ", username='" + username + '\'' + ", password='" + password + '\'' + ", primaryemail='" + primaryemail + '\'' + '}';
+        return "User{" + "customersid=" + customersid + ", username='" + username + '\'' + ", password='" + password + '\'' + ", email='" + email + '\'' + '}';
     }
 }

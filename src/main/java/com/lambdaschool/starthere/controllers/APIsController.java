@@ -32,7 +32,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/otherapis")
 public class APIsController {
-    private static final Logger logger = LoggerFactory.getLogger(RolesController.class);
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
     private RestTemplate restTemplate = new RestTemplate();
 
     // taken from https://openlibrary.org/dev/docs/api/books

@@ -1,10 +1,8 @@
 package com.lambdaschool.starthere.controllers;
 
 import com.lambdaschool.starthere.logging.Loggable;
-import com.lambdaschool.starthere.models.User;
+import com.lambdaschool.starthere.models.Customer;
 import com.lambdaschool.starthere.models.UserMinimum;
-import com.lambdaschool.starthere.models.UserRoles;
-import com.lambdaschool.starthere.services.RoleService;
 import com.lambdaschool.starthere.services.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,9 +30,6 @@ public class OpenController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private RoleService roleService;
-
     // Create the user and Return the access token
     // http://localhost:2019/createnewuser
     // Just create the user
@@ -60,16 +55,11 @@ public class OpenController {
                                        .toUpperCase() + " " + httpServletRequest.getRequestURI() + " accessed");
 
         // Create the user
-        User newuser = new User();
+        Customer newuser = new Customer();
 
         newuser.setUsername(newminuser.getUsername());
         newuser.setPassword(newminuser.getPassword());
         newuser.setPrimaryemail(newminuser.getPrimaryemail());
-
-        ArrayList<UserRoles> newRoles = new ArrayList<>();
-        newRoles.add(new UserRoles(newuser,
-                                   roleService.findByName("user")));
-        newuser.setUserroles(newRoles);
 
         newuser = userService.save(newuser);
 
@@ -77,7 +67,7 @@ public class OpenController {
         HttpHeaders responseHeaders = new HttpHeaders();
         URI newUserURI =
                 ServletUriComponentsBuilder.fromUriString(httpServletRequest.getServerName() + ":" + httpServletRequest.getLocalPort() + "/users/user/{userId}")
-                                           .buildAndExpand(newuser.getUserid())
+                                           .buildAndExpand(newuser.getCustomersid())
                                            .toUri();
         responseHeaders.setLocation(newUserURI);
 

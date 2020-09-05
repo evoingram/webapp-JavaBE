@@ -24,6 +24,7 @@ This is the Java version of the back end for the online port of my company's VB 
 Back end deployed to `Heroku` and built using:
 
 - [Java](https://www.java.com/):  a programming language.
+- [SQL](https://en.wikipedia.org/wiki/SQL):  a domain-specific language used in programming and designed for managing data held in an RDBMS or stream processing in an RDSMS
 - [Java Spring](https://github.com/spring-projects/spring-framework):  Spring provides everything required beyond the Java programming language for creating enterprise applications for a wide range of scenarios and architectures.
 - [SLF4J](http://www.slf4j.org/):  a simple logging facade for Java.
 - [OAuth2](https://github.com/pyca/bcrypt/):  industry-standard protocol for authorization
@@ -50,5 +51,7 @@ Back end deployed to `Heroku` and built using:
 ### [POSTMAN DOCUMENTATION](https://documenter.getpostman.com/view/6401823/SzRxWAvu?version=latest)   |   [SAMPLE RESPONSE](sample-response.json)
 ### [CUSTOMER USE CASE DIAGRAM](https://github.com/evoingram/webapp-javabe/blob/master/docs/use%20case.jpg)   |   [MANAGER USE CASE DIAGRAM](https://github.com/evoingram/webapp-javabe/blob/master/docs/manager%20UCD.jpg)
 
-- Postman Docs were last published on 04/08/2020
+### See also [a Node version](https://github.com/evoingram/webapp-backend/) of this API.
+
+- Postman Docs were last published on 04/08/2020.
 - Postman docs contain examples of all get, post, and put endpoint body submissions AND responses.

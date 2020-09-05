@@ -24,9 +24,10 @@ import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertEquals;
 
-
- I am testing UserServiceImpl so want 100% in UserServiceImpl
-
+/*
+ *
+ * I am testing UserServiceImpl so want 100% in UserServiceImpl
+*/
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = StartHereApplication.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)

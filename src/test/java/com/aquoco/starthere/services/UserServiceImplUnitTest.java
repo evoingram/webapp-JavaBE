@@ -5,7 +5,10 @@ package com.aquoco.starthere.services;
 import com.aquoco.starthere.StartHereApplication;
 import com.aquoco.starthere.exceptions.ResourceFoundException;
 import com.aquoco.starthere.exceptions.ResourceNotFoundException;
+import com.aquoco.starthere.models.Role;
 import com.aquoco.starthere.models.User;
+import com.aquoco.starthere.models.UserRoles;
+import com.aquoco.starthere.models.Useremail;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -24,9 +27,10 @@ import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertEquals;
 
-
- I am testing UserServiceImpl so want 100% in UserServiceImpl
-
+/*
+ *
+ * I am testing UserServiceImpl so want 100% in UserServiceImpl
+*/
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = StartHereApplication.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)

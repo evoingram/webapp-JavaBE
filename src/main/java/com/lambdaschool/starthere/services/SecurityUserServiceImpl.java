@@ -1,7 +1,7 @@
 package com.lambdaschool.starthere.services;
 
 import com.lambdaschool.starthere.logging.Loggable;
-import com.lambdaschool.starthere.models.User;
+import com.lambdaschool.starthere.models.Customer;
 import com.lambdaschool.starthere.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,7 +22,7 @@ public class SecurityUserServiceImpl
     @Override
     public UserDetails loadUserByUsername(String username) throws
             UsernameNotFoundException {
-        User user = userrepos.findByUsername(username.toLowerCase());
+        Customer user = userrepos.findByUsername(username.toLowerCase());
         if (user == null) {
             throw new UsernameNotFoundException("Invalid username or password.");
         }

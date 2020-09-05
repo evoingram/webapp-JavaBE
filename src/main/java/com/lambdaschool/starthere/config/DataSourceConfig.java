@@ -41,7 +41,8 @@ public class DataSourceConfig {
         String myDBPassword = "";
 
         String dbValue = env.getProperty("local.run.db");
-
+        // String dbValue = env.getProperty("local.run.db");
+// postgres://ghdgexgesdtrlp:df690f2e13874c5210944bd00968d73c411f613635ed5f1fcd91826de7dbab9e@ec2-34-197-212-240.compute-1.amazonaws.com:5432/d3kf6ks2in961l
         if (dbValue.equalsIgnoreCase("POSTGRESQL")) {
             checkEnvironmentVariable("MYDBHOST");
             checkEnvironmentVariable("MYDBNAME");

@@ -1,7 +1,7 @@
 package com.lambdaschool.starthere.controllers;
 
 import com.lambdaschool.starthere.logging.Loggable;
-import com.lambdaschool.starthere.models.Customer;
+import com.lambdaschool.starthere.models.User;
 import com.lambdaschool.starthere.services.UserService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -37,7 +37,7 @@ public class UserController {
     // http://localhost:2019/users/users/?page=1&size=1
     // http://localhost:2019/users/users/?sort=username,desc&sort=<field>,asc
     @ApiOperation(value = "returns all Users",
-            response = Customer.class,
+            response = User.class,
             responseContainer = "List")
     @ApiImplicitParams({@ApiImplicitParam(name = "page",
             dataType = "integer",
@@ -62,7 +62,7 @@ public class UserController {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
-        List<Customer> myUsers = userService.getAllUsers(pageable);
+        List<User> myUsers = userService.findAll(pageable);
         return new ResponseEntity<>(myUsers,
                                     HttpStatus.OK);
     }
@@ -75,7 +75,7 @@ public class UserController {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
-        List<Customer> myUsers = userService.findAll(Pageable.unpaged());
+        List<User> myUsers = userService.findAll(Pageable.unpaged());
         return new ResponseEntity<>(myUsers,
                                     HttpStatus.OK);
     }
@@ -91,7 +91,7 @@ public class UserController {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
-        Customer u = userService.findUserById(userId);
+        User u = userService.findUserById(userId);
         return new ResponseEntity<>(u,
                                     HttpStatus.OK);
     }
@@ -106,14 +106,14 @@ public class UserController {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
-        Customer u = userService.findByName(userName);
+        User u = userService.findByName(userName);
         return new ResponseEntity<>(u,
                                     HttpStatus.OK);
     }
 
     // http://localhost:2019/users/user/name/like/da?sort=username
     @ApiOperation(value = "returns all Users with names containing a given string",
-            response = Customer.class,
+            response = User.class,
             responseContainer = "List")
     @ApiImplicitParams({@ApiImplicitParam(name = "page",
             dataType = "integer",
@@ -140,7 +140,7 @@ public class UserController {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
-        List<Customer> u = userService.findByNameContaining(userName,
+        List<User> u = userService.findByNameContaining(userName,
                                                         pageable);
         return new ResponseEntity<>(u,
                                     HttpStatus.OK);
@@ -167,7 +167,7 @@ public class UserController {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
-        Customer u = userService.findByName(authentication.getName());
+        User u = userService.findByName(authentication.getName());
         return new ResponseEntity<>(u,
                                     HttpStatus.OK);
     }
@@ -196,7 +196,7 @@ public class UserController {
     public ResponseEntity<?> addNewUser(HttpServletRequest request,
                                         @Valid
                                         @RequestBody
-                                                Customer newuser) throws
+                                                User newuser) throws
             URISyntaxException {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
@@ -207,7 +207,7 @@ public class UserController {
         HttpHeaders responseHeaders = new HttpHeaders();
         URI newUserURI = ServletUriComponentsBuilder.fromCurrentRequest()
                                                     .path("/{userid}")
-                                                    .buildAndExpand(newuser.getCustomersid())
+                                                    .buildAndExpand(newuser.getUserid())
                                                     .toUri();
         responseHeaders.setLocation(newUserURI);
 
@@ -237,7 +237,7 @@ public class UserController {
     @PutMapping(value = "/user/{id}")
     public ResponseEntity<?> updateUser(HttpServletRequest request,
                                         @RequestBody
-                                                Customer updateUser,
+                                                User updateUser,
                                         @PathVariable
                                                 long id) {
         logger.trace(request.getMethod()
@@ -262,7 +262,7 @@ public class UserController {
         userService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-/*
+
     // http://localhost:2019/users/user/15/role/2
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @DeleteMapping("/user/{userid}/role/{roleid}")
@@ -297,5 +297,4 @@ public class UserController {
 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
- */
 }

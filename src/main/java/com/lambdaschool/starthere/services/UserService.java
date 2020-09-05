@@ -1,33 +1,31 @@
 package com.lambdaschool.starthere.services;
 
-import com.lambdaschool.starthere.models.Customer;
+import com.lambdaschool.starthere.models.User;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
 public interface UserService {
-    List<Customer> findAll(Pageable pageable);
+    List<User> findAll(Pageable pageable);
 
-    List<Customer> findByNameContaining(String username,
+    List<User> findByNameContaining(String username,
                                     Pageable pageable);
 
-    List<Customer> getAllUsers(Pageable pageable);
+    User findUserById(long id);
 
-    Customer findUserById(long id);
-
-    Customer findByName(String name);
+    User findByName(String name);
 
     void delete(long id);
 
-    Customer save(Customer user);
+    User save(User user);
 
-    Customer update(Customer user,
+    User update(User user,
                 long id,
                 boolean isAdmin);
-/*
+
     void deleteUserRole(long userid,
                         long roleid);
+
     void addUserRole(long userid,
                      long roleid);
-*/
 }

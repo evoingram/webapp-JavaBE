@@ -43,12 +43,10 @@ public class DataSourceConfig {
         String dbValue = env.getProperty("local.run.db");
         // String dbValue = env.getProperty("local.run.db");
         if (dbValue.equalsIgnoreCase("POSTGRESQL")) {
-            /*
             checkEnvironmentVariable("MYDBHOST");
             checkEnvironmentVariable("MYDBNAME");
             checkEnvironmentVariable("MYDBUSER");
             checkEnvironmentVariable("MYDBPASSWORD");
-*/
             if (stop) {
                 logger.info("Manually shutting down system");
                 int exitCode = SpringApplication.exit(appContext,
@@ -56,18 +54,11 @@ public class DataSourceConfig {
                 System.exit(exitCode);
             }
 
-            myUrlString = "jdbc:postgresql://" + "ec2-34-197-212-240.compute-1.amazonaws.com" + ":5432/" + "d3kf6ks2in961l";
-            myDriverClass = "org.postgresql.Driver";
-            myDBUser = "ghdgexgesdtrlp";
-            myDBPassword = "df690f2e13874c5210944bd00968d73c411f613635ed5f1fcd91826de7dbab9e";
-
-            /*
             myUrlString = "jdbc:postgresql://" + System.getenv("MYDBHOST") + ":5432/" + System.getenv("MYDBNAME");
             myDriverClass = "org.postgresql.Driver";
             myDBUser = System.getenv("MYDBUSER");
             myDBPassword = System.getenv("MYDBPASSWORD");
 
-             */
         } else {
             // Assumes H2
             // myUrlString = "jdbc:h2:mem:testdb";

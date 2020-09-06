@@ -72,14 +72,12 @@ public class UserServiceImpl
     @Transactional
     @Override
     public User save(User user) {
-        if (userrepos.findByUsername(user.getUsername()
-                                         .toLowerCase()) != null) {
+        if (userrepos.findByUsername(user.getUsername().toLowerCase()) != null) {
             throw new ResourceFoundException(user.getUsername() + " is already taken!");
         }
 
         User newUser = new User();
-        newUser.setUsername(user.getUsername()
-                                .toLowerCase());
+        newUser.setUsername(user.getUsername().toLowerCase());
         newUser.setPasswordNoEncrypt(user.getPassword());
         newUser.setPrimaryemail(user.getPrimaryemail()
                                     .toLowerCase());

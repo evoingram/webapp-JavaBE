@@ -48,7 +48,7 @@ Back end deployed to `Heroku` and built using:
 ## Documentation
 
 ### [DB SCHEMA](https://dbdesigner.page.link/gbEtfTr1XjgwDa2C7)   |   [BASE URL](https://transcript-javabe.herokuapp.com/)   |   [PRODUCT VISION](https://aquoco-my.sharepoint.com/:w:/g/personal/evoingram_aquoco_onmicrosoft_com/ES9-HPl3otdAjjtMrqpWIrkBMTrLyRDvxVEtYGkOMWLDUQ?e=fXTfhK)   |   [ENDPOINTS](https://github.com/evoingram/webapp-javabe/blob/master/docs/endpoints.md)   |   [FRONT END](https://github.com/evoingram/webapp-frontend/) (still in planning stages)
-### [POSTMAN DOCUMENTATION](https://documenter.getpostman.com/view/6401823/SzRxWAvu?version=latest)   |   [SAMPLE RESPONSE](sample-response.json)
+### [POSTMAN DOCUMENTATION](https://documenter.getpostman.com/view/6401823/SzRxWAvu?version=latest)   |   [SWAGGER DOCUMENTATION](https://transcript-javabe.herokuapp.com/swagger-ui.html)   |   [SAMPLE RESPONSE](sample-response.json)
 ### [CUSTOMER USE CASE DIAGRAM](https://github.com/evoingram/webapp-javabe/blob/master/docs/use%20case.jpg)   |   [MANAGER USE CASE DIAGRAM](https://github.com/evoingram/webapp-javabe/blob/master/docs/manager%20UCD.jpg)
 
 ### See also [a Node version](https://github.com/evoingram/webapp-backend/) of this API.

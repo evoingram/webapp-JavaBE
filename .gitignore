@@ -27,4 +27,11 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+
+
+### project specific ###
 .env
+/src/main/resources/application.properties
+src/main/resources/application.properties
+src/main/java/com/aquoco/starthere/config/DataSourceConfig.java
+/src/main/java/com/aquoco/starthere/config/DataSourceConfig.java

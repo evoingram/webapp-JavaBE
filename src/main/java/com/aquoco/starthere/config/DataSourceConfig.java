@@ -47,7 +47,6 @@ public class DataSourceConfig {
             checkEnvironmentVariable("MYDBNAME");
             checkEnvironmentVariable("MYDBUSER");
             checkEnvironmentVariable("MYDBPASSWORD");
-
             if (stop) {
                 logger.info("Manually shutting down system");
                 int exitCode = SpringApplication.exit(appContext,
@@ -59,12 +58,13 @@ public class DataSourceConfig {
             myDriverClass = "org.postgresql.Driver";
             myDBUser = System.getenv("MYDBUSER");
             myDBPassword = System.getenv("MYDBPASSWORD");
+
         } else {
             // Assumes H2
-            myUrlString = "jdbc:h2:mem:testdb";
-            myDriverClass = "org.h2.Driver";
-            myDBUser = "sa";
-            myDBPassword = "";
+            // myUrlString = "jdbc:h2:mem:testdb";
+            // myDriverClass = "org.h2.Driver";
+            // myDBUser = "sa";
+            // myDBPassword = "";
         }
 
         logger.info("Database URL is " + myUrlString);

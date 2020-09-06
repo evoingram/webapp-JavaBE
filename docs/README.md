@@ -53,5 +53,5 @@ Back end deployed to `Heroku` and built using:
 
 ### See also [a Node version](https://github.com/evoingram/webapp-backend/) of this API.
 
-- Postman Docs were last published on 04/08/2020.
+- Postman Docs were last published on 09/05/2020.
 - Postman docs contain examples of all get, post, and put endpoint body submissions AND responses.

@@ -14,7 +14,7 @@ This is the Java version of the back end for the online port of my company's VB 
 
 - Live solo project
 - RESTful API with auth services for transcript production system
-- 126 endpoints
+- 25 (126-150 when complete) endpoints
 - CourtListener, Xero, PayPal, Wunderlist, & Office API support
 - Tested and documented via Postman & Java
 - IN PROGRESS

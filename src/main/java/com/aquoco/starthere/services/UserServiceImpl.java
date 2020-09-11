@@ -88,6 +88,7 @@ public class UserServiceImpl
         newUser.setCity(user.getCity());
         newUser.setState(user.getState());
         newUser.setPostalcode(user.getPostalcode());
+
         if(user.getCompany() != null){
             newUser.setCompany(user.getCompany());
         }
@@ -180,6 +181,30 @@ public class UserServiceImpl
 
             if (user.getPostalcode() != null) {
                 currentUser.setPostalcode(user.getPostalcode());
+            }
+
+            if(user.getCompany() != null) {
+                currentUser.setCompany(user.getCompany());
+            }
+
+            if(user.getMrms() != null) {
+                currentUser.setMrms(user.getMrms());
+            }
+
+            if(user.getJobtitle() != null) {
+                currentUser.setJobtitle(user.getJobtitle());
+            }
+
+            if(user.getBusinessphone() != null) {
+                currentUser.setBusinessphone(user.getBusinessphone());
+            }
+
+            if(user.getAddress2() != null) {
+                currentUser.setAddress2(user.getAddress2());
+            }
+
+            if(user.getNotes() != null) {
+                currentUser.setNotes(user.getNotes());
             }
 
             if (user.getUserroles()

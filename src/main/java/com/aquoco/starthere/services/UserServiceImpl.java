@@ -53,7 +53,7 @@ public class UserServiceImpl
     }
 
     @Override
-    public List<User> getUsersByFactoring(boolean factoring,
+    public List<User> findUsersByFactoring(boolean factoring,
                                            Pageable pageable) {
         return userrepos.findUsersByFactoring(factoring, pageable);
     }
@@ -231,13 +231,13 @@ public class UserServiceImpl
 
     @Transactional
     @Override
-    public User updateUserFactoring(User user, long id, boolean isAdmin) {
+    public User updateUserFactoring(long id, boolean isAdmin) {
 
         if (isAdmin) {
 
             User currentUser = findUserById(id);
 
-            currentUser.setFactoring(!user.isFactoring());
+            currentUser.setFactoring(!currentUser.isFactoring());
 
             return userrepos.save(currentUser);
 
@@ -251,8 +251,7 @@ public class UserServiceImpl
 
     @Transactional
     @Override
-    public void deleteUserRole(long userid,
-                               long roleid) {
+    public void deleteUserRole(long userid, long roleid) {
         userrepos.findById(userid)
                  .orElseThrow(() -> new ResourceNotFoundException("User id " + userid + " not found!"));
         rolerepos.findById(roleid)

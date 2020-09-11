@@ -160,6 +160,38 @@ public class UserController {
                                     HttpStatus.OK);
     }
 
+    // http://localhost:2019/users/user/company/like/da?sort=username
+    @ApiOperation(value = "returns all Users with companies containing a given string",
+            response = User.class,
+            responseContainer = "List")
+    @ApiImplicitParams({@ApiImplicitParam(name = "page",
+            dataType = "integer",
+            paramType = "query",
+            value = "Results page you want to retrieve (0..N)"),
+            @ApiImplicitParam(name = "size",
+                    dataType = "integer",
+                    paramType = "query",
+                    value = "Number of records per page."),
+            @ApiImplicitParam(name = "sort",
+                    allowMultiple = true,
+                    dataType = "string",
+                    paramType = "query",
+                    value = "Sorting criteria in the format: property(,asc|desc). " + "Default sort order is ascending. " + "Multiple sort criteria are supported.")})
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @GetMapping(value = "/user/company/like/{searchPhrase}",
+            produces = {"application/json"})
+    public ResponseEntity<?> findUsersByCompany(HttpServletRequest request,
+                                             @PathVariable String searchPhrase,
+                                             @PageableDefault(page = 0, size = 5)
+                                             Pageable pageable) {
+        logger.trace(request.getMethod().toUpperCase() + " " +
+                     request.getRequestURI() + " accessed");
+
+        List<User> u = userService.findUsersByCompany(searchPhrase, pageable);
+
+        return new ResponseEntity<>(u, HttpStatus.OK);
+    }
+
     // http://localhost:2019/users/getusername
     @GetMapping(value = "/getusername",
             produces = {"application/json"})

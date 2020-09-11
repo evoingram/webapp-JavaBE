@@ -17,6 +17,8 @@ public interface UserService {
 
     List<User> findUsersByFactoring(boolean factoring, Pageable pageable);
 
+    List<User> findUsersByCompany(String searchPhrase, Pageable pageable);
+
     void delete(long id);
 
     User save(User user);

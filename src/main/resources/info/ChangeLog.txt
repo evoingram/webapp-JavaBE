@@ -6,9 +6,13 @@ September 11, 2020
 - Made sure Swagger includes new user fields
 - factoring field set only by admin
 - added factoring change endpoint for admin only
+- added endpoint:  factoring by true or false
+- added endpoint:
+- added endpoint:
+- added endpoint:
+- added endpoint:
 
 TODO:  add functions for new fields in UserService, UserServiceImpl, & UserRepository
-    factoring true/false:  getFactoringTrue, getFactoringFalse
     company search partial or full:  findByCompanyContaining
     lastname search partial or full:  findByLastnameContaining
     firstname search partial or full:  findByFirstnameContaining
@@ -18,7 +22,6 @@ TODO:  add functions for new fields in UserService, UserServiceImpl, & UserRepos
     postalcode search partial or full:  findByPostalcodeContaining
     notes search partial or full:  findByNotesContaining
 TODO:  add endpoints for new user fields in UserController
-    factoring true/false:
     company search partial or full:  users/user/company/like/da?sort=company
     lastname search partial or full:  users/user/lastname/like/da?sort=lastname
     firstname search partial or full:  users/user/firstname/like/da?sort=firstname

@@ -78,7 +78,7 @@ public class User
     private String state;
 
     @Column(nullable = false)
-    @Size(min=5, max=5)
+    @Size(min=5, max=10)
     private String postalcode;
 
     @Column

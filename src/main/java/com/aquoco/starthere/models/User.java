@@ -49,11 +49,11 @@ public class User
     private String mrms;
 
     @Column(nullable = false)
-    @Size(min=3, max=240)
+    @Size(min=2, max=240)
     private String lastname;
 
     @Column(nullable = false)
-    @Size(min=3, max=240)
+    @Size(min=2, max=240)
     private String firstname;
 
     @Column

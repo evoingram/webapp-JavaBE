@@ -33,7 +33,7 @@ TODO:  Upload Files
 
 
 
-
+knex seed:run --specific=001-users.js;
 
 
 

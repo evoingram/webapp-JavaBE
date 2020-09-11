@@ -44,7 +44,7 @@ Back end deployed to `Heroku` and built using:
 ## Testing
 
 - All endpoints have been tested and documented via Postman.
-- The endpoints in the Java back end are also being tested in Java.
+- The endpoints in the Java back end are also being tested in JUnit 4.
 
 ## Documentation
 

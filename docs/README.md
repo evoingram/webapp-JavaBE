@@ -1,4 +1,4 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/c1474fe518ccb398d184/maintainability)](https://codeclimate.com/github/evoingram/webapp-javabe/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c6f9b278e28a7b7d126c/maintainability)](https://codeclimate.com/github/evoingram/webapp-javabe/maintainability)
 
 # Java Transcript Web App Back End Product Overview
 
@@ -14,9 +14,9 @@ This is the Java version of the back end for the online port of my company's VB 
 
 - Live solo project
 - RESTful API with auth services for transcript production system
-- 126 endpoints
+- 25 (126-150 when complete) endpoints
 - CourtListener, Xero, PayPal, Wunderlist, & Office API support
-- Tested and documented via Postman & Java
+- Tested and documented via Postman & JUnit
 - IN PROGRESS
 
 ## Tech Stack
@@ -26,6 +26,7 @@ Back end deployed to `Heroku` and built using:
 - [Java](https://www.java.com/):  a programming language.
 - [SQL](https://en.wikipedia.org/wiki/SQL):  a domain-specific language used in programming and designed for managing data held in an RDBMS or stream processing in an RDSMS
 - [Java Spring](https://github.com/spring-projects/spring-framework):  Spring provides everything required beyond the Java programming language for creating enterprise applications for a wide range of scenarios and architectures.
+- [JUnit 4](https://junit.org/junit4/):  a simple framework to write repeatable tests; an instance of the xUnit architecture for unit testing frameworks.
 - [SLF4J](http://www.slf4j.org/):  a simple logging facade for Java.
 - [OAuth2](https://github.com/pyca/bcrypt/):  industry-standard protocol for authorization
 - [Swagger](https://swagger.io/):  simplifies Java API documentation.
@@ -43,7 +44,7 @@ Back end deployed to `Heroku` and built using:
 ## Testing
 
 - All endpoints have been tested and documented via Postman.
-- The endpoints in the Java back end are also being tested in Java.
+- The endpoints in the Java back end are also being tested in JUnit 4.
 
 ## Documentation
 

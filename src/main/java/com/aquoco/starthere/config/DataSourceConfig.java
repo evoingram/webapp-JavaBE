@@ -70,7 +70,7 @@ public class DataSourceConfig {
             HikariConfig config = new HikariConfig();
             config.setDriverClassName("org.postgresql.Driver");
             config.setJdbcUrl(dbURL);
-            logger.info("Database URL is " + dbURL);
+            logger.info("Heroku Database URL is " + dbURL);
             return new HikariDataSource(config);
 
 
@@ -80,7 +80,7 @@ public class DataSourceConfig {
             myDriverClass = "org.h2.Driver";
             myDBUser = "sa";
             myDBPassword = "";
-            logger.info("Database URL is " + myUrlString);
+            logger.info("H2 Database URL is " + myUrlString);
             return DataSourceBuilder.create()
                                     .username(myDBUser)
                                     .password(myDBPassword)

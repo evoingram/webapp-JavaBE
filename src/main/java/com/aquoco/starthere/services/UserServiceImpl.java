@@ -81,6 +81,31 @@ public class UserServiceImpl
         newUser.setPasswordNoEncrypt(user.getPassword());
         newUser.setPrimaryemail(user.getPrimaryemail()
                                     .toLowerCase());
+        newUser.setFactoring(user.isFactoring());
+        newUser.setLastname(user.getLastname());
+        newUser.setFirstname(user.getFirstname());
+        newUser.setAddress1(user.getAddress1());
+        newUser.setCity(user.getCity());
+        newUser.setState(user.getState());
+        newUser.setPostalcode(user.getPostalcode());
+        if(user.getCompany() != null){
+            newUser.setCompany(user.getCompany());
+        }
+        if(user.getMrms() != null){
+            newUser.setMrms(user.getMrms());
+        }
+        if(user.getJobtitle() != null){
+            newUser.setJobtitle(user.getJobtitle());
+        }
+        if(user.getBusinessphone() != null){
+            newUser.setBusinessphone(user.getBusinessphone());
+        }
+        if(user.getAddress2() != null){
+            newUser.setAddress2(user.getAddress2());
+        }
+        if(user.getNotes() != null){
+            newUser.setNotes(user.getNotes());
+        }
 
         ArrayList<UserRoles> newRoles = new ArrayList<>();
         for (UserRoles ur : user.getUserroles()) {
@@ -127,6 +152,34 @@ public class UserServiceImpl
             if (user.getPrimaryemail() != null) {
                 currentUser.setPrimaryemail(user.getPrimaryemail()
                                                 .toLowerCase());
+            }
+
+            if (user.isFactoring()) {
+                currentUser.setFactoring(user.isFactoring());
+            }
+
+            if (user.getLastname() != null) {
+                currentUser.setLastname(user.getLastname());
+            }
+
+            if (user.getFirstname() != null) {
+                currentUser.setFirstname(user.getFirstname());
+            }
+
+            if (user.getAddress1() != null) {
+                currentUser.setAddress1(user.getAddress1());
+            }
+
+            if (user.getCity() != null) {
+                currentUser.setCity(user.getCity());
+            }
+
+            if (user.getState() != null) {
+                currentUser.setState(user.getState());
+            }
+
+            if (user.getPostalcode() != null) {
+                currentUser.setPostalcode(user.getPostalcode());
             }
 
             if (user.getUserroles()

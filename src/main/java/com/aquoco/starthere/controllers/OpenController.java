@@ -65,6 +65,13 @@ public class OpenController {
         newuser.setUsername(newminuser.getUsername());
         newuser.setPassword(newminuser.getPassword());
         newuser.setPrimaryemail(newminuser.getPrimaryemail());
+        newuser.setFactoring(newminuser.getFactoring());
+        newuser.setLastname(newminuser.getLastname());
+        newuser.setFirstname(newminuser.getFirstname());
+        newuser.setAddress1(newminuser.getAddress1());
+        newuser.setCity(newminuser.getCity());
+        newuser.setState(newminuser.getState());
+        newuser.setPostalcode(newminuser.getPostalcode());
 
         ArrayList<UserRoles> newRoles = new ArrayList<>();
         newRoles.add(new UserRoles(newuser,

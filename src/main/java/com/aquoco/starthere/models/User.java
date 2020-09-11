@@ -190,7 +190,8 @@ public class User
     }
 
     public void setFactoring(boolean factoring) {
-        this.factoring = factoring;
+
+            this.factoring = factoring;
     }
 
     public String getCompany() {

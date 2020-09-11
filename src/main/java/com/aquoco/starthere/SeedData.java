@@ -197,7 +197,7 @@ public class SeedData
                                 "password",
                                 nameFaker.internet()
                                          .emailAddress(),
-                                false,
+                                nameFaker.equals(false),
                                 nameFaker.company().name(),
                                 "",
                                 nameFaker.name().lastName(),

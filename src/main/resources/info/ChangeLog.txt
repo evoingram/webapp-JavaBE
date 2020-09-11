@@ -4,7 +4,8 @@ September 11, 2020
 - added new fields to 'save' in UserServiceImpl at line 74
 - set favicon
 - Made sure Swagger includes new user fields
-TODO:  factoring field set only by admin
+- factoring field set only by admin
+- added factoring change endpoint for admin only
 TODO:  add functions for new fields in UserService, UserServiceImpl, & UserRepository
     factoring true/false:  getFactoringTrue, getFactoringFalse
     company search partial or full:  findByCompanyContaining

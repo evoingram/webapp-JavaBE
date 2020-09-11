@@ -249,6 +249,22 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @PutMapping(value = "/user/{id}/factoring")
+    public ResponseEntity<?> updateUserFactoring(HttpServletRequest request,
+                                        @RequestBody
+                                                User updateUserFactoring,
+                                        @PathVariable
+                                                long id) {
+        logger.trace(request.getMethod()
+                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
+        userService.updateFactoring(updateUserFactoring,
+                           id,
+                           request.isUserInRole("ADMIN"));
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
     // http://localhost:2019/users/user/14
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")

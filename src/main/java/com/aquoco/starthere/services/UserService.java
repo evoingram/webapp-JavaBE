@@ -23,6 +23,10 @@ public interface UserService {
                 long id,
                 boolean isAdmin);
 
+    User updateFactoring(User user,
+                         long id,
+                         boolean isAdmin);
+
     void deleteUserRole(long userid,
                         long roleid);
 

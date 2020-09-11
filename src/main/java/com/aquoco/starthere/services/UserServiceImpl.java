@@ -81,7 +81,7 @@ public class UserServiceImpl
         newUser.setPasswordNoEncrypt(user.getPassword());
         newUser.setPrimaryemail(user.getPrimaryemail()
                                     .toLowerCase());
-        newUser.setFactoring(user.isFactoring());
+        newUser.setFactoring(false);
         newUser.setLastname(user.getLastname());
         newUser.setFirstname(user.getFirstname());
         newUser.setAddress1(user.getAddress1());
@@ -155,10 +155,6 @@ public class UserServiceImpl
                                                 .toLowerCase());
             }
 
-            if (user.isFactoring()) {
-                currentUser.setFactoring(user.isFactoring());
-            }
-
             if (user.getLastname() != null) {
                 currentUser.setLastname(user.getLastname());
             }
@@ -227,6 +223,24 @@ public class UserServiceImpl
         }
     }
 
+    @Transactional
+    @Override
+    public User updateFactoring(User user, long id, boolean isAdmin) {
+
+        if (isAdmin) {
+
+            User currentUser = findUserById(id);
+
+            currentUser.setFactoring(!user.isFactoring());
+
+            return userrepos.save(currentUser);
+
+        } else {
+
+            throw new ResourceNotFoundException(id + " Not current user");
+
+        }
+    }
     @Transactional
     @Override
     public void deleteUserRole(long userid,

@@ -6,6 +6,7 @@ September 11, 2020
 - Made sure Swagger includes new user fields
 - factoring field set only by admin
 - added factoring change endpoint for admin only
+
 TODO:  add functions for new fields in UserService, UserServiceImpl, & UserRepository
     factoring true/false:  getFactoringTrue, getFactoringFalse
     company search partial or full:  findByCompanyContaining

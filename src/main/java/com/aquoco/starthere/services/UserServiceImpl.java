@@ -52,6 +52,12 @@ public class UserServiceImpl
         return list;
     }
 
+    @Override
+    public List<User> getUsersByFactoring(boolean factoring,
+                                           Pageable pageable) {
+        return userrepos.findUsersByFactoring(factoring, pageable);
+    }
+
     @Transactional
     @Override
     public void delete(long id) {
@@ -225,7 +231,7 @@ public class UserServiceImpl
 
     @Transactional
     @Override
-    public User updateFactoring(User user, long id, boolean isAdmin) {
+    public User updateUserFactoring(User user, long id, boolean isAdmin) {
 
         if (isAdmin) {
 
@@ -240,7 +246,9 @@ public class UserServiceImpl
             throw new ResourceNotFoundException(id + " Not current user");
 
         }
+
     }
+
     @Transactional
     @Override
     public void deleteUserRole(long userid,

@@ -80,6 +80,21 @@ public class UserController {
                                     HttpStatus.OK);
     }
 
+    // http://localhost:2019/users/users/all
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @GetMapping(value = "/users/factoring/{factoring}",
+            produces = {"application/json"})
+    public ResponseEntity<?> getUsersByFactoring(HttpServletRequest request,
+                                                 @PathVariable boolean factoring) {
+
+        logger.trace(request.getMethod()
+                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
+        List<User> myUsers = userService.getUsersByFactoring(factoring, Pageable.unpaged());
+
+        return new ResponseEntity<>(myUsers, HttpStatus.OK);
+    }
+
 
     // http://localhost:2019/users/user/7
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
@@ -92,8 +107,7 @@ public class UserController {
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
         User u = userService.findUserById(userId);
-        return new ResponseEntity<>(u,
-                                    HttpStatus.OK);
+        return new ResponseEntity<>(u, HttpStatus.OK);
     }
 
     // http://localhost:2019/users/user/name/cinnamon
@@ -249,6 +263,7 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    // http://localhost:2019/users/user/14/factoring
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PutMapping(value = "/user/{id}/factoring")
     public ResponseEntity<?> updateUserFactoring(HttpServletRequest request,
@@ -259,9 +274,9 @@ public class UserController {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
-        userService.updateFactoring(updateUserFactoring,
-                           id,
-                           request.isUserInRole("ADMIN"));
+        userService.updateUserFactoring(updateUserFactoring,
+                                        id,
+                                        request.isUserInRole("ADMIN"));
 
         return new ResponseEntity<>(HttpStatus.OK);
     }

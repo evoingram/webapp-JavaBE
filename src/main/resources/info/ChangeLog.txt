@@ -1,5 +1,4 @@
 September 11, 2020
-
 - added new fields to 'create new user' in OpenController at line 65
 - added new fields to 'update' in UserServiceImpl at line 107
 - added new fields to 'save' in UserServiceImpl at line 74
@@ -31,6 +30,16 @@ TODO:  Sign on with Google, Facebook, GitHub, us
     https://www.callicoder.com/spring-boot-security-oauth2-social-login-part-1/
 TODO:  Upload Files
      https://www.devglan.com/spring-boot/spring-boot-file-upload-download
+
+
+
+
+
+
+
+
+
+
 
 CI
 

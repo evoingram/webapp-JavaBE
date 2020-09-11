@@ -58,6 +58,12 @@ public class UserServiceImpl
         return userrepos.findUsersByFactoring(factoring, pageable);
     }
 
+    @Override
+    public List<User> findUsersByCompany(String searchPhrase,
+                                           Pageable pageable) {
+        return userrepos.findUsersByCompany(searchPhrase, pageable);
+    }
+
     @Transactional
     @Override
     public void delete(long id) {

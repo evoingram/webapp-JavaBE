@@ -52,6 +52,12 @@ public class UserServiceImpl
         return list;
     }
 
+    @Override
+    public List<User> getUsersByFactoring(boolean factoring,
+                                           Pageable pageable) {
+        return userrepos.findUsersByFactoring(factoring, pageable);
+    }
+
     @Transactional
     @Override
     public void delete(long id) {
@@ -81,7 +87,7 @@ public class UserServiceImpl
         newUser.setPasswordNoEncrypt(user.getPassword());
         newUser.setPrimaryemail(user.getPrimaryemail()
                                     .toLowerCase());
-        newUser.setFactoring(user.isFactoring());
+        newUser.setFactoring(false);
         newUser.setLastname(user.getLastname());
         newUser.setFirstname(user.getFirstname());
         newUser.setAddress1(user.getAddress1());
@@ -155,10 +161,6 @@ public class UserServiceImpl
                                                 .toLowerCase());
             }
 
-            if (user.isFactoring()) {
-                currentUser.setFactoring(user.isFactoring());
-            }
-
             if (user.getLastname() != null) {
                 currentUser.setLastname(user.getLastname());
             }
@@ -225,6 +227,26 @@ public class UserServiceImpl
         } else {
             throw new ResourceNotFoundException(id + " Not current user");
         }
+    }
+
+    @Transactional
+    @Override
+    public User updateUserFactoring(User user, long id, boolean isAdmin) {
+
+        if (isAdmin) {
+
+            User currentUser = findUserById(id);
+
+            currentUser.setFactoring(!user.isFactoring());
+
+            return userrepos.save(currentUser);
+
+        } else {
+
+            throw new ResourceNotFoundException(id + " Not current user");
+
+        }
+
     }
 
     @Transactional

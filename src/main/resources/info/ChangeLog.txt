@@ -2,6 +2,11 @@ September 11, 2020
 - added new fields to 'create new user' in OpenController at line 65
 - added new fields to 'update' in UserServiceImpl at line 107
 - added new fields to 'save' in UserServiceImpl at line 74
+- set favicon
+- Made sure Swagger includes new user fields
+- factoring field set only by admin
+- added factoring change endpoint for admin only
+
 TODO:  add functions for new fields in UserService, UserServiceImpl, & UserRepository
     factoring true/false:  getFactoringTrue, getFactoringFalse
     company search partial or full:  findByCompanyContaining
@@ -22,18 +27,11 @@ TODO:  add endpoints for new user fields in UserController
     state search partial or full:  users/user/state/like/da?sort=state
     postalcode search partial or full:  users/user/postalcode/like/da?sort=postalcode
     notes search partial or full:  users/user/notes/like/da?sort=notes
-TODO:  Add seed data info to SeedData or run knex files from other repo
-TODO:  Make sure Swagger includes new user fields
-TODO:  Set favicon
 
 TODO:  Sign on with Google, Facebook, GitHub, us
     https://www.callicoder.com/spring-boot-security-oauth2-social-login-part-1/
 TODO:  Upload Files
      https://www.devglan.com/spring-boot/spring-boot-file-upload-download
-
-
-
-knex seed:run --specific=001-users.js;
 
 
 

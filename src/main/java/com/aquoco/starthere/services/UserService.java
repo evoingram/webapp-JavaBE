@@ -15,6 +15,8 @@ public interface UserService {
 
     User findByName(String name);
 
+    List<User> getUsersByFactoring(boolean factoring, Pageable pageable);
+
     void delete(long id);
 
     User save(User user);
@@ -22,6 +24,10 @@ public interface UserService {
     User update(User user,
                 long id,
                 boolean isAdmin);
+
+    User updateUserFactoring(User user,
+                         long id,
+                         boolean isAdmin);
 
     void deleteUserRole(long userid,
                         long roleid);

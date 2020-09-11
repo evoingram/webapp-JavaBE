@@ -26,6 +26,7 @@ Back end deployed to `Heroku` and built using:
 - [Java](https://www.java.com/):  a programming language.
 - [SQL](https://en.wikipedia.org/wiki/SQL):  a domain-specific language used in programming and designed for managing data held in an RDBMS or stream processing in an RDSMS
 - [Java Spring](https://github.com/spring-projects/spring-framework):  Spring provides everything required beyond the Java programming language for creating enterprise applications for a wide range of scenarios and architectures.
+- [JUnit 4](https://junit.org/junit4/):  a simple framework to write repeatable tests; an instance of the xUnit architecture for unit testing frameworks.
 - [SLF4J](http://www.slf4j.org/):  a simple logging facade for Java.
 - [OAuth2](https://github.com/pyca/bcrypt/):  industry-standard protocol for authorization
 - [Swagger](https://swagger.io/):  simplifies Java API documentation.

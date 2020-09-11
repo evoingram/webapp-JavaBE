@@ -77,7 +77,6 @@ public class DataSourceConfig {
             myDriverClass = "org.postgresql.Driver";
             myDBUser = System.getenv("MYDBUSER");
             myDBPassword = System.getenv("MYDBPASSWORD");
-
             */
 
             HikariConfig config = new HikariConfig();

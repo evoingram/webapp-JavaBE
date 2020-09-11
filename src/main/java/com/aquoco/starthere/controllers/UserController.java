@@ -82,15 +82,15 @@ public class UserController {
 
     // http://localhost:2019/users/users/all
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @GetMapping(value = "/users/factoring/{factoring}",
+    @GetMapping(value = "/factoring/{factoring}",
             produces = {"application/json"})
-    public ResponseEntity<?> getUsersByFactoring(HttpServletRequest request,
+    public ResponseEntity<?> findUsersByFactoring(HttpServletRequest request,
                                                  @PathVariable boolean factoring) {
 
-        logger.trace(request.getMethod()
-                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+        logger.trace(request.getMethod().toUpperCase() + " " +
+                     request.getRequestURI() + " accessed");
 
-        List<User> myUsers = userService.getUsersByFactoring(factoring, Pageable.unpaged());
+        List<User> myUsers = userService.findUsersByFactoring(factoring, Pageable.unpaged());
 
         return new ResponseEntity<>(myUsers, HttpStatus.OK);
     }
@@ -265,18 +265,14 @@ public class UserController {
 
     // http://localhost:2019/users/user/14/factoring
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @PutMapping(value = "/user/{id}/factoring")
+    @PutMapping(value = "/user/{id}/factoring/")
     public ResponseEntity<?> updateUserFactoring(HttpServletRequest request,
-                                        @RequestBody
-                                                User updateUserFactoring,
-                                        @PathVariable
-                                                long id) {
+                                                 @PathVariable long id) {
+
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
-        userService.updateUserFactoring(updateUserFactoring,
-                                        id,
-                                        request.isUserInRole("ADMIN"));
+        userService.updateUserFactoring(id, request.isUserInRole("ADMIN"));
 
         return new ResponseEntity<>(HttpStatus.OK);
     }

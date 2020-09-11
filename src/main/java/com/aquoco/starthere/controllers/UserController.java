@@ -176,9 +176,11 @@ public class UserController {
                     allowMultiple = true,
                     dataType = "string",
                     paramType = "query",
-                    value = "Sorting criteria in the format: property(,asc|desc). " + "Default sort order is ascending. " + "Multiple sort criteria are supported.")})
+                    value = "Sorting criteria in the format: property(,asc|desc). " +
+                            "Default sort order is ascending. " +
+                            "Multiple sort criteria are supported.")})
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @GetMapping(value = "/user/company/like/{searchPhrase}",
+    @GetMapping(value = "/company/like/{searchPhrase}",
             produces = {"application/json"})
     public ResponseEntity<?> findUsersByCompany(HttpServletRequest request,
                                              @PathVariable String searchPhrase,

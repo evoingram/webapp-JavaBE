@@ -265,7 +265,7 @@ public class UserController {
 
     // http://localhost:2019/users/user/14/factoring
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @PutMapping(value = "/user/{id}/factoring/")
+    @PutMapping(value = "/user/{id}/factoring")
     public ResponseEntity<?> updateUserFactoring(HttpServletRequest request,
                                                  @PathVariable long id) {
 

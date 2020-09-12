@@ -262,7 +262,7 @@ public class UserController {
         return new ResponseEntity<>(u, HttpStatus.OK);
     }
 
-    // http://localhost:2019/users/user/businessphone/like/da?sort=username
+    // http://localhost:2019/users/businessphone/like/da?sort=username
     @ApiOperation(value = "returns all Users with business phone containing a given string",
             response = User.class,
             responseContainer = "List")
@@ -296,7 +296,41 @@ public class UserController {
         return new ResponseEntity<>(u, HttpStatus.OK);
     }
 
-    // http://localhost:2019/users/user/city/like/da?sort=username
+    // http://localhost:2019/users/address1/like/da?sort=username
+    @ApiOperation(value = "returns all Users with address1 containing a given string",
+            response = User.class,
+            responseContainer = "List")
+    @ApiImplicitParams({@ApiImplicitParam(name = "page",
+            dataType = "integer",
+            paramType = "query",
+            value = "Results page you want to retrieve (0..N)"),
+            @ApiImplicitParam(name = "size",
+                    dataType = "integer",
+                    paramType = "query",
+                    value = "Number of records per page."),
+            @ApiImplicitParam(name = "sort",
+                    allowMultiple = true,
+                    dataType = "string",
+                    paramType = "query",
+                    value = "Sorting criteria in the format: property(,asc|desc). " +
+                            "Default sort order is ascending. " +
+                            "Multiple sort criteria are supported.")})
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @GetMapping(value = "/address1/like/{address1}",
+            produces = {"application/json"})
+    public ResponseEntity<?> findByAddress1ContainingIgnoreCase(HttpServletRequest request,
+                                                            @PathVariable String address1,
+                                                            @PageableDefault(page = 0, size = 5)
+                                                                    Pageable pageable) {
+        logger.trace(request.getMethod().toUpperCase() + " " +
+                             request.getRequestURI() + " accessed");
+
+        List<User> u = userService.findByAddress1ContainingIgnoreCase(address1, pageable);
+
+        return new ResponseEntity<>(u, HttpStatus.OK);
+    }
+
+    // http://localhost:2019/users/city/like/da?sort=username
     @ApiOperation(value = "returns all Users with city containing a given string",
             response = User.class,
             responseContainer = "List")
@@ -330,7 +364,7 @@ public class UserController {
         return new ResponseEntity<>(u, HttpStatus.OK);
     }
 
-    // http://localhost:2019/users/user/state/like/da?sort=username
+    // http://localhost:2019/users/state/like/da?sort=username
     @ApiOperation(value = "returns all Users with state containing a given string",
             response = User.class,
             responseContainer = "List")
@@ -364,7 +398,7 @@ public class UserController {
         return new ResponseEntity<>(u, HttpStatus.OK);
     }
 
-    // http://localhost:2019/users/user/postalcode/like/da?sort=username
+    // http://localhost:2019/users/postalcode/like/da?sort=username
     @ApiOperation(value = "returns all Users with postal code containing a given string",
             response = User.class,
             responseContainer = "List")
@@ -398,7 +432,7 @@ public class UserController {
         return new ResponseEntity<>(u, HttpStatus.OK);
     }
 
-    // http://localhost:2019/users/user/notes/like/da?sort=username
+    // http://localhost:2019/users/notes/like/da?sort=username
     @ApiOperation(value = "returns all Users with notes containing a given string",
             response = User.class,
             responseContainer = "List")

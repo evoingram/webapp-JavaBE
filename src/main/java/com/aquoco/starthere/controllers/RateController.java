@@ -39,8 +39,8 @@ public class RateController {
     @Autowired
     private RateService rateService;
 
-    // http://localhost:2019/rates/?page=1&size=1
-    // http://localhost:2019/rates/?sort=username,desc&sort=<field>,asc
+    // http://localhost:2019/rates/rates/?page=1&size=1
+    // http://localhost:2019/rates/rates/?sort=username,desc&sort=<field>,asc
     @ApiOperation(value = "returns all rates",
             response = Rate.class,
             responseContainer = "List")
@@ -71,7 +71,7 @@ public class RateController {
         return new ResponseEntity<>(myRates, HttpStatus.OK);
     }
 
-    // http://localhost:2019/rates/all
+    // http://localhost:2019/rates/rates/all
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping(value = "/rates/all",
             produces = {"application/json"})
@@ -99,7 +99,7 @@ public class RateController {
 
     // http://localhost:2019/rates/rate/1.60
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @GetMapping(value = "/rate/{rate}",
+    @GetMapping(value = "/rate/rate/{rate}",
             produces = {"application/json"})
     public ResponseEntity<?> getRateByRate(HttpServletRequest request,
                                            @PathVariable
@@ -131,7 +131,7 @@ public class RateController {
                     paramType = "query",
                     value = "Sorting criteria in the format: property(,asc|desc). " + "Default sort order is ascending. " + "Multiple sort criteria are supported.")})
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @GetMapping(value = "/rate/like/{rate}",
+    @GetMapping(value = "/rateamount/like/{rate}",
             produces = {"application/json"})
     public ResponseEntity<?> getRateLikeRate(HttpServletRequest request,
                                              @PathVariable

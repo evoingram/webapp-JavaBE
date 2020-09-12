@@ -10,6 +10,7 @@ import java.util.List;
     * password, postalcode, primaryemail, state, username
  */
 public interface UserService {
+
     List<User> findAll(Pageable pageable);
 
     List<User> findByNameContaining(String username, Pageable pageable);

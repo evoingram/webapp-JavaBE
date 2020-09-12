@@ -22,25 +22,49 @@ September 11, 2020
 - do endpoints w/o subarrays/subobjects first
 - need slightly different view for self-user endpoints
 
+AGShortcut
+Appearance
+BrandingTheme
+Case
+CCC
+Citation
+CitationHyperlink
+CommHistory
+Courtdate
+ExamType
+Expense
+Invoice
+MailClass
+PackageType
+Payment
+Rate
+Shipping
+Status
+Style
+Task
+TurnaroundTime
+USC
+
+
 FOLDER:  Financials
     FOLDER:  Rates
 TODO:  GET endpoint all rates (admin)
-TODO:  GET endpoint self-user's courtdates by rates (user or admin)
 TODO:  GET endpoint one rate (admin)
-TODO:  GET endpoint self-user's courtdates by one rate (user or admin)
 TODO:  GET endpoint search by code (admin)
 TODO:  GET endpoint search by inventoryratecode (admin)
 TODO:  GET endpoint search by productname (admin)
 TODO:  GET endpoint search by description (admin)
 TODO:  GET endpoint search by rate (admin)
+TODO:  POST endpoint one rate (admin)
+TODO:  PUT endpoint one rate (admin)
+TODO:  DELETE endpoint one rate (admin)
 TODO:  GET endpoint search self-user's jobs by code (user or admin)
 TODO:  GET endpoint search self-user's jobs by inventoryratecode (user or admin)
 TODO:  GET endpoint search self-user's jobs by productname (user or admin)
 TODO:  GET endpoint search self-user's jobs by description (user or admin)
 TODO:  GET endpoint search self-user's jobs by rate (user or admin)
-TODO:  POST endpoint one rate (admin)
-TODO:  PUT endpoint one rate (admin)
-TODO:  DELETE endpoint one rate (admin)
+TODO:  GET endpoint self-user's courtdates by rates (user or admin)
+TODO:  GET endpoint self-user's courtdates by one rate (user or admin)
 
     FOLDER:  Invoices
 TODO:  GET endpoint all invoices (admin)

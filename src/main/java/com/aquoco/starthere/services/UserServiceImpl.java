@@ -64,6 +64,48 @@ public class UserServiceImpl
         return userrepos.findByCompanyContainingIgnoreCase(company, pageable);
     }
 
+    @Override
+    public List<User> findByLastnameContainingIgnoreCase(String lastname,
+                                                        Pageable pageable) {
+        return userrepos.findByLastnameContainingIgnoreCase(lastname, pageable);
+    }
+
+    @Override
+    public List<User> findByFirstnameContainingIgnoreCase(String firstname,
+                                                         Pageable pageable) {
+        return userrepos.findByFirstnameContainingIgnoreCase(firstname, pageable);
+    }
+
+    @Override
+    public List<User> findByBusinessphoneContainingIgnoreCase(String businessphone,
+                                                          Pageable pageable) {
+        return userrepos.findByBusinessphoneContainingIgnoreCase(businessphone, pageable);
+    }
+
+    @Override
+    public List<User> findByCityContainingIgnoreCase(String city,
+                                                          Pageable pageable) {
+        return userrepos.findByCityContainingIgnoreCase(city, pageable);
+    }
+
+    @Override
+    public List<User> findByStateContainingIgnoreCase(String state,
+                                                          Pageable pageable) {
+        return userrepos.findByStateContainingIgnoreCase(state, pageable);
+    }
+
+    @Override
+    public List<User> findByPostalcodeContainingIgnoreCase(String postalcode,
+                                                          Pageable pageable) {
+        return userrepos.findByPostalcodeContainingIgnoreCase(postalcode, pageable);
+    }
+
+    @Override
+    public List<User> findByNotesContainingIgnoreCase(String notes,
+                                                          Pageable pageable) {
+        return userrepos.findByNotesContainingIgnoreCase(notes, pageable);
+    }
+
     @Transactional
     @Override
     public void delete(long id) {

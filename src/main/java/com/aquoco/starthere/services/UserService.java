@@ -10,8 +10,21 @@ public interface UserService {
 
     List<User> findByNameContaining(String username, Pageable pageable);
 
-
     List<User> findByCompanyContainingIgnoreCase(String company, Pageable pageable);
+
+    List<User> findByLastnameContainingIgnoreCase(String lastname, Pageable pageable);
+
+    List<User> findByFirstnameContainingIgnoreCase(String firstname, Pageable pageable);
+
+    List<User> findByBusinessphoneContainingIgnoreCase(String businessphone, Pageable pageable);
+
+    List<User> findByCityContainingIgnoreCase(String city, Pageable pageable);
+
+    List<User> findByStateContainingIgnoreCase(String state, Pageable pageable);
+
+    List<User> findByPostalcodeContainingIgnoreCase(String postalcode, Pageable pageable);
+
+    List<User> findByNotesContainingIgnoreCase(String notes, Pageable pageable);
 
     User findUserById(long id);
 

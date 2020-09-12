@@ -59,7 +59,7 @@ public class UserServiceImpl
     }
 
     @Override
-    public List<User> findByCompanyContainingIC(String company,
+    public List<User> findByCompanyContainingIgnoreCase(String company,
                                            Pageable pageable) {
         return userrepos.findByCompanyContainingIgnoreCase(company, pageable);
     }

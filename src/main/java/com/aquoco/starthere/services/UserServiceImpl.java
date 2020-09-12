@@ -53,9 +53,9 @@ public class UserServiceImpl
     }
 
     @Override
-    public List<User> findUsersByFactoring(boolean factoring,
+    public List<User> findUsersByCreditApproved(boolean creditApproved,
                                            Pageable pageable) {
-        return userrepos.findUsersByFactoring(factoring, pageable);
+        return userrepos.findUsersByCreditApproved(creditApproved, pageable);
     }
 
     @Override
@@ -141,7 +141,7 @@ public class UserServiceImpl
         newUser.setPasswordNoEncrypt(user.getPassword());
         newUser.setPrimaryemail(user.getPrimaryemail()
                                     .toLowerCase());
-        newUser.setFactoring(false);
+        newUser.setCreditApproved(false);
         newUser.setLastname(user.getLastname());
         newUser.setFirstname(user.getFirstname());
         newUser.setAddress1(user.getAddress1());
@@ -285,13 +285,13 @@ public class UserServiceImpl
 
     @Transactional
     @Override
-    public User updateUserFactoring(long id, boolean isAdmin) {
+    public User updateUserCreditApproved(long id, boolean isAdmin) {
 
         if (isAdmin) {
 
             User currentUser = findUserById(id);
 
-            currentUser.setFactoring(!currentUser.isFactoring());
+            currentUser.setCreditApproved(!currentUser.isCreditApproved());
 
             return userrepos.save(currentUser);
 

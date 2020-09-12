@@ -32,7 +32,7 @@ public interface UserService {
 
     User findByName(String name);
 
-    List<User> findUsersByFactoring(boolean factoring, Pageable pageable);
+    List<User> findUsersByCreditApproved(boolean creditApproved, Pageable pageable);
 
     void delete(long id);
 
@@ -42,7 +42,7 @@ public interface UserService {
                 long id,
                 boolean isAdmin);
 
-    User updateUserFactoring(long id,
+    User updateUserCreditApproved(long id,
                          boolean isAdmin);
 
     void deleteUserRole(long userid,

@@ -22,9 +22,9 @@
         "duedate": "2020-03-06T00:00:00.000Z",
         "discount": "0.10",
         "reference": "1",
-        "factoring": {
-            "factoring": true,
-            "factoringcost": "0.00"
+        "creditApproved": {
+            "creditApproved": true,
+            "creditApprovedcost": "0.00"
         },
         "invoices": [
             {
@@ -42,7 +42,7 @@
                 "taxtype": "none",
                 "ratesid": 1,
                 "customersid": 2,
-                "factoring": true,
+                "creditApproved": true,
                 "company": "A Quo Co.",
                 "mrms": "Ms",
                 "lastname": "Ingram",
@@ -76,7 +76,7 @@
             "ppstatus": ""
         },
         "xero": {
-            "brandingtheme": "WRTS NC Factoring",
+            "brandingtheme": "WRTS NC CreditApproved",
             "itemcode": "CNB45",
             "description": " Case Info Here Maybe",
             "accountcode": 400,
@@ -123,7 +123,7 @@
     "shipping": [
         {
             "customersid": 1,
-            "factoring": true,
+            "creditApproved": true,
             "company": "A Quo Co.",
             "mrms": "Ms",
             "lastname": "Ingram",
@@ -176,7 +176,7 @@
             "appid": 1,
             "cdappid": 1,
             "customersid": 1,
-            "factoring": true,
+            "creditApproved": true,
             "company": "A Quo Co.",
             "mrms": "Ms",
             "lastname": "Ingram",
@@ -196,7 +196,7 @@
             "appid": 4,
             "cdappid": 2,
             "customersid": 1,
-            "factoring": true,
+            "creditApproved": true,
             "company": "A Quo Co.",
             "mrms": "Ms",
             "lastname": "Ingram",
@@ -216,7 +216,7 @@
             "appid": 6,
             "cdappid": 3,
             "customersid": 4,
-            "factoring": true,
+            "creditApproved": true,
             "company": "A Quo Co.",
             "mrms": "Ms",
             "lastname": "Ingram2",
@@ -236,7 +236,7 @@
             "appid": 9,
             "cdappid": 2,
             "customersid": 4,
-            "factoring": true,
+            "creditApproved": true,
             "company": "A Quo Co.",
             "mrms": "Ms",
             "lastname": "Ingram2",
@@ -280,7 +280,7 @@
         {
             "courtdatesid": 1,
             "customersid": 1,
-            "factoring": true,
+            "creditApproved": true,
             "company": "A Quo Co.",
             "mrms": "Ms",
             "lastname": "Ingram",
@@ -301,7 +301,7 @@
         {
             "courtdatesid": 1,
             "customersid": 2,
-            "factoring": true,
+            "creditApproved": true,
             "company": "A Quo Co.",
             "mrms": "Ms",
             "lastname": "Ingram",

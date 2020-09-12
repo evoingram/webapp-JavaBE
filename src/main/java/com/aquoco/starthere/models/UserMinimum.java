@@ -7,7 +7,7 @@ public class UserMinimum {
     private String username;
     private String password;
     private String primaryemail;
-    private boolean factoring;
+    private boolean creditApproved;
     private String lastname;
     private String firstname;
     private String address1;
@@ -39,12 +39,12 @@ public class UserMinimum {
         this.primaryemail = primaryemail;
     }
 
-    public boolean getFactoring() {
-        return factoring;
+    public boolean getCreditApproved() {
+        return creditApproved;
     }
 
-    public void setFactoring(boolean factoring) {
-        this.factoring = factoring;
+    public void setCreditApproved(boolean creditApproved) {
+        this.creditApproved = creditApproved;
     }
 
     public String getLastname() {

@@ -14,9 +14,9 @@ public interface UserRepository
 
     List<User> findByUsernameContainingIgnoreCase(String name, Pageable pageable);
 
-    @Query(value = "SELECT * FROM users WHERE factoring = :factoring",
+    @Query(value = "SELECT * FROM users WHERE creditApproved = :creditApproved",
             nativeQuery = true)
-    List<User> findUsersByFactoring(boolean factoring, Pageable pageable);
+    List<User> findUsersByCreditApproved(boolean creditApproved, Pageable pageable);
 
     // SELECT * FROM Users WHERE Company LIKE 'a%';
     List<User> findByCompanyContainingIgnoreCase(String company, Pageable pageable);

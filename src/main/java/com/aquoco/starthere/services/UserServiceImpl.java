@@ -19,6 +19,11 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * user table fields:  userid, address1, address2, businessphone, city,
+ * company, creditApproved,firstname, jobtitle, lastname, mrms, notes,
+ * password, postalcode, primaryemail, state, username
+ */
 @Loggable
 @Service(value = "userService")
 public class UserServiceImpl

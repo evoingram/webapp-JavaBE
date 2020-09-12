@@ -4,7 +4,11 @@ import com.aquoco.starthere.models.User;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
-
+/*
+    * user table fields:  userid, address1, address2, businessphone, city,
+    * company, creditApproved,firstname, jobtitle, lastname, mrms, notes,
+    * password, postalcode, primaryemail, state, username
+ */
 public interface UserService {
     List<User> findAll(Pageable pageable);
 

@@ -25,6 +25,11 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
+/*
+ * user table fields:  userid, address1, address2, businessphone, city,
+ * company, creditApproved,firstname, jobtitle, lastname, mrms, notes,
+ * password, postalcode, primaryemail, state, username
+ */
 @Loggable
 @RestController
 @RequestMapping("/users")
@@ -94,7 +99,6 @@ public class UserController {
 
         return new ResponseEntity<>(myUsers, HttpStatus.OK);
     }
-
 
     // http://localhost:2019/users/user/7
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")

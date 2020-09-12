@@ -58,7 +58,7 @@ public class RateController {
                     paramType = "query",
                     value = "Sorting criteria in the format: property(,asc|desc). " + "Default sort order is ascending. " + "Multiple sort criteria are supported.")})
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @GetMapping(value = "/",
+    @GetMapping(value = "/rates",
             produces = {"application/json"})
     public ResponseEntity<?> listAllRates(HttpServletRequest request,
                                           @PageableDefault(page = 0,
@@ -73,15 +73,14 @@ public class RateController {
 
     // http://localhost:2019/rates/all
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @GetMapping(value = "/all",
+    @GetMapping(value = "/rates/all",
             produces = {"application/json"})
     public ResponseEntity<?> reallyListAllUsers(HttpServletRequest request) {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
         List<Rate> myRates = rateService.findAll(Pageable.unpaged());
-        return new ResponseEntity<>(myRates,
-                                    HttpStatus.OK);
+        return new ResponseEntity<>(myRates, HttpStatus.OK);
     }
 
     // http://localhost:2019/rates/rate/7

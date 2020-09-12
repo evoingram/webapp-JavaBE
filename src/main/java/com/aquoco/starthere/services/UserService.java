@@ -8,16 +8,16 @@ import java.util.List;
 public interface UserService {
     List<User> findAll(Pageable pageable);
 
-    List<User> findByNameContaining(String username,
-                                    Pageable pageable);
+    List<User> findByNameContaining(String username, Pageable pageable);
+
+
+    List<User> findByCompanyContainingIC(String company, Pageable pageable);
 
     User findUserById(long id);
 
     User findByName(String name);
 
     List<User> findUsersByFactoring(boolean factoring, Pageable pageable);
-
-    List<User> findUsersByCompany(String searchPhrase, Pageable pageable);
 
     void delete(long id);
 

@@ -20,7 +20,5 @@ public interface UserRepository
     List<User> findUsersByFactoring(boolean factoring, Pageable pageable);
 
     // SELECT * FROM Users WHERE Company LIKE 'a%';
-    @Query(value = "SELECT * FROM users WHERE company LIKE ':searchPhrase" + "%'",
-            nativeQuery = true)
-    List<User> findUsersByCompany(String searchPhrase, Pageable pageable);
+    List<User> findByCompanyContainingIgnoreCase(String company, Pageable pageable);
 }

@@ -64,6 +64,12 @@ public class UserServiceImpl
         return userrepos.findByCompanyContainingIgnoreCase(company, pageable);
     }
 
+    @Override
+    public List<User> findByLastnameContainingIgnoreCase(String lastname,
+                                                        Pageable pageable) {
+        return userrepos.findByLastnameContainingIgnoreCase(lastname, pageable);
+    }
+
     @Transactional
     @Override
     public void delete(long id) {

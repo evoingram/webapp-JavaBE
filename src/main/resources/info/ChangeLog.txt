@@ -7,13 +7,17 @@ September 11, 2020
 - factoring field set only by admin
 - added factoring change endpoint for admin only
 - added endpoint:  factoring by true or false
-- added endpoint:
-- added endpoint:
-- added endpoint:
-- added endpoint:
+- added endpoint:  company search partial or full
+- added endpoint:   search partial or full
+- added endpoint:   search partial or full
+- added endpoint:   search partial or full
+- added endpoint:   search partial or full
+- added endpoint:   search partial or full
+- added endpoint:   search partial or full
+- added endpoint:   search partial or full
+
 
 TODO:  add functions for new fields in UserService, UserServiceImpl, & UserRepository
-    company search partial or full:  findByCompanyContaining
     lastname search partial or full:  findByLastnameContaining
     firstname search partial or full:  findByFirstnameContaining
     businessphone search full:  findByBusinessphoneContaining
@@ -22,7 +26,6 @@ TODO:  add functions for new fields in UserService, UserServiceImpl, & UserRepos
     postalcode search partial or full:  findByPostalcodeContaining
     notes search partial or full:  findByNotesContaining
 TODO:  add endpoints for new user fields in UserController
-    company search partial or full:  users/user/company/like/da?sort=company
     lastname search partial or full:  users/user/lastname/like/da?sort=lastname
     firstname search partial or full:  users/user/firstname/like/da?sort=firstname
     businessphone search full:  users/user/phone/like/da?sort=businessphone

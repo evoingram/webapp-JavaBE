@@ -10,8 +10,9 @@ public interface UserService {
 
     List<User> findByNameContaining(String username, Pageable pageable);
 
-
     List<User> findByCompanyContainingIgnoreCase(String company, Pageable pageable);
+
+    List<User> findByLastnameContainingIgnoreCase(String lastname, Pageable pageable);
 
     User findUserById(long id);
 

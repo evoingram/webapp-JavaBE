@@ -1,7 +1,6 @@
 package com.aquoco.starthere.repository;
 
 import com.aquoco.starthere.models.User;
-import com.aquoco.starthere.view.JustTheCount;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
@@ -21,4 +20,8 @@ public interface UserRepository
 
     // SELECT * FROM Users WHERE Company LIKE 'a%';
     List<User> findByCompanyContainingIgnoreCase(String company, Pageable pageable);
+
+    // SELECT * FROM Users WHERE Lastname LIKE 'a%';
+    List<User> findByLastnameContainingIgnoreCase(String lastname, Pageable pageable);
+
 }

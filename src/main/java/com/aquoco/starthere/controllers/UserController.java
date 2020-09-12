@@ -179,6 +179,7 @@ public class UserController {
                     value = "Sorting criteria in the format: property(,asc|desc). " +
                             "Default sort order is ascending. " +
                             "Multiple sort criteria are supported.")})
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping(value = "/company/like/{company}",
             produces = {"application/json"})
     public ResponseEntity<?> findByCompanyContainingIgnoreCase(HttpServletRequest request,
@@ -189,6 +190,40 @@ public class UserController {
                      request.getRequestURI() + " accessed");
 
         List<User> u = userService.findByCompanyContainingIgnoreCase(company, pageable);
+
+        return new ResponseEntity<>(u, HttpStatus.OK);
+    }
+
+    // http://localhost:2019/users/user/lastname/like/da?sort=username
+    @ApiOperation(value = "returns all Users with companies containing a given string",
+            response = User.class,
+            responseContainer = "List")
+    @ApiImplicitParams({@ApiImplicitParam(name = "page",
+            dataType = "integer",
+            paramType = "query",
+            value = "Results page you want to retrieve (0..N)"),
+            @ApiImplicitParam(name = "size",
+                    dataType = "integer",
+                    paramType = "query",
+                    value = "Number of records per page."),
+            @ApiImplicitParam(name = "sort",
+                    allowMultiple = true,
+                    dataType = "string",
+                    paramType = "query",
+                    value = "Sorting criteria in the format: property(,asc|desc). " +
+                            "Default sort order is ascending. " +
+                            "Multiple sort criteria are supported.")})
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @GetMapping(value = "/lastname/like/{lastname}",
+            produces = {"application/json"})
+    public ResponseEntity<?> findByLastnameContainingIgnoreCase(HttpServletRequest request,
+                                                               @PathVariable String lastname,
+                                                               @PageableDefault(page = 0, size = 5)
+                                                                       Pageable pageable) {
+        logger.trace(request.getMethod().toUpperCase() + " " +
+                             request.getRequestURI() + " accessed");
+
+        List<User> u = userService.findByLastnameContainingIgnoreCase(lastname, pageable);
 
         return new ResponseEntity<>(u, HttpStatus.OK);
     }

@@ -8,8 +8,8 @@ September 11, 2020
 - added factoring change endpoint for admin only
 - added endpoint:  factoring by true or false
 - added endpoint:  company search partial or full
-- added endpoint:   search partial or full
-- added endpoint:   search partial or full
+- added endpoint:  last name search partial or full
+- added endpoint:  first name search partial or full
 - added endpoint:   search partial or full
 - added endpoint:   search partial or full
 - added endpoint:   search partial or full

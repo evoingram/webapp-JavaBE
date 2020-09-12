@@ -14,6 +14,8 @@ public interface UserService {
 
     List<User> findByLastnameContainingIgnoreCase(String lastname, Pageable pageable);
 
+    List<User> findByFirstnameContainingIgnoreCase(String firstname, Pageable pageable);
+
     User findUserById(long id);
 
     User findByName(String name);

@@ -27,6 +27,9 @@ public interface UserRepository
     // SELECT * FROM Users WHERE Firstname LIKE 'a%';
     List<User> findByFirstnameContainingIgnoreCase(String firstname, Pageable pageable);
 
+    // SELECT * FROM Users WHERE address1 LIKE 'a%';
+    List<User> findByAddress1ContainingIgnoreCase(String address1, Pageable pageable);
+
     // SELECT * FROM Users WHERE Firstname LIKE 'a%';
     List<User> findByBusinessphoneContainingIgnoreCase(String businessphone, Pageable pageable);
 

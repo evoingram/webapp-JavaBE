@@ -83,6 +83,12 @@ public class UserServiceImpl
     }
 
     @Override
+    public List<User> findByAddress1ContainingIgnoreCase(String address1,
+                                                     Pageable pageable) {
+        return userrepos.findByAddress1ContainingIgnoreCase(address1, pageable);
+    }
+
+    @Override
     public List<User> findByCityContainingIgnoreCase(String city,
                                                           Pageable pageable) {
         return userrepos.findByCityContainingIgnoreCase(city, pageable);

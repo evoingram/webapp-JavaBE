@@ -18,6 +18,8 @@ public interface UserService {
 
     List<User> findByBusinessphoneContainingIgnoreCase(String businessphone, Pageable pageable);
 
+    List<User> findByAddress1ContainingIgnoreCase(String address1, Pageable pageable);
+
     List<User> findByCityContainingIgnoreCase(String city, Pageable pageable);
 
     List<User> findByStateContainingIgnoreCase(String state, Pageable pageable);

@@ -4,7 +4,11 @@ import com.aquoco.starthere.models.User;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
-
+/*
+    * user table fields:  userid, address1, address2, businessphone, city,
+    * company, creditApproved,firstname, jobtitle, lastname, mrms, notes,
+    * password, postalcode, primaryemail, state, username
+ */
 public interface UserService {
     List<User> findAll(Pageable pageable);
 
@@ -32,7 +36,7 @@ public interface UserService {
 
     User findByName(String name);
 
-    List<User> findUsersByFactoring(boolean factoring, Pageable pageable);
+    List<User> findUsersByCreditApproved(boolean creditApproved, Pageable pageable);
 
     void delete(long id);
 
@@ -42,7 +46,7 @@ public interface UserService {
                 long id,
                 boolean isAdmin);
 
-    User updateUserFactoring(long id,
+    User updateUserCreditApproved(long id,
                          boolean isAdmin);
 
     void deleteUserRole(long userid,

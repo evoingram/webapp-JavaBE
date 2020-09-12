@@ -40,7 +40,7 @@ public class User
     private String primaryemail;
 
     @Column(nullable = false)
-    private boolean factoring = false;
+    private boolean creditApproved = false;
 
     @Column
     private String company;
@@ -102,7 +102,7 @@ public class User
     public User(String username,
                 String password,
                 String primaryemail,
-                boolean factoring,
+                boolean creditApproved,
                 String company,
                 String mrms,
                 String lastname,
@@ -119,7 +119,7 @@ public class User
         setUsername(username);
         setPassword(password);
         this.primaryemail = primaryemail;
-        this.factoring = factoring;
+        this.creditApproved = creditApproved;
         this.company = company;
         this.mrms = mrms;
         this.lastname = lastname;
@@ -185,13 +185,13 @@ public class User
         this.password = password;
     }
 
-    public boolean isFactoring() {
-        return factoring;
+    public boolean isCreditApproved() {
+        return creditApproved;
     }
 
-    public void setFactoring(boolean factoring) {
+    public void setCreditApproved(boolean creditApproved) {
 
-            this.factoring = factoring;
+            this.creditApproved = creditApproved;
     }
 
     public String getCompany() {
@@ -376,7 +376,7 @@ public class User
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", primaryemail='" + primaryemail +
-                ", factoring='" + factoring +
+                ", creditApproved='" + creditApproved +
                 ", company='" + company +
                 ", mrms='" + mrms +
                 ", lastname='" + lastname +

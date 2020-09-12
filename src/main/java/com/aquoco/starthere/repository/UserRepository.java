@@ -7,6 +7,11 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
 
+/*
+ * user table fields:  userid, address1, address2, businessphone, city,
+ * company, creditApproved,firstname, jobtitle, lastname, mrms, notes,
+ * password, postalcode, primaryemail, state, username
+ */
 public interface UserRepository
         extends PagingAndSortingRepository<User, Long> {
 
@@ -14,9 +19,9 @@ public interface UserRepository
 
     List<User> findByUsernameContainingIgnoreCase(String name, Pageable pageable);
 
-    @Query(value = "SELECT * FROM users WHERE factoring = :factoring",
+    @Query(value = "SELECT * FROM users WHERE creditApproved = :creditApproved",
             nativeQuery = true)
-    List<User> findUsersByFactoring(boolean factoring, Pageable pageable);
+    List<User> findUsersByCreditApproved(boolean creditApproved, Pageable pageable);
 
     // SELECT * FROM Users WHERE Company LIKE 'a%';
     List<User> findByCompanyContainingIgnoreCase(String company, Pageable pageable);

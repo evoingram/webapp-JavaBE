@@ -4,37 +4,552 @@ September 11, 2020
 - added new fields to 'save' in UserServiceImpl at line 74
 - set favicon
 - Made sure Swagger includes new user fields
-- factoring field set only by admin
-- added factoring change endpoint for admin only
-- added endpoint:  factoring by true or false
+- creditApproved field set only by admin
+- added creditApproved change endpoint for admin only
+- added endpoint:  creditApproved by true or false
 - added endpoint:  company search partial or full
 - added endpoint:  last name search partial or full
 - added endpoint:  first name search partial or full
-- added endpoint:   search partial or full
-- added endpoint:   search partial or full
-- added endpoint:   search partial or full
-- added endpoint:   search partial or full
-- added endpoint:   search partial or full
+- added endpoint:  business phone search partial or full
+- added endpoint:  address1 search partial or full
+- added endpoint:  city search partial or full
+- added endpoint:  state search partial or full
+- added endpoint:  postalcode search partial or full
+- added endpoint:  notes search partial or full
+- changed factoring field name to creditApproved
 
 
-TODO:  add functions for new fields in UserService, UserServiceImpl, & UserRepository
-    businessphone search full:  findByBusinessphoneContaining
-    city search partial or full:  findByCityContaining
-    state search partial or full:  findByStateContaining
-    postalcode search partial or full:  findByPostalcodeContaining
-    notes search partial or full:  findByNotesContaining
-TODO:  add endpoints for new user fields in UserController
-    businessphone search full:  users/user/phone/like/da?sort=businessphone
-    city search partial or full:  users/user/city/like/da?sort=city
-    state search partial or full:  users/user/state/like/da?sort=state
-    postalcode search partial or full:  users/user/postalcode/like/da?sort=postalcode
-    notes search partial or full:  users/user/notes/like/da?sort=notes
+- do endpoints w/o subarrays/subobjects first
+- need slightly different view for self-user endpoints
+
+FOLDER:  Financials
+    FOLDER:  Rates
+TODO:  GET endpoint all rates (admin)
+TODO:  GET endpoint one rate (admin)
+TODO:  GET endpoint search by code (admin)
+TODO:  GET endpoint search by inventoryratecode (admin)
+TODO:  GET endpoint search by productname (admin)
+TODO:  GET endpoint search by description (admin)
+TODO:  GET endpoint search by rate (admin)
+TODO:  POST endpoint one rate (admin)
+TODO:  PUT endpoint one rate (admin)
+TODO:  DELETE endpoint one rate (admin)
+TODO:  GET endpoint search self-user's jobs by code (user or admin)
+TODO:  GET endpoint search self-user's jobs by inventoryratecode (user or admin)
+TODO:  GET endpoint search self-user's jobs by productname (user or admin)
+TODO:  GET endpoint search self-user's jobs by description (user or admin)
+TODO:  GET endpoint search self-user's jobs by rate (user or admin)
+TODO:  GET endpoint self-user's courtdates by rates (user or admin)
+TODO:  GET endpoint self-user's courtdates by one rate (user or admin)
+
+FOLDER:  Financials
+    FOLDER:  BrandingThemes
+TODO:  GET endpoint all brandingthemes (admin)
+TODO:  GET endpoint one brandingtheme (admin)
+TODO:  GET endpoint search by brandingtheme (admin)
+TODO:  POST endpoint one brandingtheme (admin)
+TODO:  PUT endpoint one brandingtheme (admin)
+TODO:  DELETE endpoint one brandingtheme (admin)
+
+FOLDER:  Production
+    FOLDER:  Formatting
+        FOLDER:  TurnaroundTimes
+TODO:  GET endpoint all turnaroundtimes (admin)
+TODO:  GET endpoint one turnaroundtime (admin)
+TODO:  GET endpoint self-user's courtdates by all turnaroundtimes (user or admin)
+TODO:  GET endpoint self-user's courtdates by one turnaround time (user or admin)
+TODO:  GET endpoint search by turnaroundtime (admin)
+TODO:  GET endpoint search self-user's courtdates by turnaroundtime (admin)
+TODO:  POST endpoint one turnaroundtime (admin)
+TODO:  PUT endpoint one turnaroundtime (admin)
+TODO:  DELETE endpoint one turnaroundtime (admin)
+
+FOLDER:  Production
+    FOLDER:  Shipping
+        FOLDER:  Mailclasses
+TODO:  GET endpoint all mailclasses (admin)
+TODO:  GET endpoint one mailclass (admin)
+TODO:  GET endpoint search by mailclass (admin)
+TODO:  GET endpoint search by description (admin)
+TODO:  POST endpoint one mailclass (admin)
+TODO:  PUT endpoint one mailclass (admin)
+TODO:  DELETE endpoint one mailclass (admin)
+
+FOLDER:  Shipping
+    FOLDER:  Packagetypes
+TODO:  GET endpoint all packagetypes (admin)
+TODO:  GET endpoint one packagetype (admin)
+TODO:  GET endpoint search by packagetype (admin)
+TODO:  GET endpoint search by description (admin)
+TODO:  POST endpoint one packagetype (admin)
+TODO:  PUT endpoint one packagetype (admin)
+TODO:  DELETE endpoint one packagetype (admin)
+
+FOLDER:  Production
+    FOLDER:  Info
+        FOLDER:  Cases
+TODO:  GET endpoint all cases (admin)
+TODO:  GET endpoint one case (admin)
+TODO:  GET endpoint all self-user's cases (user or admin)
+TODO:  GET endpoint one self-user's case (user or admin)
+TODO:  GET endpoint search by party1 (admin)
+TODO:  GET endpoint search by party1name (admin)
+TODO:  GET endpoint search by party2 (admin)
+TODO:  GET endpoint search by party2name (admin)
+TODO:  GET endpoint search by casenumber1 (admin)
+TODO:  GET endpoint search by casenumber2 (admin)
+TODO:  GET endpoint search by jurisdiction (admin)
+TODO:  GET endpoint search by notes (admin)
+TODO:  GET endpoint search self-user's cases by party1 (user or admin)
+TODO:  GET endpoint search self-user's cases by party1name (user or admin)
+TODO:  GET endpoint search self-user's cases by party2 (user or admin)
+TODO:  GET endpoint search self-user's cases by party2name (user or admin)
+TODO:  GET endpoint search self-user's cases by casenumber1 (user or admin)
+TODO:  GET endpoint search self-user's cases by casenumber2 (user or admin)
+TODO:  GET endpoint search self-user's cases by jurisdiction (user or admin)
+TODO:  GET endpoint search self-user's cases by notes (user or admin)
+TODO:  POST endpoint one case (user or admin)
+TODO:  PUT endpoint one case (user or admin)
+TODO:  DELETE endpoint one case (admin)
+
+FOLDER:  Production
+    FOLDER:  Authorities
+        FOLDER:  CitationHyperlinks
+TODO:  GET endpoint all citationhyperlinks (admin)
+TODO:  GET endpoint one citationhyperlink (admin)
+TODO:  GET endpoint search by findcitation (admin)
+TODO:  GET endpoint search by replacehyperlink (admin)
+TODO:  GET endpoint search by longcitation (admin)
+TODO:  GET endpoint search by chcategory (admin)
+TODO:  GET endpoint search by webaddress (admin)
+TODO:  GET endpoint search by self-user's citationhyperlinks findcitation (user or admin)
+TODO:  GET endpoint search by self-user's citationhyperlinks replacehyperlink (user or admin)
+TODO:  GET endpoint search by self-user's citationhyperlinks longcitation (user or admin)
+TODO:  GET endpoint search by self-user's citationhyperlinks chcategory (user or admin)
+TODO:  GET endpoint search self-user's citationhyperlinks by webaddress (user or admin)
+TODO:  POST endpoint one citationhyperlink (admin)
+TODO:  PUT endpoint one citationhyperlink (admin)
+TODO:  DELETE endpoint one citationhyperlink (admin)
+
+FOLDER:  Financials
+    FOLDER:  Invoices
+TODO:  GET endpoint all invoices (admin)
+TODO:  GET endpoint self-user's invoices (user or admin)
+TODO:  GET endpoint one invoice (admin)
+TODO:  GET endpoint one self-user's invoice (user or admin)
+TODO:  GET endpoint search by invoiceno (admin)
+TODO:  GET endpoint search by userid (admin)
+TODO:  GET endpoint search by btid (admin)
+TODO:  GET endpoint search by ratesid (admin)
+TODO:  GET endpoint search by reference (admin)
+TODO:  GET endpoint search by invoicedate (admin)
+TODO:  GET endpoint search by duedate (admin)
+TODO:  GET endpoint search by itemcode (admin)
+TODO:  GET endpoint search by description (admin)
+TODO:  GET endpoint search by accountcode (admin)
+TODO:  GET endpoint search by taxtype (admin)
+TODO:  GET endpoint search self-user's invoices by invoiceno (user or admin)
+TODO:  GET endpoint search self-user's invoices by userid (user or admin)
+TODO:  GET endpoint search self-user's invoices by btid (user or admin)
+TODO:  GET endpoint search self-user's invoices by ratesid (user or admin)
+TODO:  GET endpoint search self-user's invoices by reference (user or admin)
+TODO:  GET endpoint search self-user's invoices by invoicedate (user or admin)
+TODO:  GET endpoint search self-user's invoices by duedate (user or admin)
+TODO:  GET endpoint search self-user's invoices by itemcode (user or admin)
+TODO:  GET endpoint search self-user's invoices by description (user or admin)
+TODO:  GET endpoint search self-user's invoices by accountcode (user or admin)
+TODO:  GET endpoint search self-user's invoices by taxtype (user or admin)
+TODO:  POST endpoint one invoice (admin)
+TODO:  PUT endpoint one invoice (admin)
+TODO:  DELETE endpoint one invoice (admin)
+
+FOLDER:  Production
+    FOLDER:  Formatting
+        FOLDER:  Styles
+TODO:  GET endpoint all styles (admin)
+TODO:  GET endpoint one style (admin)
+TODO:  GET endpoint search by stylename (admin)
+TODO:  POST endpoint one style (admin)
+TODO:  PUT endpoint one style (admin)
+TODO:  DELETE endpoint one style (admin)
+
+FOLDER:  Production
+    FOLDER:  Formatting
+        FOLDER:  ExamTypes
+TODO:  GET endpoint all examtypes (admin)
+TODO:  GET endpoint one examtype (admin)
+TODO:  GET endpoint search by examination (admin)
+TODO:  GET endpoint search by ecode (admin)
+TODO:  POST endpoint one examtype (admin)
+TODO:  PUT endpoint one examtype (admin)
+TODO:  DELETE endpoint one examtype (admin)
+
+FOLDER:  Financials
+    FOLDER:  Payments
+TODO:  GET endpoint all payments (admin)
+TODO:  GET endpoint one payment (admin)
+TODO:  GET endpoint all self-user's payments (user or admin)
+TODO:  GET endpoint one self-user's payment (user or admin)
+TODO:  GET endpoint search by invoiceno (admin)
+TODO:  GET endpoint search by amount (admin)
+TODO:  GET endpoint search by remitdate (admin)
+TODO:  GET endpoint search self-user's payments by invoiceno (user or admin)
+TODO:  GET endpoint search self-user's payments by amount (user or admin)
+TODO:  GET endpoint search self-user's payments by remitdate (user or admin)
+TODO:  POST endpoint one payment (admin)
+TODO:  PUT endpoint one payment (admin)
+TODO:  DELETE endpoint one payment (admin)
+
+FOLDER:  Production
+    FOLDER:  Authorities
+        FOLDER:  USC
+TODO:  GET endpoint all usc items (admin)
+TODO:  GET endpoint one usc item (admin)
+TODO:  GET endpoint all self-user's usc items (user or admin)
+TODO:  GET endpoint one self-user's usc item (user or admin)
+TODO:  GET endpoint search by findcitation (admin)
+TODO:  GET endpoint search by replacehyperlink (admin)
+TODO:  GET endpoint search by longcitation (admin)
+TODO:  GET endpoint search by chcategory (admin)
+TODO:  GET endpoint search by webaddress (admin)
+TODO:  GET endpoint search by self-user's usc items findcitation (user or admin)
+TODO:  GET endpoint search by self-user's usc items replacehyperlink (user or admin)
+TODO:  GET endpoint search by self-user's usc items longcitation (user or admin)
+TODO:  GET endpoint search by self-user's usc items chcategory (user or admin)
+TODO:  GET endpoint search self-user's usc items by webaddress (user or admin)
+TODO:  POST endpoint one usc item (admin)
+TODO:  PUT endpoint one usc item (admin)
+TODO:  DELETE endpoint one usc item (admin)
+
+FOLDER:  Production
+    FOLDER:  Authorities
+        FOLDER:  Citations
+TODO:  GET endpoint all citations (admin)
+TODO:  GET endpoint one citation (admin)
+TODO:  GET endpoint all self-user's citations (user or admin)
+TODO:  GET endpoint one self-user's citation (user or admin)
+TODO:  GET endpoint search by findcitation (admin)
+TODO:  GET endpoint search by replacehyperlink (admin)
+TODO:  GET endpoint search by longcitation (admin)
+TODO:  GET endpoint search by chcategory (admin)
+TODO:  GET endpoint search by webaddress (admin)
+TODO:  GET endpoint search by self-user's citations findcitation (user or admin)
+TODO:  GET endpoint search by self-user's citations replacehyperlink (user or admin)
+TODO:  GET endpoint search by self-user's citations longcitation (user or admin)
+TODO:  GET endpoint search by self-user's citations chcategory (user or admin)
+TODO:  GET endpoint search self-user's usc items by webaddress (user or admin)
+TODO:  POST endpoint one citation (admin)
+TODO:  PUT endpoint one citation (admin)
+TODO:  DELETE endpoint one citation (admin)
+
+FOLDER:  Production
+    FOLDER:  Info
+TODO:  GET endpoint all courtdates
+
+FOLDER:  Production
+    FOLDER:  Info
+        FOLDER:  One CourtDate
+TODO:  GET endpoint one courtdate advanced (admin)
+TODO:  GET endpoint one courtdate basic (admin)
+TODO:  GET endpoint one courtdate's invoices (admin)
+TODO:  GET endpoint one courtdate's expenses (admin)
+TODO:  GET endpoint one courtdate's apps (admin)
+TODO:  GET endpoint one courtdate's payments (admin)
+TODO:  GET endpoint one courtdate's shipping items (admin)
+TODO:  GET endpoint one courtdate's citations (admin)
+TODO:  GET endpoint one courtdate's tasks (admin)
+TODO:  GET endpoint one courtdate's commhistory (admin)
+TODO:  GET endpoint one courtdate's statuses (admin)
+TODO:  GET endpoint one self-user's courtdate advanced (user or admin)
+TODO:  GET endpoint one self-user's courtdate basic (user or admin)
+TODO:  GET endpoint one self-user's courtdate's invoices (user or admin)
+TODO:  GET endpoint one self-user's courtdate's expenses (user or admin)
+TODO:  GET endpoint one self-user's courtdate's apps (user or admin)
+TODO:  GET endpoint one self-user's courtdate's payments (user or admin)
+TODO:  GET endpoint one self-user's courtdate's shipping items (user or admin)
+TODO:  GET endpoint one self-user's courtdate's citations (user or admin)
+TODO:  GET endpoint one self-user's courtdate's tasks (user or admin)
+TODO:  GET endpoint one self-user's courtdate's commhistory (user or admin)
+TODO:  GET endpoint one self-user's courtdate's statuses (user or admin)
+TODO:  POST endpoint one courtdate (admin)
+TODO:  PUT endpoint one courtdate (admin)
+TODO:  DELETE endpoint one courtdate (admin)
+
+FOLDER:  Production
+    FOLDER:  Formatting
+        FOLDER:  AGShortcuts
+TODO:  GET endpoint all agshortcuts (admin)
+TODO:  GET endpoint one agshortcut (admin)
+TODO:  GET endpoint search by courtdatesid (admin)
+TODO:  POST endpoint one agshortcut (admin)
+TODO:  PUT endpoint one agshortcut (admin)
+TODO:  DELETE endpoint one agshortcut (admin)
+
+FOLDER:  Production
+    FOLDER:  Mgmt
+        FOLDER:  Statuses
+TODO:  GET endpoint all statuses (admin)
+TODO:  GET endpoint one status (admin)
+TODO:  GET endpoint all self-user's statuses by courtdate (user or admin)
+TODO:  GET endpoint one self-user's statuses by courtdate (user or admin)
+TODO:  GET endpoint search by courtdatesid (admin)
+TODO:  GET endpoint search self-user's courtdates/statuses by courtdatesid (admin)
+TODO:  POST endpoint one status (admin)
+TODO:  PUT endpoint one status (admin)
+TODO:  DELETE endpoint one status (admin)
+
+FOLDER:  Production
+    FOLDER:  Info
+        FOLDER:  Appearances
+TODO:  GET endpoint all appearances (admin)
+TODO:  GET endpoint one appearance (admin)
+TODO:  GET endpoint all self-user's courtdates and appearances (user or admin)
+TODO:  GET endpoint one self-user's courtdate's appearance (user or admin)
+TODO:  GET endpoint search by userid (admin)
+TODO:  GET endpoint search by courtdatesid (admin)
+TODO:  GET endpoint search by appno (admin)
+TODO:  GET endpoint search self-user's courtdates/apps by userid (user or admin)
+TODO:  GET endpoint search self-user's courtdates/apps by courtdatesid (user or admin)
+TODO:  GET endpoint search self-user's courtdates/apps by appno (user or admin)
+TODO:  POST endpoint one appearance (admin)
+TODO:  PUT endpoint one appearance (admin)
+TODO:  DELETE endpoint one appearance (admin)
+
+FOLDER:  Production
+    FOLDER:  Mgmt
+        FOLDER:  Tasks
+TODO:  GET endpoint all tasks (admin)
+TODO:  GET endpoint one task (admin)
+TODO:  POST endpoint one task (admin)
+TODO:  PUT endpoint one task (admin)
+TODO:  DELETE endpoint one task (admin)
+TODO:  GET endpoint search by courtdatesid (admin)
+TODO:  GET endpoint search by title (admin)
+TODO:  GET endpoint search by priority (admin)
+TODO:  GET endpoint search by status (admin)
+TODO:  GET endpoint search by description (admin)
+TODO:  GET endpoint search by startdate (admin)
+TODO:  GET endpoint search by duedate (admin)
+TODO:  GET endpoint search by prioritypoints (admin)
+TODO:  GET endpoint search by category (admin)
+TODO:  GET endpoint search by timelength (admin)
+TODO:  GET endpoint search by completed (admin)
+
+FOLDER:  Financials
+    FOLDER:  Expenses
+TODO:  GET endpoint all expenses (admin)
+TODO:  GET endpoint one expense (admin)
+TODO:  GET endpoint search by vendor (admin)
+TODO:  GET endpoint search by date (admin)
+TODO:  GET endpoint search by amount (admin)
+TODO:  GET endpoint search by description (admin)
+TODO:  GET endpoint search by courtdatesid (admin)
+TODO:  POST endpoint one expense (admin)
+TODO:  PUT endpoint one expense (admin)
+TODO:  DELETE endpoint one expense (admin)
+
+FOLDER:  Production
+    FOLDER:  Info
+        FOLDER:  CommHistory
+TODO:  GET endpoint all commhistory items (admin)
+TODO:  GET endpoint one commhistory item (admin)
+TODO:  GET endpoint search by filepath (admin)
+TODO:  GET endpoint search by datecreated (admin)
+TODO:  GET endpoint search by courtdatesid (admin)
+TODO:  GET endpoint search by userid (admin)
+TODO:  POST endpoint one commhistory item (admin)
+TODO:  PUT endpoint one commhistory item (admin)
+TODO:  DELETE endpoint one commhistory item (admin)
+
+FOLDER:  Production
+    FOLDER:  Shipping
+        FOLDER:  Shipping
+TODO:  GET endpoint all shipping items (admin)
+TODO:  GET endpoint one shipping item (admin)
+TODO:  GET endpoint all self-user's shipping items (user or admin)
+TODO:  GET endpoint one self-user's shipping item (user or admin)
+TODO:  GET endpoint search by courtdatesid (admin)
+TODO:  GET endpoint search by mcid (admin)
+TODO:  GET endpoint search by ptid (admin)
+TODO:  GET endpoint search by userid (admin)
+TODO:  GET endpoint search by amount (admin)
+TODO:  GET endpoint search by shippingcost (admin)
+TODO:  GET endpoint search by width (admin)
+TODO:  GET endpoint search by height (admin)
+TODO:  GET endpoint search by length (admin)
+TODO:  GET endpoint search by uspstracking (admin)
+TODO:  GET endpoint search by referenceid (admin)
+TODO:  GET endpoint search by value (admin)
+TODO:  GET endpoint search by description (admin)
+TODO:  GET endpoint search by weightoz (admin)
+TODO:  GET endpoint search self-user's courtdates/shipping items by courtdatesid (user or admin)
+TODO:  GET endpoint search self-user's courtdates/shipping items by mcid (user or admin)
+TODO:  GET endpoint search self-user's courtdates/shipping items by ptid (user or admin)
+TODO:  GET endpoint search self-user's courtdates/shipping items by userid (user or admin)
+TODO:  GET endpoint search self-user's courtdates/shipping items by amount (user or admin)
+TODO:  GET endpoint search self-user's courtdates/shipping items by shippingcost (user or admin)
+TODO:  GET endpoint search self-user's courtdates/shipping items by width (user or admin)
+TODO:  GET endpoint search self-user's courtdates/shipping items by height (user or admin)
+TODO:  GET endpoint search self-user's courtdates/shipping items by length (user or admin)
+TODO:  GET endpoint search self-user's courtdates/shipping items by uspstracking (user or admin)
+TODO:  GET endpoint search self-user's courtdates/shipping items by referenceid (user or admin)
+TODO:  GET endpoint search self-user's courtdates/shipping items by value (user or admin)
+TODO:  GET endpoint search self-user's courtdates/shipping items by description (user or admin)
+TODO:  GET endpoint search self-user's courtdates/shipping items by weightoz (user or admin)
+TODO:  POST endpoint one shipping item (admin)
+TODO:  PUT endpoint one shipping item (admin)
+TODO:  DELETE endpoint one shipping item (admin)
+
+FOLDER:  Production
+    FOLDER:  Info
+        FOLDER:  CourtdatesInvoices
+TODO:  GET endpoint all courtdatesinvoices (admin)
+TODO:  GET endpoint one courtdatesinvoice (admin)
+TODO:  GET endpoint search by courtdatesinvoices (admin)
+TODO:  GET endpoint search by invoiceid (admin)
+TODO:  GET endpoint search by userid (admin)
+TODO:  POST endpoint one courtdatesinvoice (admin)
+TODO:  PUT endpoint one courtdatesinvoice (admin)
+TODO:  DELETE endpoint one courtdatesinvoice (admin)
+
+FOLDER:  Production
+    FOLDER:  Info
+        FOLDER:  CourtdatesCasesCustomers
+TODO:  GET endpoint all cccs (admin)
+TODO:  GET endpoint one ccc (admin)
+TODO:  GET endpoint search by courtdatescasescustomers (admin)
+TODO:  GET endpoint search by casesid (admin)
+TODO:  GET endpoint search by userid (admin)
+TODO:  POST endpoint one ccc (admin)
+TODO:  PUT endpoint one ccc (admin)
+TODO:  DELETE endpoint one ccc (admin)
+
+FOLDER:  Users
+TODO:  GET endpoint one user's cases (admin)
+    case {
+        general {
+            caseinfo
+        }
+        courtdates {
+            general {
+                courtdates
+                hearingdetails {}
+            }
+            shipping {}
+            appearances {}
+            citations {}
+            commHistory {}
+            speakerList {}
+            agShortcuts {}
+            status {}
+            tasks {}
+        }
+        financial {
+            invoice
+            estimates
+            final
+            paypal
+            xero
+            expenses
+            payments
+        }
+    }
+TODO:  GET endpoint one user's invoices (admin)
+    invoices w/ courtdates w/ cases
+        invoices {
+            financial{
+                invoice
+                estimates
+                final
+                paypal
+                xero
+                expenses
+                payments
+            }
+            courtdates {
+                general {
+                    courtdates
+                    courtdates hearingdetails
+                }
+                case {}
+                shipping {}
+                appearances {}
+                citations {}
+                commHistory {}
+                speakerList {}
+                agShortcuts {}
+                status {}
+                tasks {}
+            }
+        }
+TODO:  GET endpoint one user's courtdates (admin)
+    courtdates {
+        general {
+            courtdates
+            courtdates hearingdetails
+        }
+        financial {
+            invoice
+            estimates
+            final
+            paypal
+            xero
+            expenses
+            payments
+        }
+        case {}
+        shipping {}
+        appearances {}
+        citations {}
+        commHistory {}
+        speakerList {}
+        agShortcuts {}
+        status {}
+        tasks {}
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 TODO:  Sign on with Google, Facebook, GitHub, us
     https://www.callicoder.com/spring-boot-security-oauth2-social-login-part-1/
 TODO:  Upload Files
      https://www.devglan.com/spring-boot/spring-boot-file-upload-download
 
+
+AGShortcut
+Appearance
+BrandingTheme
+Case
+CCC
+Citation
+CitationHyperlink
+CommHistory
+Courtdate
+ExamType
+Expense
+Invoice
+MailClass
+PackageType
+Payment
+Rate
+Shipping
+Status
+Style
+Task
+TurnaroundTime
+USC
 
 
 

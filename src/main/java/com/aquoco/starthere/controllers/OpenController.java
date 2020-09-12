@@ -65,7 +65,7 @@ public class OpenController {
         newuser.setUsername(newminuser.getUsername());
         newuser.setPassword(newminuser.getPassword());
         newuser.setPrimaryemail(newminuser.getPrimaryemail());
-        newuser.setFactoring(newminuser.getFactoring());
+        newuser.setCreditApproved(newminuser.getCreditApproved());
         newuser.setLastname(newminuser.getLastname());
         newuser.setFirstname(newminuser.getFirstname());
         newuser.setAddress1(newminuser.getAddress1());

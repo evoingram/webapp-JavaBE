@@ -25,6 +25,11 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
+/*
+ * user table fields:  userid, address1, address2, businessphone, city,
+ * company, creditApproved,firstname, jobtitle, lastname, mrms, notes,
+ * password, postalcode, primaryemail, state, username
+ */
 @Loggable
 @RestController
 @RequestMapping("/users")
@@ -82,19 +87,18 @@ public class UserController {
 
     // http://localhost:2019/users/users/all
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @GetMapping(value = "/factoring/{factoring}",
+    @GetMapping(value = "/creditApproved/{creditApproved}",
             produces = {"application/json"})
-    public ResponseEntity<?> findUsersByFactoring(HttpServletRequest request,
-                                                 @PathVariable boolean factoring) {
+    public ResponseEntity<?> findUsersByCreditApproved(HttpServletRequest request,
+                                                 @PathVariable boolean creditApproved) {
 
         logger.trace(request.getMethod().toUpperCase() + " " +
                      request.getRequestURI() + " accessed");
 
-        List<User> myUsers = userService.findUsersByFactoring(factoring, Pageable.unpaged());
+        List<User> myUsers = userService.findUsersByCreditApproved(creditApproved, Pageable.unpaged());
 
         return new ResponseEntity<>(myUsers, HttpStatus.OK);
     }
-
 
     // http://localhost:2019/users/user/7
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
@@ -569,16 +573,16 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    // http://localhost:2019/users/user/14/factoring
+    // http://localhost:2019/users/user/14/creditApproved
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @PutMapping(value = "/user/{id}/factoring")
-    public ResponseEntity<?> updateUserFactoring(HttpServletRequest request,
+    @PutMapping(value = "/user/{id}/creditApproved")
+    public ResponseEntity<?> updateUserCreditApproved(HttpServletRequest request,
                                                  @PathVariable long id) {
 
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
-        userService.updateUserFactoring(id, request.isUserInRole("ADMIN"));
+        userService.updateUserCreditApproved(id, request.isUserInRole("ADMIN"));
 
         return new ResponseEntity<>(HttpStatus.OK);
     }

@@ -33,7 +33,7 @@ let object = {
 			brandingtheme: "",
 			btid: "",
 			paymenttype: "",
-			factoringcost: "",
+			creditApprovedcost: "",
 			estimatedquantity: "",
 			actualquantity: "",
 			subtotal: "",
@@ -156,7 +156,7 @@ let object = {
 			speakerlist: [],
 			ordering: {
 				customersid: "",
-				factoring: "",
+				creditApproved: "",
 				company: "",
 				mrms: "",
 				lastname: "",
@@ -173,7 +173,7 @@ let object = {
 			},
 			appearance1: {
 				customersid: "",
-				factoring: "",
+				creditApproved: "",
 				company: "",
 				mrms: "",
 				lastname: "",
@@ -190,7 +190,7 @@ let object = {
 			},
 			appearance2: {
 				customersid: "",
-				factoring: "",
+				creditApproved: "",
 				company: "",
 				mrms: "",
 				lastname: "",

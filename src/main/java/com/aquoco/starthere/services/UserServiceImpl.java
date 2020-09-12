@@ -59,9 +59,9 @@ public class UserServiceImpl
     }
 
     @Override
-    public List<User> findUsersByCompany(String searchPhrase,
+    public List<User> findByCompanyContainingIC(String company,
                                            Pageable pageable) {
-        return userrepos.findUsersByCompany(searchPhrase, pageable);
+        return userrepos.findByCompanyContainingIgnoreCase(company, pageable);
     }
 
     @Transactional

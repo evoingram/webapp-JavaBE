@@ -180,16 +180,16 @@ public class UserController {
                             "Default sort order is ascending. " +
                             "Multiple sort criteria are supported.")})
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @GetMapping(value = "/company/like/{searchPhrase}",
+    @GetMapping(value = "/company/like/{company}",
             produces = {"application/json"})
-    public ResponseEntity<?> findUsersByCompany(HttpServletRequest request,
-                                             @PathVariable String searchPhrase,
+    public ResponseEntity<?> findByCompanyContainingIC(HttpServletRequest request,
+                                             @PathVariable String company,
                                              @PageableDefault(page = 0, size = 5)
                                              Pageable pageable) {
         logger.trace(request.getMethod().toUpperCase() + " " +
                      request.getRequestURI() + " accessed");
 
-        List<User> u = userService.findUsersByCompany(searchPhrase, pageable);
+        List<User> u = userService.findByCompanyContainingIC(company, pageable);
 
         return new ResponseEntity<>(u, HttpStatus.OK);
     }

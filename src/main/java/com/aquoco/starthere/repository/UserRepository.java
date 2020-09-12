@@ -26,4 +26,19 @@ public interface UserRepository
 
     // SELECT * FROM Users WHERE Firstname LIKE 'a%';
     List<User> findByFirstnameContainingIgnoreCase(String firstname, Pageable pageable);
+
+    // SELECT * FROM Users WHERE Firstname LIKE 'a%';
+    List<User> findByBusinessphoneContainingIgnoreCase(String businessphone, Pageable pageable);
+
+    // SELECT * FROM Users WHERE city LIKE 'a%';
+    List<User> findByCityContainingIgnoreCase(String city, Pageable pageable);
+
+    // SELECT * FROM Users WHERE state LIKE 'a%';
+    List<User> findByStateContainingIgnoreCase(String state, Pageable pageable);
+
+    // SELECT * FROM Users WHERE postalcode LIKE 'a%';
+    List<User> findByPostalcodeContainingIgnoreCase(String postalcode, Pageable pageable);
+
+    // SELECT * FROM Users WHERE notes LIKE 'a%';
+    List<User> findByNotesContainingIgnoreCase(String notes, Pageable pageable);
 }

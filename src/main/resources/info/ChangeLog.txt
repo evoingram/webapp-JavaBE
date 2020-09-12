@@ -18,16 +18,12 @@ September 11, 2020
 
 
 TODO:  add functions for new fields in UserService, UserServiceImpl, & UserRepository
-    lastname search partial or full:  findByLastnameContaining
-    firstname search partial or full:  findByFirstnameContaining
     businessphone search full:  findByBusinessphoneContaining
     city search partial or full:  findByCityContaining
     state search partial or full:  findByStateContaining
     postalcode search partial or full:  findByPostalcodeContaining
     notes search partial or full:  findByNotesContaining
 TODO:  add endpoints for new user fields in UserController
-    lastname search partial or full:  users/user/lastname/like/da?sort=lastname
-    firstname search partial or full:  users/user/firstname/like/da?sort=firstname
     businessphone search full:  users/user/phone/like/da?sort=businessphone
     city search partial or full:  users/user/city/like/da?sort=city
     state search partial or full:  users/user/state/like/da?sort=state

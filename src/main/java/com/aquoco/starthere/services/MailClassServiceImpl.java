@@ -23,7 +23,6 @@ public class MailClassServiceImpl implements MailClassService {
     @Autowired
     private MailClassRepository mcrepo;
 
-
     public MailClass findMailclassById(long id) throws
             ResourceNotFoundException {
         return mcrepo.findById(id)

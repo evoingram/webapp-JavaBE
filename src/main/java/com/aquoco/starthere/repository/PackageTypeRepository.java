@@ -20,4 +20,7 @@ public interface PackageTypeRepository
 
     List<PackageType> findByDescriptionContainingIgnoreCase(String description,
                                                             Pageable pageable);
+
+    List<PackageType> findByPackagetypeContaining(String packagetype,
+                                                  Pageable pageable);
 }

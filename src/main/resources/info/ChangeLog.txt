@@ -45,6 +45,7 @@ September 12, 2020
 - added endpoint:  POST endpoint one turnaroundtime (admin)
 - added endpoint:  PUT endpoint one turnaroundtime (admin)
 - added endpoint:  DELETE endpoint one turnaroundtime (admin)
+- added seed data:  mailclasses table
 
 September 13, 2020
 
@@ -59,7 +60,6 @@ TODO:  fix turnaroundtimes/turnaroundtime/time/45
 FOLDER:  Production
     FOLDER:  Shipping
         FOLDER:  Mailclasses
-TODO:  added seed data:  mailclasses table
 TODO:  GET endpoint all mailclasses (admin)
 TODO:  GET endpoint one mailclass (admin)
 TODO:  GET endpoint search partial or full by mailclass (admin)

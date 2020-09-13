@@ -3,7 +3,7 @@ package com.aquoco.starthere.services;
 import com.aquoco.starthere.exceptions.ResourceFoundException;
 import com.aquoco.starthere.exceptions.ResourceNotFoundException;
 import com.aquoco.starthere.logging.Loggable;
-import com.aquoco.starthere.models.*;
+import com.aquoco.starthere.models.BrandingTheme;
 import com.aquoco.starthere.repository.BrandingThemeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -17,9 +17,8 @@ import java.util.List;
  * brandingtheme table fields: btid, brandingtheme
  */
 @Loggable
-@Service(value = "brandingthemeService")
-public class BrandingThemeServiceImpl
-        implements BrandingThemeService {
+@Service(value = "brandingThemeService")
+public class BrandingThemeServiceImpl implements BrandingThemeService {
 
     @Autowired
     private BrandingThemeRepository btrepo;

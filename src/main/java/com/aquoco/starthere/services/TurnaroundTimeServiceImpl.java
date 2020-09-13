@@ -14,8 +14,7 @@ import java.util.List;
 /*
  * turnaroundtimes table fields: ttid, turnaroundtime
  */
-public class TurnaroundTimeServiceImpl
-        implements TurnaroundTimeService  {
+public class TurnaroundTimeServiceImpl implements TurnaroundTimeService  {
 
     @Autowired
     private TurnaroundTimeRepository ttrepo;

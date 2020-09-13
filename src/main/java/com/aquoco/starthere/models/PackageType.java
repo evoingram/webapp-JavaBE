@@ -4,6 +4,9 @@ import com.aquoco.starthere.logging.Loggable;
 
 import javax.persistence.*;
 
+/*
+ * packagetype table fields: ptid, packagetype, description
+ */
 @Loggable
 @Entity
 @Table(name = "packagetype")

@@ -5,6 +5,9 @@ import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
+/*
+ * packagetype table fields: ptid, packagetype, description
+ */
 public interface PackageTypeService {
 
     List<PackageType> findAll(Pageable pageable);

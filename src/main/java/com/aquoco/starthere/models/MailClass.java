@@ -4,6 +4,10 @@ import com.aquoco.starthere.logging.Loggable;
 
 import javax.persistence.*;
 
+
+/*
+ * mailclass table fields: mcid, mailclass, description
+ */
 @Loggable
 @Entity
 @Table(name = "mailclass")

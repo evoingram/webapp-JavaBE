@@ -266,6 +266,7 @@ public class SeedData
         rateService.save(rate9, true);
 
         // rates data
+        /*
         rates = new ArrayList<>();
         rates.add(new Rate());
         Rate rate10 = new Rate("NC1",
@@ -274,7 +275,8 @@ public class SeedData
                                "noncourt overnight",
                                5.25);
         rateService.save(rate10, true);
-
+         */
+        
         // rates data
         rates = new ArrayList<>();
         rates.add(new Rate());

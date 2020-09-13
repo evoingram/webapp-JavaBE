@@ -33,6 +33,12 @@ public class SeedData
     @Autowired
     TurnaroundTimeService ttService;
 
+    @Autowired
+    MailClassService mcService;
+
+    @Autowired
+    PackageTypeService ptService;
+
     @Override
     public void run(String[] args) throws
             Exception {
@@ -412,6 +418,128 @@ public class SeedData
         turnaroundtimes.add(new TurnaroundTime());
         TurnaroundTime tt7 = new TurnaroundTime(1);
         ttService.save(tt7, true);
+
+
+        ArrayList<MailClass> mailclasses;
+
+        // mailclasses data
+        mailclasses = new ArrayList<>();
+        mailclasses.add(new MailClass());
+        MailClass mc1 = new MailClass("FIRST", "First");
+        mcService.save(mc1, true);
+
+        mailclasses = new ArrayList<>();
+        mailclasses.add(new MailClass());
+        MailClass mc2 = new MailClass("EXPRESS", "Express Mail");
+        mcService.save(mc2, true);
+
+        mailclasses = new ArrayList<>();
+        mailclasses.add(new MailClass());
+        MailClass mc3 = new MailClass("PRIORITY", "Priority Mail");
+        mcService.save(mc3, true);
+
+        mailclasses = new ArrayList<>();
+        mailclasses.add(new MailClass());
+        MailClass mc4 = new MailClass("NONE", "Do not print postage");
+        mcService.save(mc4, true);
+
+        mailclasses = new ArrayList<>();
+        mailclasses.add(new MailClass());
+        MailClass mc5 = new MailClass("PARCELPOST", "Parcel Post");
+        mcService.save(mc5, true);
+
+        mailclasses = new ArrayList<>();
+        mailclasses.add(new MailClass());
+        MailClass mc6 = new MailClass("INTLFIRST", "International First-Class");
+        mcService.save(mc6, true);
+
+        mailclasses = new ArrayList<>();
+        mailclasses.add(new MailClass());
+        MailClass mc7 = new MailClass("INTLEXPRESS", "International Express Mail");
+        mcService.save(mc7, true);
+
+        mailclasses = new ArrayList<>();
+        mailclasses.add(new MailClass());
+        MailClass mc8 = new MailClass("INTLPRIORITY", "International Priority Mail");
+        mcService.save(mc8, true);
+
+        mailclasses = new ArrayList<>();
+        mailclasses.add(new MailClass());
+        MailClass mc9 = new MailClass("MEDIAMAIL", "Media Mail");
+        mcService.save(mc9, true);
+
+        mailclasses = new ArrayList<>();
+        mailclasses.add(new MailClass());
+        MailClass mc10 = new MailClass("LIBRARYMAIL", "Library Mail");
+        mcService.save(mc10, true);
+
+        mailclasses = new ArrayList<>();
+        mailclasses.add(new MailClass());
+        MailClass mc11 = new MailClass("BOUNDPRINTEDMATTER", "Bound Printed Matter");
+        mcService.save(mc11, true);
+
+        mailclasses = new ArrayList<>();
+        mailclasses.add(new MailClass());
+        MailClass mc12 = new MailClass("PRESORTEDFIRST", "Presorted, First-Class");
+        mcService.save(mc12, true);
+
+        mailclasses = new ArrayList<>();
+        mailclasses.add(new MailClass());
+        MailClass mc13 = new MailClass("PRESORTEDSTANDARD", "Presorted, Standard Class");
+        mcService.save(mc13, true);
+
+        mailclasses = new ArrayList<>();
+        mailclasses.add(new MailClass());
+        MailClass mc14 = new MailClass("INTLGXG", "Global Express Guaranteed");
+        mcService.save(mc14, true);
+
+        mailclasses = new ArrayList<>();
+        mailclasses.add(new MailClass());
+        MailClass mc15 = new MailClass("INTLGXGNODOC", "Global Express Guaranteed Non-Docs");
+        mcService.save(mc15, true);
+
+        ArrayList<PackageType> packagetypes;
+
+        // packagetypes data
+        packagetypes = new ArrayList<>();
+        packagetypes.add(new PackageType());
+        PackageType pt1 = new PackageType("ENVELOPE", "Standard letter rate");
+        ptService.save(pt1, true);
+
+        packagetypes = new ArrayList<>();
+        packagetypes.add(new PackageType());
+        PackageType pt2 = new PackageType("RECTPARCEL", "Rectangular parcel, the standard parcel");
+        ptService.save(pt2, true);
+
+        packagetypes = new ArrayList<>();
+        packagetypes.add(new PackageType());
+        PackageType pt3 = new PackageType("NONRECTPARCEL", "Non-rectangular parcel – impacts rate for PM");
+        ptService.save(pt3, true);
+
+        packagetypes = new ArrayList<>();
+        packagetypes.add(new PackageType());
+        PackageType pt4 = new PackageType("FLATRATEENVELOPE", "Flat Rate Envelope – PM and EM");
+        ptService.save(pt4, true);
+
+        packagetypes = new ArrayList<>();
+        packagetypes.add(new PackageType());
+        PackageType pt5 = new PackageType("FLATRATEBOX", "Flat Rate Box PM");
+        ptService.save(pt5, true);
+
+        packagetypes = new ArrayList<>();
+        packagetypes.add(new PackageType());
+        PackageType pt6 = new PackageType("FLATRATELARGEBOX", "Flat Rate Large Box PM");
+        ptService.save(pt6, true);
+
+        packagetypes = new ArrayList<>();
+        packagetypes.add(new PackageType());
+        PackageType pt7 = new PackageType("POSTCARD", "Postcard rate (FC and International FC)");
+        ptService.save(pt7, true);
+
+        packagetypes = new ArrayList<>();
+        packagetypes.add(new PackageType());
+        PackageType pt8 = new PackageType("FLAT", "Flat rate (only affects rate for FC mail)");
+        ptService.save(pt8, true);
 
         // using JavaFaker create a bunch of regular users
         // https://www.baeldung.com/java-faker

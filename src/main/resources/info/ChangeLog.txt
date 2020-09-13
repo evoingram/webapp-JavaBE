@@ -63,6 +63,7 @@ September 13, 2020
 - added endpoint:  POST endpoint one packagetype (admin)
 - added endpoint:  PUT endpoint one packagetype (admin)
 - added endpoint:  DELETE endpoint one packagetype (admin)
+- added seed data:  cases table
 
 TODO:  fix endpoint rates/rateamount/like/da?sort=rate
 TODO:  fix endpoint rates/rate/1.60
@@ -74,7 +75,6 @@ TODO:  fix turnaroundtimes/turnaroundtime/time/45
 FOLDER:  Production
     FOLDER:  Info
         FOLDER:  Cases
-TODO:  added seed data:  cases table
 TODO:  GET endpoint all cases (admin)
 TODO:  GET endpoint one case (admin)
 TODO:  GET endpoint search partial or full by party1 (admin)

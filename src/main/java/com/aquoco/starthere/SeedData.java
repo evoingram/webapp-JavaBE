@@ -1,13 +1,10 @@
 package com.aquoco.starthere;
 
 import com.aquoco.starthere.models.*;
-import com.aquoco.starthere.services.BrandingThemeService;
-import com.aquoco.starthere.services.RateService;
-import com.aquoco.starthere.services.RoleService;
+import com.aquoco.starthere.services.*;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
-import com.aquoco.starthere.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -31,6 +28,9 @@ public class SeedData
 
     @Autowired
     BrandingThemeService btService;
+
+    @Autowired
+    TurnaroundTimeService ttService;
 
     @Override
     public void run(String[] args) throws
@@ -315,7 +315,6 @@ public class SeedData
 
         // brandingthemes data
         brandingthemes = new ArrayList<>();
-
         brandingthemes.add(new BrandingTheme());
         BrandingTheme bt1 = new BrandingTheme("WRTS NC Factoring");
         btService.save(bt1, true);
@@ -375,6 +374,43 @@ public class SeedData
         BrandingTheme bt12 = new BrandingTheme("WRTS AMOR Factoring");
         btService.save(bt12, true);
 
+        ArrayList<TurnaroundTime> turnaroundtimes;
+
+        // turnaroundtimes data
+        turnaroundtimes = new ArrayList<>();
+        turnaroundtimes.add(new TurnaroundTime());
+        TurnaroundTime tt1 = new TurnaroundTime(45);
+        ttService.save(tt1, true);
+
+        turnaroundtimes = new ArrayList<>();
+        turnaroundtimes.add(new TurnaroundTime());
+        TurnaroundTime tt2 = new TurnaroundTime(30);
+        ttService.save(tt2, true);
+
+        turnaroundtimes = new ArrayList<>();
+        turnaroundtimes.add(new TurnaroundTime());
+        TurnaroundTime tt3 = new TurnaroundTime(14);
+        ttService.save(tt3, true);
+
+        turnaroundtimes = new ArrayList<>();
+        turnaroundtimes.add(new TurnaroundTime());
+        TurnaroundTime tt4 = new TurnaroundTime(10);
+        ttService.save(tt4, true);
+
+        turnaroundtimes = new ArrayList<>();
+        turnaroundtimes.add(new TurnaroundTime());
+        TurnaroundTime tt5 = new TurnaroundTime(7);
+        ttService.save(tt5, true);
+
+        turnaroundtimes = new ArrayList<>();
+        turnaroundtimes.add(new TurnaroundTime());
+        TurnaroundTime tt6 = new TurnaroundTime(3);
+        ttService.save(tt6, true);
+
+        turnaroundtimes = new ArrayList<>();
+        turnaroundtimes.add(new TurnaroundTime());
+        TurnaroundTime tt7 = new TurnaroundTime(1);
+        ttService.save(tt7, true);
 
         // using JavaFaker create a bunch of regular users
         // https://www.baeldung.com/java-faker

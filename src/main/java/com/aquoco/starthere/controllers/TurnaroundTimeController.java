@@ -99,10 +99,10 @@ public class TurnaroundTimeController {
         return new ResponseEntity<>(tt, HttpStatus.OK);
     }
 
-    // GET endpoint one turnaroundtime by name (admin)
-    // http://localhost:2019/turnaroundtimes/turnaroundtime/name/cinnamon
+    // GET endpoint one turnaroundtime by time (admin)
+    // http://localhost:2019/turnaroundtimes/turnaroundtime/time/exact/cinnamon
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @GetMapping(value = "/turnaroundtime/name/{turnaroundtime}",
+    @GetMapping(value = "/turnaroundtime/time/exact/{turnaroundtime}",
             produces = {"application/json"})
     public ResponseEntity<?> getTurnaroundtimeByName(HttpServletRequest request,
                                                     @PathVariable

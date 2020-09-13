@@ -3,7 +3,6 @@ package com.aquoco.starthere.models;
 import com.aquoco.starthere.logging.Loggable;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Loggable
 @Entity

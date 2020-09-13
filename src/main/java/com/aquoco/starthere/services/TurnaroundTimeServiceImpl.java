@@ -2,10 +2,12 @@ package com.aquoco.starthere.services;
 
 import com.aquoco.starthere.exceptions.ResourceFoundException;
 import com.aquoco.starthere.exceptions.ResourceNotFoundException;
+import com.aquoco.starthere.logging.Loggable;
 import com.aquoco.starthere.models.TurnaroundTime;
 import com.aquoco.starthere.repository.TurnaroundTimeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
@@ -14,8 +16,9 @@ import java.util.List;
 /*
  * turnaroundtimes table fields: ttid, turnaroundtime
  */
-public class TurnaroundTimeServiceImpl
-        implements TurnaroundTimeService  {
+@Loggable
+@Service(value = "turnaroundtimeService")
+public class TurnaroundTimeServiceImpl implements TurnaroundTimeService  {
 
     @Autowired
     private TurnaroundTimeRepository ttrepo;

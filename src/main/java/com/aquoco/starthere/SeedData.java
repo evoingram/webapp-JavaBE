@@ -17,6 +17,7 @@ import java.util.Locale;
 @Component
 public class SeedData
         implements CommandLineRunner {
+
     @Autowired
     RoleService roleService;
 

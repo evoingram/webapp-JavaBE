@@ -12,8 +12,8 @@ import java.util.List;
 public interface TurnaroundTimeRepository
         extends PagingAndSortingRepository<TurnaroundTime, Long> {
 
-    TurnaroundTime findByTurnaroundtime(String turnaroundtime);
+    TurnaroundTime findByTurnaroundtime(long turnaroundtime);
 
-    List<TurnaroundTime> findByTurnaroundtimeContainingIgnoreCase(String turnaroundtime, Pageable pageable);
+    List<TurnaroundTime> findByTurnaroundtimeContainingIgnoreCase(long turnaroundtime, Pageable pageable);
 
 }

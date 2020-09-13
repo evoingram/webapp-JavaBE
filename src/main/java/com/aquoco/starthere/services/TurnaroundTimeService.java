@@ -12,11 +12,10 @@ public interface TurnaroundTimeService {
 
     List<TurnaroundTime> findAll(Pageable pageable);
 
-    List<TurnaroundTime> findByTurnaroundtimeContaining(String turnaroundtime, Pageable pageable);
 
     TurnaroundTime findTurnaroundtimeById(long id);
 
-    TurnaroundTime findByTurnaroundtime(String turnaroundtime);
+    TurnaroundTime findByTurnaroundtime(long turnaroundtime);
 
     void delete(long id, boolean isAdmin);
 

@@ -106,7 +106,7 @@ public class TurnaroundTimeController {
             produces = {"application/json"})
     public ResponseEntity<?> getTurnaroundtimeByName(HttpServletRequest request,
                                                     @PathVariable
-                                                            String turnaroundtime) {
+                                                            long turnaroundtime) {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
@@ -136,13 +136,13 @@ public class TurnaroundTimeController {
     @GetMapping(value = "/turnaroundtime/time/like/{turnaroundtime}",
             produces = {"application/json"})
     public ResponseEntity<?> getTurnaroundtimeLikeName(HttpServletRequest request,
-                                                      @PathVariable String turnaroundtime,
+                                                      @PathVariable long turnaroundtime,
                                                       @PageableDefault(page = 0, size = 5)
                                                               Pageable pageable) {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
-        List<TurnaroundTime> tt = ttService.findByTurnaroundtimeContaining(turnaroundtime, pageable);
+        TurnaroundTime tt = ttService.findByTurnaroundtime(turnaroundtime);
         return new ResponseEntity<>(tt, HttpStatus.OK);
     }
 

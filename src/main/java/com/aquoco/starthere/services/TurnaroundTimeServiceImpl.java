@@ -31,15 +31,8 @@ public class TurnaroundTimeServiceImpl implements TurnaroundTimeService  {
     }
 
     @Override
-    public TurnaroundTime findByTurnaroundtime(String turnaroundtime) {
+    public TurnaroundTime findByTurnaroundtime(long turnaroundtime) {
         return null;
-    }
-
-    @Override
-    public List<TurnaroundTime> findByTurnaroundtimeContaining(String turnaroundtime,
-                                                             Pageable pageable) {
-        return ttrepo.findByTurnaroundtimeContainingIgnoreCase(turnaroundtime,
-                                                              pageable);
     }
 
     @Override
@@ -68,7 +61,7 @@ public class TurnaroundTimeServiceImpl implements TurnaroundTimeService  {
 
         if (isAdmin) {
 
-            if (ttrepo.findByTurnaroundtime(Integer.toString(turnaroundtime.getTurnaroundtime())) != null) {
+            if (ttrepo.findByTurnaroundtime(turnaroundtime.getTurnaroundtime()) != null) {
                 throw new ResourceFoundException(turnaroundtime.getTurnaroundtime() + " is already taken!");
             }
 

@@ -30,7 +30,7 @@ public class Rate
     @Column(nullable = false, unique = true)
     private String description;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private Double rate;
 
     public Rate() {

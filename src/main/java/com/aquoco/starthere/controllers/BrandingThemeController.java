@@ -87,14 +87,14 @@ public class BrandingThemeController {
     // GET endpoint one brandingtheme (admin)
     // http://localhost:2019/brandingthemes/brandingtheme/7
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @GetMapping(value = "/brandingtheme/{brandingthemeId}",
+    @GetMapping(value = "/brandingtheme/{btid}",
             produces = {"application/json"})
     public ResponseEntity<?> getBrandingthemeById(HttpServletRequest request,
-                                         @PathVariable Long brandingthemeId) {
+                                         @PathVariable Long btid) {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
-        BrandingTheme bt = btService.findBrandingthemeById(brandingthemeId);
+        BrandingTheme bt = btService.findBrandingthemeById(btid);
         return new ResponseEntity<>(bt, HttpStatus.OK);
     }
 
@@ -163,7 +163,7 @@ public class BrandingThemeController {
         // set the location header for the newly created resource
         HttpHeaders responseHeaders = new HttpHeaders();
         URI newBrandingThemeURI = ServletUriComponentsBuilder.fromCurrentRequest()
-                                                    .path("/{brandingthemeid}")
+                                                    .path("/{btid}")
                                                     .buildAndExpand(newBrandingtheme.getBtid())
                                                     .toUri();
         responseHeaders.setLocation(newBrandingThemeURI);

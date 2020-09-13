@@ -496,7 +496,6 @@ public class UserController {
                                     HttpStatus.OK);
     }
 
-    // http://localhost:2019/users/user
     //        {
     //            "username": "Mojo",
     //            "primaryemail": "mojo@lambdaschool.local",
@@ -513,6 +512,7 @@ public class UserController {
     //            }
     //        ]
     //        }
+    // http://localhost:2019/users/user
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PostMapping(value = "/user",
             consumes = {"application/json"},
@@ -541,7 +541,6 @@ public class UserController {
     }
 
 
-    // http://localhost:2019/users/user/7
 //        {
 //            "userid": 7,
 //                "username": "cinnamon",
@@ -558,6 +557,7 @@ public class UserController {
 //            }
 //        ]
 //        }
+    // http://localhost:2019/users/user/7
     @PutMapping(value = "/user/{id}")
     public ResponseEntity<?> updateUser(HttpServletRequest request,
                                         @RequestBody

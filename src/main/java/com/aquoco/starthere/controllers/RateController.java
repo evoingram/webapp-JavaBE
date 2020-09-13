@@ -112,7 +112,7 @@ public class RateController {
     }
 
     // List<Rate> findByRateContaining(Double rate, Pageable pageable);
-    // http://localhost:2019/rates/rate/like/da?sort=rate
+    // http://localhost:2019/rates/rateamount/like/da?sort=rate
     @ApiOperation(value = "returns all rates with rates containing a given string",
             response = Rate.class,
             responseContainer = "List")
@@ -185,7 +185,7 @@ public class RateController {
 
     // List<Rate> findByInventoryratecodeContainingIgnoreCase(String inventoryratecode, Pageable pageable);
     // http://localhost:2019/rates/irc/like/da?sort=rate
-    @ApiOperation(value = "returns all rates with rates containing a given string",
+    @ApiOperation(value = "returns all rates with ircs containing a given string",
             response = Rate.class,
             responseContainer = "List")
     @ApiImplicitParams({@ApiImplicitParam(name = "page",

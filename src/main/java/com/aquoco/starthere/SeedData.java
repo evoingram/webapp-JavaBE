@@ -276,7 +276,7 @@ public class SeedData
                                5.25);
         rateService.save(rate10, true);
          */
-        
+
         // rates data
         rates = new ArrayList<>();
         rates.add(new Rate());

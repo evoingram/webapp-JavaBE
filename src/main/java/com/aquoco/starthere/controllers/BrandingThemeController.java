@@ -90,7 +90,7 @@ public class BrandingThemeController {
     @GetMapping(value = "/brandingtheme/{btid}",
             produces = {"application/json"})
     public ResponseEntity<?> getBrandingthemeById(HttpServletRequest request,
-                                         @PathVariable Long btid) {
+                                                  @PathVariable Long btid) {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
@@ -98,14 +98,14 @@ public class BrandingThemeController {
         return new ResponseEntity<>(bt, HttpStatus.OK);
     }
 
-    // GET endpoint one brandingtheme by name (admin)
-    // http://localhost:2019/brandingthemes/brandingtheme/name/cinnamon
+    // GET endpoint one brandingtheme by theme (admin)
+    // http://localhost:2019/brandingthemes/brandingtheme/theme/cinnamon
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @GetMapping(value = "/brandingtheme/name/{brandingtheme}",
+    @GetMapping(value = "/brandingtheme/theme/exact/{brandingtheme}",
             produces = {"application/json"})
     public ResponseEntity<?> getBrandingthemeByName(HttpServletRequest request,
-                                           @PathVariable
-                                                   String brandingtheme) {
+                                                    @PathVariable
+                                                            String brandingtheme) {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
@@ -115,7 +115,7 @@ public class BrandingThemeController {
 
     // GET endpoint search partial or full by brandingtheme (admin)
     // http://localhost:2019/brandingthemes/brandingtheme/theme/like/da?sort=brandingthemename
-    @ApiOperation(value = "returns all BrandingThemes with names containing a given string",
+    @ApiOperation(value = "returns all branding themes with names containing a given string",
             response = BrandingTheme.class,
             responseContainer = "List")
     @ApiImplicitParams({@ApiImplicitParam(name = "page",

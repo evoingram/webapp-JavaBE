@@ -22,6 +22,8 @@ public interface PackageTypeService {
 
     PackageType findByPackagetype(String packagetype);
 
+    PackageType findByDescription(String description);
+
     void delete(long id, boolean isAdmin);
 
     PackageType save(PackageType packagetype, boolean isAdmin);

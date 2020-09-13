@@ -101,7 +101,7 @@ public class PackageTypeController {
     // GET endpoint one packagetype by packagetype (admin)
     // http://localhost:2019/packagetypes/packagetype/class/cinnamon
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @GetMapping(value = "/packagetype/type/{packagetype}",
+    @GetMapping(value = "/packagetype/type/exact/{packagetype}",
             produces = {"application/json"})
     public ResponseEntity<?> getPackagetypeByPackagetype(HttpServletRequest request,
                                                      @PathVariable String packagetype) {
@@ -109,6 +109,20 @@ public class PackageTypeController {
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
         PackageType pt = ptService.findByPackagetype(packagetype);
+        return new ResponseEntity<>(pt, HttpStatus.OK);
+    }
+
+    // GET endpoint one packagetype by description (admin)
+    // http://localhost:2019/packagetypes/packagetype/description/exact/cinnamon
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @GetMapping(value = "/packagetype/type/exact/{description}",
+            produces = {"application/json"})
+    public ResponseEntity<?> getPackagetypeByDescription(HttpServletRequest request,
+                                                         @PathVariable String description) {
+        logger.trace(request.getMethod()
+                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
+        PackageType pt = ptService.findByDescription(description);
         return new ResponseEntity<>(pt, HttpStatus.OK);
     }
 

@@ -58,37 +58,35 @@ September 13, 2020
 - added seed data:  packagetypes table
 - added endpoint:  GET endpoint all packagetypes (admin)
 - added endpoint:  GET endpoint one packagetype (admin)
-- added endpoint:  GET endpoint search partial or full by packagetype (admin)
-- added endpoint:  GET endpoint search partial or full by description (admin)
+- added endpoint:  GET endpoints search partial or full by packagetype (admin)
+- added endpoint:  GET endpoints search partial or full by description (admin)
 - added endpoint:  POST endpoint one packagetype (admin)
 - added endpoint:  PUT endpoint one packagetype (admin)
 - added endpoint:  DELETE endpoint one packagetype (admin)
+- added seed data:  cases table
+- added endpoint:  GET endpoint all cases (admin)
+- added endpoint:  GET endpoint one case (admin)
+- added endpoints:  GET endpoints search partial or full by party1 (user or admin)
+- added endpoints:  GET endpoints search partial or full by party1name (user or admin)
+- added endpoints:  GET endpoints search partial or full by party2 (user or admin)
+- added endpoints:  GET endpoints search partial or full by party2name (user or admin)
+- added endpoints:  GET endpoints search partial or full by casenumber1 (user or admin)
+- added endpoints:  GET endpoints search partial or full by casenumber2 (user or admin)
+- added endpoints:  GET endpoints search partial or full by jurisdiction (user or admin)
+- added endpoints:  GET endpoints search partial or full by notes (user or admin)
+- added endpoint:  POST endpoint one case (user or admin)
+- added endpoint:  PUT endpoint one case (user or admin)
+- added endpoint:  DELETE endpoint one case (user or admin)
+- added 'exact' to appropriate endpoints urls (as opposed to 'like')
 
-TODO:  Figure out decimal/double endpoints
-    rates/rateamount/like/da?sort=rate
-    rates/rate/1.60
+TODO:  fix endpoint rates/rateamount/like/da?sort=rate
+TODO:  fix endpoint rates/rate/1.60
 TODO:  change role endpoints to admin only
 TODO:  fix brandingthemes/brandingtheme/name/'WRTS JJ Factoring'
 TODO:  add bodies to each post/update endpoint in Postman
 TODO:  fix turnaroundtimes/turnaroundtime/time/45
+TODO:  fix endpoints for cases post, put, delete to self-user or admin only
 
-FOLDER:  Production
-    FOLDER:  Info
-        FOLDER:  Cases
-TODO:  added seed data:  cases table
-TODO:  GET endpoint all cases (admin)
-TODO:  GET endpoint one case (admin)
-TODO:  GET endpoint search partial or full by party1 (admin)
-TODO:  GET endpoint search partial or full by party1name (admin)
-TODO:  GET endpoint search partial or full by party2 (admin)
-TODO:  GET endpoint search partial or full by party2name (admin)
-TODO:  GET endpoint search partial or full by casenumber1 (admin)
-TODO:  GET endpoint search partial or full by casenumber2 (admin)
-TODO:  GET endpoint search partial or full by jurisdiction (admin)
-TODO:  GET endpoint search partial or full by notes (admin)
-TODO:  POST endpoint one case (user or admin)
-TODO:  PUT endpoint one case (user or admin)
-TODO:  DELETE endpoint one case (admin)
 
 FOLDER:  Production
     FOLDER:  Authorities
@@ -101,11 +99,6 @@ TODO:  GET endpoint search partial or full by replacehyperlink (admin)
 TODO:  GET endpoint search partial or full by longcitation (admin)
 TODO:  GET endpoint search partial or full by chcategory (admin)
 TODO:  GET endpoint search partial or full by webaddress (admin)
-TODO:  GET endpoint search partial or full by self-user's citationhyperlinks findcitation (user or admin)
-TODO:  GET endpoint search partial or full by self-user's citationhyperlinks replacehyperlink (user or admin)
-TODO:  GET endpoint search partial or full by self-user's citationhyperlinks longcitation (user or admin)
-TODO:  GET endpoint search partial or full by self-user's citationhyperlinks chcategory (user or admin)
-TODO:  GET endpoint search partial or full self-user's citationhyperlinks by webaddress (user or admin)
 TODO:  POST endpoint one citationhyperlink (admin)
 TODO:  PUT endpoint one citationhyperlink (admin)
 TODO:  DELETE endpoint one citationhyperlink (admin)
@@ -114,9 +107,7 @@ FOLDER:  Financials
     FOLDER:  Invoices
 TODO:  added seed data:  invoices table
 TODO:  GET endpoint all invoices (admin)
-TODO:  GET endpoint self-user's invoices (user or admin)
 TODO:  GET endpoint one invoice (admin)
-TODO:  GET endpoint one self-user's invoice (user or admin)
 TODO:  GET endpoint search partial or full by invoiceno (admin)
 TODO:  GET endpoint search partial or full by userid (admin)
 TODO:  GET endpoint search partial or full by btid (admin)
@@ -128,17 +119,6 @@ TODO:  GET endpoint search partial or full by itemcode (admin)
 TODO:  GET endpoint search partial or full by description (admin)
 TODO:  GET endpoint search partial or full by accountcode (admin)
 TODO:  GET endpoint search partial or full by taxtype (admin)
-TODO:  GET endpoint search partial or full self-user's invoices by invoiceno (user or admin)
-TODO:  GET endpoint search partial or full self-user's invoices by userid (user or admin)
-TODO:  GET endpoint search partial or full self-user's invoices by btid (user or admin)
-TODO:  GET endpoint search partial or full self-user's invoices by ratesid (user or admin)
-TODO:  GET endpoint search partial or full self-user's invoices by reference (user or admin)
-TODO:  GET endpoint search partial or full self-user's invoices by invoicedate (user or admin)
-TODO:  GET endpoint search partial or full self-user's invoices by duedate (user or admin)
-TODO:  GET endpoint search partial or full self-user's invoices by itemcode (user or admin)
-TODO:  GET endpoint search partial or full self-user's invoices by description (user or admin)
-TODO:  GET endpoint search partial or full self-user's invoices by accountcode (user or admin)
-TODO:  GET endpoint search partial or full self-user's invoices by taxtype (user or admin)
 TODO:  POST endpoint one invoice (admin)
 TODO:  PUT endpoint one invoice (admin)
 TODO:  DELETE endpoint one invoice (admin)
@@ -171,14 +151,9 @@ FOLDER:  Financials
 TODO:  added seed data:  payments table
 TODO:  GET endpoint all payments (admin)
 TODO:  GET endpoint one payment (admin)
-TODO:  GET endpoint all self-user's payments (user or admin)
-TODO:  GET endpoint one self-user's payment (user or admin)
 TODO:  GET endpoint search partial or full by invoiceno (admin)
 TODO:  GET endpoint search partial or full by amount (admin)
 TODO:  GET endpoint search partial or full by remitdate (admin)
-TODO:  GET endpoint search partial or full self-user's payments by invoiceno (user or admin)
-TODO:  GET endpoint search partial or full self-user's payments by amount (user or admin)
-TODO:  GET endpoint search partial or full self-user's payments by remitdate (user or admin)
 TODO:  POST endpoint one payment (admin)
 TODO:  PUT endpoint one payment (admin)
 TODO:  DELETE endpoint one payment (admin)
@@ -189,18 +164,11 @@ FOLDER:  Production
 TODO:  added seed data:  usc table
 TODO:  GET endpoint all usc items (admin)
 TODO:  GET endpoint one usc item (admin)
-TODO:  GET endpoint all self-user's usc items (user or admin)
-TODO:  GET endpoint one self-user's usc item (user or admin)
 TODO:  GET endpoint search partial or full by findcitation (admin)
 TODO:  GET endpoint search partial or full by replacehyperlink (admin)
 TODO:  GET endpoint search partial or full by longcitation (admin)
 TODO:  GET endpoint search partial or full by chcategory (admin)
 TODO:  GET endpoint search partial or full by webaddress (admin)
-TODO:  GET endpoint search partial or full by self-user's usc items findcitation (user or admin)
-TODO:  GET endpoint search partial or full by self-user's usc items replacehyperlink (user or admin)
-TODO:  GET endpoint search partial or full by self-user's usc items longcitation (user or admin)
-TODO:  GET endpoint search partial or full by self-user's usc items chcategory (user or admin)
-TODO:  GET endpoint search partial or full self-user's usc items by webaddress (user or admin)
 TODO:  POST endpoint one usc item (admin)
 TODO:  PUT endpoint one usc item (admin)
 TODO:  DELETE endpoint one usc item (admin)
@@ -211,18 +179,11 @@ FOLDER:  Production
 TODO:  added seed data:  citations table
 TODO:  GET endpoint all citations (admin)
 TODO:  GET endpoint one citation (admin)
-TODO:  GET endpoint all self-user's citations (user or admin)
-TODO:  GET endpoint one self-user's citation (user or admin)
 TODO:  GET endpoint search partial or full by findcitation (admin)
 TODO:  GET endpoint search partial or full by replacehyperlink (admin)
 TODO:  GET endpoint search partial or full by longcitation (admin)
 TODO:  GET endpoint search partial or full by chcategory (admin)
 TODO:  GET endpoint search partial or full by webaddress (admin)
-TODO:  GET endpoint search partial or full by self-user's citations findcitation (user or admin)
-TODO:  GET endpoint search partial or full by self-user's citations replacehyperlink (user or admin)
-TODO:  GET endpoint search partial or full by self-user's citations longcitation (user or admin)
-TODO:  GET endpoint search partial or full by self-user's citations chcategory (user or admin)
-TODO:  GET endpoint search partial or full self-user's usc items by webaddress (user or admin)
 TODO:  POST endpoint one citation (admin)
 TODO:  PUT endpoint one citation (admin)
 TODO:  DELETE endpoint one citation (admin)
@@ -535,10 +496,60 @@ TODO:  GET endpoint search partial or full self-user's cases by casenumber2 (use
 TODO:  GET endpoint search partial or full self-user's cases by jurisdiction (user or admin)
 TODO:  GET endpoint search partial or full self-user's cases by notes (user or admin)
 
+FOLDER:  Production
+    FOLDER:  Authorities
+        FOLDER:  CitationHyperlinks
+TODO:  GET endpoint search partial or full by self-user's citationhyperlinks findcitation (user or admin)
+TODO:  GET endpoint search partial or full by self-user's citationhyperlinks replacehyperlink (user or admin)
+TODO:  GET endpoint search partial or full by self-user's citationhyperlinks longcitation (user or admin)
+TODO:  GET endpoint search partial or full by self-user's citationhyperlinks chcategory (user or admin)
+TODO:  GET endpoint search partial or full self-user's citationhyperlinks by webaddress (user or admin)
 
+FOLDER:  Financials
+    FOLDER:  Invoices
+TODO:  GET endpoint self-user's invoices (user or admin)
+TODO:  GET endpoint one self-user's invoice (user or admin)
+TODO:  GET endpoint search partial or full self-user's invoices by invoiceno (user or admin)
+TODO:  GET endpoint search partial or full self-user's invoices by userid (user or admin)
+TODO:  GET endpoint search partial or full self-user's invoices by btid (user or admin)
+TODO:  GET endpoint search partial or full self-user's invoices by ratesid (user or admin)
+TODO:  GET endpoint search partial or full self-user's invoices by reference (user or admin)
+TODO:  GET endpoint search partial or full self-user's invoices by invoicedate (user or admin)
+TODO:  GET endpoint search partial or full self-user's invoices by duedate (user or admin)
+TODO:  GET endpoint search partial or full self-user's invoices by itemcode (user or admin)
+TODO:  GET endpoint search partial or full self-user's invoices by description (user or admin)
+TODO:  GET endpoint search partial or full self-user's invoices by accountcode (user or admin)
+TODO:  GET endpoint search partial or full self-user's invoices by taxtype (user or admin)
 
+FOLDER:  Financials
+    FOLDER:  Payments
+TODO:  GET endpoint all self-user's payments (user or admin)
+TODO:  GET endpoint one self-user's payment (user or admin)
+TODO:  GET endpoint search partial or full self-user's payments by invoiceno (user or admin)
+TODO:  GET endpoint search partial or full self-user's payments by amount (user or admin)
+TODO:  GET endpoint search partial or full self-user's payments by remitdate (user or admin)
 
+FOLDER:  Production
+    FOLDER:  Authorities
+        FOLDER:  USC
+TODO:  GET endpoint all self-user's usc items (user or admin)
+TODO:  GET endpoint one self-user's usc item (user or admin)
+TODO:  GET endpoint search partial or full by self-user's usc items findcitation (user or admin)
+TODO:  GET endpoint search partial or full by self-user's usc items replacehyperlink (user or admin)
+TODO:  GET endpoint search partial or full by self-user's usc items longcitation (user or admin)
+TODO:  GET endpoint search partial or full by self-user's usc items chcategory (user or admin)
+TODO:  GET endpoint search partial or full self-user's usc items by webaddress (user or admin)
 
+FOLDER:  Production
+    FOLDER:  Authorities
+        FOLDER:  Citations
+TODO:  GET endpoint all self-user's citations (user or admin)
+TODO:  GET endpoint one self-user's citation (user or admin)
+TODO:  GET endpoint search partial or full by self-user's citations findcitation (user or admin)
+TODO:  GET endpoint search partial or full by self-user's citations replacehyperlink (user or admin)
+TODO:  GET endpoint search partial or full by self-user's citations longcitation (user or admin)
+TODO:  GET endpoint search partial or full by self-user's citations chcategory (user or admin)
+TODO:  GET endpoint search partial or full self-user's usc items by webaddress (user or admin)
 
 
 

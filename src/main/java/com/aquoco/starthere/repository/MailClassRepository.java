@@ -14,6 +14,8 @@ public interface MailClassRepository
 
     MailClass findByMailclass(String mailclass);
 
+    MailClass findByDescription(String description);
+
     List<MailClass> findByMailclassContainingIgnoreCase(String mailclass, Pageable pageable);
 
     List<MailClass> findByDescriptionContainingIgnoreCase(String description, Pageable pageable);

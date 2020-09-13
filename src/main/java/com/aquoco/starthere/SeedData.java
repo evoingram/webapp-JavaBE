@@ -39,6 +39,9 @@ public class SeedData
     @Autowired
     PackageTypeService ptService;
 
+    @Autowired
+    CaseService caseService;
+
     @Override
     public void run(String[] args) throws
             Exception {
@@ -540,6 +543,40 @@ public class SeedData
         packagetypes.add(new PackageType());
         PackageType pt8 = new PackageType("FLAT", "Flat rate (only affects rate for FC mail)");
         ptService.save(pt8, true);
+
+
+        ArrayList<Case> cases;
+
+        // cases data
+        cases = new ArrayList<>();
+        cases.add(new Case());
+        Case case1 = new Case("John Doe", "Plaintiff", "Jane Doe", "Defendant", "13-1-15898", "88888-13-I", "King County Superior Court", "");
+        caseService.save(case1);
+
+        cases = new ArrayList<>();
+        cases.add(new Case());
+        Case case2 = new Case("Mickey Mouse", "Petitioner", "Donald Duck", "Respondent", "6-66-666665", "777-77-7777", "USBC District of Hawaii", "");
+        caseService.save(case2);
+
+        cases = new ArrayList<>();
+        cases.add(new Case());
+        Case case3 = new Case("Cordanas Felsong", "Petitioner", "Maiev Shadowsong", "Respondent", "12-3-44444-5", "76890-6-I", "Snohomish County Superior Court", "");
+        caseService.save(case3);
+
+        cases = new ArrayList<>();
+        cases.add(new Case());
+        Case case4 = new Case("Ricky Martin", "Plaintiff", "Michael Buble", "Defendant", "545-1-544326", "12-1-15788", "King County Superior Court", "");
+        caseService.save(case4);
+
+        cases = new ArrayList<>();
+        cases.add(new Case());
+        Case case5 = new Case("Thrall", "Employee", "City of Orgrimmar", "Employer", "23-2-58642-1", "65039-89-I", "Franklin County Superior Court", "");
+        caseService.save(case5);
+
+        cases = new ArrayList<>();
+        cases.add(new Case());
+        Case case6 = new Case("Illidan Stormrage", "Plaintiff", "Malfurian Stormrage", "Defendant", "123456", "987564123", "Yakima County Superior Court", "");
+        caseService.save(case6);
 
         // using JavaFaker create a bunch of regular users
         // https://www.baeldung.com/java-faker

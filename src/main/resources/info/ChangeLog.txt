@@ -16,6 +16,7 @@ September 11, 2020
 - added endpoint:  state search partial or full
 - added endpoint:  postalcode search partial or full
 - added endpoint:  notes search partial or full
+- added seed data:  users table
 - changed factoring field name to creditApproved
 - added endpoint:  GET endpoint all rates (admin)
 - added endpoint:  GET endpoint one rate (admin)
@@ -27,34 +28,33 @@ September 11, 2020
 - added endpoint:  POST endpoint one rate (admin)
 - added endpoint:  PUT endpoint one rate (admin)
 - added endpoint:  DELETE endpoint one rate (admin)
-
+- added seed data:  rates table
+- added endpoint:  GET endpoint all brandingthemes (admin)
+- added endpoint:  GET endpoint one brandingtheme (admin)
+- added endpoint:  GET endpoint search partial or full by brandingtheme (admin)
+- added endpoint:  POST endpoint one brandingtheme (admin)
+- added endpoint:  PUT endpoint one brandingtheme (admin)
+- added endpoint:  DELETE endpoint one brandingtheme (admin)
+- added seed data:  brandingthemes table
+- added seed data:  turnaroundtimes table
 
 TODO:  Figure out decimal/double endpoints
     rates/rateamount/like/da?sort=rate
     rates/rate/1.60
-- TODO:  change role endpoints to admin only
+TODO:  change role endpoints to admin only
+TODO:  fix brandingthemes/brandingtheme/name/'WRTS JJ Factoring'
+TODO:  add bodies to each post/update endpoint in Postman
 
 /*
-    * brandingtheme table fields: btid, brandingtheme
+    * turnaroundtimes table fields: ttid, turnaroundtime
+    * tt serviceimpl & controller
 */
-FOLDER:  Financials
-    FOLDER:  BrandingThemes
-TODO:  GET endpoint all brandingthemes (admin)
-TODO:  GET endpoint one brandingtheme (admin)
-TODO:  GET endpoint search partial or full by brandingtheme (admin)
-TODO:  POST endpoint one brandingtheme (admin)
-TODO:  PUT endpoint one brandingtheme (admin)
-TODO:  DELETE endpoint one brandingtheme (admin)
-
 FOLDER:  Production
     FOLDER:  Formatting
         FOLDER:  TurnaroundTimes
 TODO:  GET endpoint all turnaroundtimes (admin)
 TODO:  GET endpoint one turnaroundtime (admin)
-TODO:  GET endpoint self-user's courtdates by all turnaroundtimes (user or admin)
-TODO:  GET endpoint self-user's courtdates by one turnaround time (user or admin)
 TODO:  GET endpoint search partial or full by turnaroundtime (admin)
-TODO:  GET endpoint search partial or full self-user's courtdates by turnaroundtime (admin)
 TODO:  POST endpoint one turnaroundtime (admin)
 TODO:  PUT endpoint one turnaroundtime (admin)
 TODO:  DELETE endpoint one turnaroundtime (admin)
@@ -62,6 +62,7 @@ TODO:  DELETE endpoint one turnaroundtime (admin)
 FOLDER:  Production
     FOLDER:  Shipping
         FOLDER:  Mailclasses
+TODO:  added seed data:  table
 TODO:  GET endpoint all mailclasses (admin)
 TODO:  GET endpoint one mailclass (admin)
 TODO:  GET endpoint search partial or full by mailclass (admin)
@@ -72,6 +73,7 @@ TODO:  DELETE endpoint one mailclass (admin)
 
 FOLDER:  Shipping
     FOLDER:  Packagetypes
+TODO:  added seed data:  table
 TODO:  GET endpoint all packagetypes (admin)
 TODO:  GET endpoint one packagetype (admin)
 TODO:  GET endpoint search partial or full by packagetype (admin)
@@ -83,6 +85,7 @@ TODO:  DELETE endpoint one packagetype (admin)
 FOLDER:  Production
     FOLDER:  Info
         FOLDER:  Cases
+TODO:  added seed data:  table
 TODO:  GET endpoint all cases (admin)
 TODO:  GET endpoint one case (admin)
 TODO:  GET endpoint all self-user's cases (user or admin)
@@ -110,6 +113,7 @@ TODO:  DELETE endpoint one case (admin)
 FOLDER:  Production
     FOLDER:  Authorities
         FOLDER:  CitationHyperlinks
+TODO:  added seed data:  table
 TODO:  GET endpoint all citationhyperlinks (admin)
 TODO:  GET endpoint one citationhyperlink (admin)
 TODO:  GET endpoint search partial or full by findcitation (admin)
@@ -128,6 +132,7 @@ TODO:  DELETE endpoint one citationhyperlink (admin)
 
 FOLDER:  Financials
     FOLDER:  Invoices
+TODO:  added seed data:  table
 TODO:  GET endpoint all invoices (admin)
 TODO:  GET endpoint self-user's invoices (user or admin)
 TODO:  GET endpoint one invoice (admin)
@@ -161,6 +166,7 @@ TODO:  DELETE endpoint one invoice (admin)
 FOLDER:  Production
     FOLDER:  Formatting
         FOLDER:  Styles
+TODO:  added seed data:  table
 TODO:  GET endpoint all styles (admin)
 TODO:  GET endpoint one style (admin)
 TODO:  GET endpoint search partial or full by stylename (admin)
@@ -171,6 +177,7 @@ TODO:  DELETE endpoint one style (admin)
 FOLDER:  Production
     FOLDER:  Formatting
         FOLDER:  ExamTypes
+TODO:  added seed data:  table
 TODO:  GET endpoint all examtypes (admin)
 TODO:  GET endpoint one examtype (admin)
 TODO:  GET endpoint search partial or full by examination (admin)
@@ -181,6 +188,7 @@ TODO:  DELETE endpoint one examtype (admin)
 
 FOLDER:  Financials
     FOLDER:  Payments
+TODO:  added seed data:  table
 TODO:  GET endpoint all payments (admin)
 TODO:  GET endpoint one payment (admin)
 TODO:  GET endpoint all self-user's payments (user or admin)
@@ -198,6 +206,7 @@ TODO:  DELETE endpoint one payment (admin)
 FOLDER:  Production
     FOLDER:  Authorities
         FOLDER:  USC
+TODO:  added seed data:  table
 TODO:  GET endpoint all usc items (admin)
 TODO:  GET endpoint one usc item (admin)
 TODO:  GET endpoint all self-user's usc items (user or admin)
@@ -219,6 +228,7 @@ TODO:  DELETE endpoint one usc item (admin)
 FOLDER:  Production
     FOLDER:  Authorities
         FOLDER:  Citations
+TODO:  added seed data:  table
 TODO:  GET endpoint all citations (admin)
 TODO:  GET endpoint one citation (admin)
 TODO:  GET endpoint all self-user's citations (user or admin)
@@ -239,11 +249,12 @@ TODO:  DELETE endpoint one citation (admin)
 
 FOLDER:  Production
     FOLDER:  Info
-TODO:  GET endpoint all courtdates
 
 FOLDER:  Production
     FOLDER:  Info
         FOLDER:  One CourtDate
+TODO:  added seed data:  table
+TODO:  GET endpoint all courtdates
 TODO:  GET endpoint one courtdate advanced (admin)
 TODO:  GET endpoint one courtdate basic (admin)
 TODO:  GET endpoint one courtdate's invoices (admin)
@@ -273,6 +284,7 @@ TODO:  DELETE endpoint one courtdate (admin)
 FOLDER:  Production
     FOLDER:  Formatting
         FOLDER:  AGShortcuts
+TODO:  added seed data:  table
 TODO:  GET endpoint all agshortcuts (admin)
 TODO:  GET endpoint one agshortcut (admin)
 TODO:  GET endpoint search partial or full by courtdatesid (admin)
@@ -283,6 +295,7 @@ TODO:  DELETE endpoint one agshortcut (admin)
 FOLDER:  Production
     FOLDER:  Mgmt
         FOLDER:  Statuses
+TODO:  added seed data:  table
 TODO:  GET endpoint all statuses (admin)
 TODO:  GET endpoint one status (admin)
 TODO:  GET endpoint all self-user's statuses by courtdate (user or admin)
@@ -296,6 +309,7 @@ TODO:  DELETE endpoint one status (admin)
 FOLDER:  Production
     FOLDER:  Info
         FOLDER:  Appearances
+TODO:  added seed data:  table
 TODO:  GET endpoint all appearances (admin)
 TODO:  GET endpoint one appearance (admin)
 TODO:  GET endpoint all self-user's courtdates and appearances (user or admin)
@@ -313,6 +327,7 @@ TODO:  DELETE endpoint one appearance (admin)
 FOLDER:  Production
     FOLDER:  Mgmt
         FOLDER:  Tasks
+TODO:  added seed data:  table
 TODO:  GET endpoint all tasks (admin)
 TODO:  GET endpoint one task (admin)
 TODO:  POST endpoint one task (admin)
@@ -332,6 +347,7 @@ TODO:  GET endpoint search partial or full by completed (admin)
 
 FOLDER:  Financials
     FOLDER:  Expenses
+TODO:  added seed data:  table
 TODO:  GET endpoint all expenses (admin)
 TODO:  GET endpoint one expense (admin)
 TODO:  GET endpoint search partial or full by vendor (admin)
@@ -346,6 +362,7 @@ TODO:  DELETE endpoint one expense (admin)
 FOLDER:  Production
     FOLDER:  Info
         FOLDER:  CommHistory
+TODO:  added seed data:  table
 TODO:  GET endpoint all commhistory items (admin)
 TODO:  GET endpoint one commhistory item (admin)
 TODO:  GET endpoint search partial or full by filepath (admin)
@@ -359,6 +376,7 @@ TODO:  DELETE endpoint one commhistory item (admin)
 FOLDER:  Production
     FOLDER:  Shipping
         FOLDER:  Shipping
+TODO:  added seed data:  table
 TODO:  GET endpoint all shipping items (admin)
 TODO:  GET endpoint one shipping item (admin)
 TODO:  GET endpoint all self-user's shipping items (user or admin)
@@ -398,6 +416,7 @@ TODO:  DELETE endpoint one shipping item (admin)
 FOLDER:  Production
     FOLDER:  Info
         FOLDER:  CourtdatesInvoices
+TODO:  added seed data:  table
 TODO:  GET endpoint all courtdatesinvoices (admin)
 TODO:  GET endpoint one courtdatesinvoice (admin)
 TODO:  GET endpoint search partial or full by courtdatesinvoices (admin)
@@ -410,6 +429,7 @@ TODO:  DELETE endpoint one courtdatesinvoice (admin)
 FOLDER:  Production
     FOLDER:  Info
         FOLDER:  CourtdatesCasesCustomers
+TODO:  added seed data:  table
 TODO:  GET endpoint all cccs (admin)
 TODO:  GET endpoint one ccc (admin)
 TODO:  GET endpoint search partial or full by courtdatescasescustomers (admin)
@@ -514,6 +534,12 @@ TODO:  GET endpoint search self-user's courtdates by rate (user or admin)
 TODO:  GET endpoint self-user's courtdates by rates (user or admin)
 TODO:  GET endpoint self-user's courtdates by one rate (user or admin)
 
+FOLDER:  Production
+    FOLDER:  Formatting
+        FOLDER:  TurnaroundTimes
+TODO:  GET endpoint self-user's courtdates by all turnaroundtimes (user or admin)
+TODO:  GET endpoint self-user's courtdates by one turnaround time (user or admin)
+TODO:  GET endpoint search partial or full self-user's courtdates by turnaroundtime (admin)
 
 
 

@@ -1,7 +1,6 @@
 package com.aquoco.starthere.controllers;
 
 import com.aquoco.starthere.logging.Loggable;
-import com.aquoco.starthere.models.BrandingTheme;
 import com.aquoco.starthere.models.MailClass;
 import com.aquoco.starthere.services.MailClassService;
 import io.swagger.annotations.ApiImplicitParam;
@@ -39,8 +38,8 @@ public class MailClassController {
 
     // GET endpoint all mailclasses (admin)
     // http://localhost:2019/mailclasses/mailclasses/?page=1&size=1
-    // http://localhost:2019/mailclasses/mailclasses/?sort=brandingthemename,desc&sort=<field>,asc
-    @ApiOperation(value = "returns all branding themes",
+    // http://localhost:2019/mailclasses/mailclasses/?sort=mailclass,desc&sort=<field>,asc
+    @ApiOperation(value = "returns all mail classes",
             response = MailClass.class,
             responseContainer = "List")
     @ApiImplicitParams({@ApiImplicitParam(name = "page",
@@ -112,7 +111,7 @@ public class MailClassController {
     }
 
     // GET endpoint search partial or full by mailclass (admin)
-    // http://localhost:2019/mailclasses/mailclass/class/like/da?sort=brandingthemename
+    // http://localhost:2019/mailclasses/mailclass/class/like/da?sort=mailclass
     @ApiOperation(value = "returns all mail classes with classes containing a given string",
             response = MailClass.class,
             responseContainer = "List")
@@ -191,11 +190,11 @@ public class MailClassController {
 
         // set the location header for the newly created resource
         HttpHeaders responseHeaders = new HttpHeaders();
-        URI newBrandingThemeURI = ServletUriComponentsBuilder.fromCurrentRequest()
+        URI newMailClassURI = ServletUriComponentsBuilder.fromCurrentRequest()
                                                              .path("/{mcid}")
                                                              .buildAndExpand(newMailclass.getMcid())
                                                              .toUri();
-        responseHeaders.setLocation(newBrandingThemeURI);
+        responseHeaders.setLocation(newMailClassURI);
 
         return new ResponseEntity<>(null,
                                     responseHeaders,
@@ -217,8 +216,8 @@ public class MailClassController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    // DELETE endpoint one brandingtheme (admin)
-    // http://localhost:2019/brandingthemes/brandingtheme/14
+    // DELETE endpoint one mailclass (admin)
+    // http://localhost:2019/mailclasses/mailclass/14
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @DeleteMapping("/mailclass/{mcid}")
     public ResponseEntity<?> deleteMailclassById(HttpServletRequest request,

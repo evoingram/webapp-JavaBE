@@ -32,7 +32,6 @@ public class RoleServiceImpl
         return list;
     }
 
-
     @Override
     public Role findRoleById(long id) {
         return rolerepos.findById(id)

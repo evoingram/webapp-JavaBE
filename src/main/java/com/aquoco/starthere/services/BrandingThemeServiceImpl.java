@@ -17,7 +17,7 @@ import java.util.List;
  * brandingtheme table fields: btid, brandingtheme
  */
 @Loggable
-@Service(value = "brandingThemeService")
+@Service(value = "brandingthemeService")
 public class BrandingThemeServiceImpl implements BrandingThemeService {
 
     @Autowired

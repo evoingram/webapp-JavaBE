@@ -22,7 +22,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.text.DecimalFormat;
 import java.util.List;
 
 /*
@@ -103,7 +102,7 @@ public class RateController {
             produces = {"application/json"})
     public ResponseEntity<?> getRateByRate(HttpServletRequest request,
                                            @PathVariable
-                                           DecimalFormat rate) {
+                                                   Double rate) {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
@@ -112,7 +111,7 @@ public class RateController {
                                     HttpStatus.OK);
     }
 
-    // List<Rate> findByRateContaining(DecimalFormat rate, Pageable pageable);
+    // List<Rate> findByRateContaining(Double rate, Pageable pageable);
     // http://localhost:2019/rates/rate/like/da?sort=rate
     @ApiOperation(value = "returns all rates with rates containing a given string",
             response = Rate.class,
@@ -135,7 +134,7 @@ public class RateController {
             produces = {"application/json"})
     public ResponseEntity<?> getRateLikeRate(HttpServletRequest request,
                                              @PathVariable
-                                                     DecimalFormat rate,
+                                                     Double rate,
                                              @PageableDefault(page = 0,
                                                      size = 5)
                                                      Pageable pageable) {

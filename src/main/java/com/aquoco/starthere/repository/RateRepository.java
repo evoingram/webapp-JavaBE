@@ -4,7 +4,6 @@ import com.aquoco.starthere.models.Rate;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import java.text.DecimalFormat;
 import java.util.List;
 
 /*
@@ -13,11 +12,11 @@ import java.util.List;
 public interface RateRepository
         extends PagingAndSortingRepository<Rate, Long> {
 
-    Rate findByRate(DecimalFormat rate);
+    Rate findByRate(Double rate);
 
-    List<Rate> findByRateContainingIgnoreCase(DecimalFormat rate, Pageable pageable);
+    List<Rate> findByRateContainingIgnoreCase(Double rate, Pageable pageable);
 
-    List<Rate> findByRateContaining(DecimalFormat rate, Pageable pageable);
+    List<Rate> findByRateContaining(Double rate, Pageable pageable);
 
     List<Rate> findByCodeContainingIgnoreCase(String code, Pageable pageable);
 

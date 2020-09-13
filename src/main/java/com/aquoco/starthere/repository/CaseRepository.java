@@ -6,6 +6,10 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
 
+/*
+ * cases table fields:  casesid, party1, party1name, party2,
+ * party2name, casenumber1, casenumber2, jurisdiction, notes
+ */
 public interface CaseRepository
         extends PagingAndSortingRepository<Case, Long> {
 
@@ -23,6 +27,8 @@ public interface CaseRepository
 
     Case findByJurisdiction(String jurisdiction);
 
+    Case findByNotes(String jurisdiction);
+
     List<Case> findByParty1ContainingIgnoreCase(String party1, Pageable pageable);
 
     List<Case> findByParty1nameContainingIgnoreCase(String party1name, Pageable pageable);
@@ -36,5 +42,7 @@ public interface CaseRepository
     List<Case> findByCasenumber2ContainingIgnoreCase(String casenumber2, Pageable pageable);
 
     List<Case> findByJurisdictionContainingIgnoreCase(String jurisdiction, Pageable pageable);
+
+    List<Case> findByNotesContainingIgnoreCase(String notes, Pageable pageable);
 
 }

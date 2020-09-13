@@ -35,6 +35,11 @@ public class PackageTypeServiceImpl implements PackageTypeService {
     }
 
     @Override
+    public PackageType findByDescription(String description) {
+        return ptrepo.findByDescription(description);
+    }
+
+    @Override
     public List<PackageType> findByPackagetypeContainingIgnoreCase(String packagetype,
                                                                Pageable pageable) {
         return ptrepo.findByPackagetypeContainingIgnoreCase(packagetype, pageable);

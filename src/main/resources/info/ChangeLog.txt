@@ -58,12 +58,25 @@ September 13, 2020
 - added seed data:  packagetypes table
 - added endpoint:  GET endpoint all packagetypes (admin)
 - added endpoint:  GET endpoint one packagetype (admin)
-- added endpoint:  GET endpoint search partial or full by packagetype (admin)
-- added endpoint:  GET endpoint search partial or full by description (admin)
+- added endpoint:  GET endpoints search partial or full by packagetype (admin)
+- added endpoint:  GET endpoints search partial or full by description (admin)
 - added endpoint:  POST endpoint one packagetype (admin)
 - added endpoint:  PUT endpoint one packagetype (admin)
 - added endpoint:  DELETE endpoint one packagetype (admin)
 - added seed data:  cases table
+- added endpoint:  GET endpoint all cases (admin)
+- added endpoint:  GET endpoint one case (admin)
+- added endpoints:  GET endpoints search partial or full by party1 (user or admin)
+- added endpoints:  GET endpoints search partial or full by party1name (user or admin)
+- added endpoints:  GET endpoints search partial or full by party2 (user or admin)
+- added endpoints:  GET endpoints search partial or full by party2name (user or admin)
+- added endpoints:  GET endpoints search partial or full by casenumber1 (user or admin)
+- added endpoints:  GET endpoints search partial or full by casenumber2 (user or admin)
+- added endpoints:  GET endpoints search partial or full by jurisdiction (user or admin)
+- added endpoints:  GET endpoints search partial or full by notes (user or admin)
+- added endpoint:  POST endpoint one case (user or admin)
+- added endpoint:  PUT endpoint one case (user or admin)
+- added endpoint:  DELETE endpoint one case (user or admin)
 
 TODO:  fix endpoint rates/rateamount/like/da?sort=rate
 TODO:  fix endpoint rates/rate/1.60
@@ -71,23 +84,8 @@ TODO:  change role endpoints to admin only
 TODO:  fix brandingthemes/brandingtheme/name/'WRTS JJ Factoring'
 TODO:  add bodies to each post/update endpoint in Postman
 TODO:  fix turnaroundtimes/turnaroundtime/time/45
+TODO:  fix endpoints for cases post, put, delete to self-user or admin only
 
-FOLDER:  Production
-    FOLDER:  Info
-        FOLDER:  Cases
-TODO:  GET endpoint all cases (admin)
-TODO:  GET endpoint one case (admin)
-TODO:  GET endpoint search partial or full by party1 (admin)
-TODO:  GET endpoint search partial or full by party1name (admin)
-TODO:  GET endpoint search partial or full by party2 (admin)
-TODO:  GET endpoint search partial or full by party2name (admin)
-TODO:  GET endpoint search partial or full by casenumber1 (admin)
-TODO:  GET endpoint search partial or full by casenumber2 (admin)
-TODO:  GET endpoint search partial or full by jurisdiction (admin)
-TODO:  GET endpoint search partial or full by notes (admin)
-TODO:  POST endpoint one case (user or admin)
-TODO:  PUT endpoint one case (user or admin)
-TODO:  DELETE endpoint one case (admin)
 
 FOLDER:  Production
     FOLDER:  Authorities

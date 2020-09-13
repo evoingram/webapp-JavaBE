@@ -30,8 +30,22 @@ public class MailClassServiceImpl implements MailClassService {
     }
 
     @Override
-    public MailClass findByMailclass(String mailclass) {
-        return null;
+    public MailClass findByMailclass(String mailclass) throws
+            ResourceNotFoundException {
+        if (mcrepo.findByMailclass(mailclass.toLowerCase()) == null) {
+            throw new ResourceNotFoundException("Mail class " + mailclass + " not found!");
+        }
+        return mcrepo.findByMailclass(mailclass.toLowerCase());
+    }
+
+    @Override
+    public MailClass findByDescription(String description) throws
+            ResourceNotFoundException {
+
+        if (mcrepo.findByDescription(description.toLowerCase()) == null) {
+            throw new ResourceNotFoundException("Description " + description + " not found!");
+        }
+        return mcrepo.findByDescription(description.toLowerCase());
     }
 
     @Override

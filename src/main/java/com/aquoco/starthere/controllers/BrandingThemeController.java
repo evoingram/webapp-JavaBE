@@ -90,7 +90,7 @@ public class BrandingThemeController {
     @GetMapping(value = "/brandingtheme/{btid}",
             produces = {"application/json"})
     public ResponseEntity<?> getBrandingthemeById(HttpServletRequest request,
-                                         @PathVariable Long btid) {
+                                                  @PathVariable Long btid) {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
@@ -104,8 +104,8 @@ public class BrandingThemeController {
     @GetMapping(value = "/brandingtheme/name/{brandingtheme}",
             produces = {"application/json"})
     public ResponseEntity<?> getBrandingthemeByName(HttpServletRequest request,
-                                           @PathVariable
-                                                   String brandingtheme) {
+                                                    @PathVariable
+                                                            String brandingtheme) {
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 

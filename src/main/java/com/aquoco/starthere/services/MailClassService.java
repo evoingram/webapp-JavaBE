@@ -20,6 +20,8 @@ public interface MailClassService {
 
     MailClass findByMailclass(String mailclass);
 
+    MailClass findByDescription(String description);
+
     void delete(long id, boolean isAdmin);
 
     MailClass save(MailClass mailclass, boolean isAdmin);

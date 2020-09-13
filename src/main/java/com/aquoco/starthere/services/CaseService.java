@@ -63,9 +63,8 @@ public interface CaseService {
 
     void delete(long id);
 
-    Case save(Case singlecase);
+    Case save(Case singleCase);
 
-    Case update(Case singlecase,
-                long id,
-                boolean isAdmin);
+    Case update(Case singleCase,
+                long id);
 }

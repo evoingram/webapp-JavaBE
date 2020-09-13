@@ -1,6 +1,7 @@
 package com.aquoco.starthere;
 
 import com.aquoco.starthere.models.*;
+import com.aquoco.starthere.services.BrandingThemeService;
 import com.aquoco.starthere.services.RateService;
 import com.aquoco.starthere.services.RoleService;
 import com.github.javafaker.Faker;
@@ -27,6 +28,9 @@ public class SeedData
 
     @Autowired
     RateService rateService;
+
+    @Autowired
+    BrandingThemeService btService;
 
     @Override
     public void run(String[] args) throws
@@ -306,6 +310,71 @@ public class SeedData
                                "generic subcontractor rate",
                                1.75);
         rateService.save(rate13, true);
+
+        ArrayList<BrandingTheme> brandingthemes;
+
+        // brandingthemes data
+        brandingthemes = new ArrayList<>();
+
+        brandingthemes.add(new BrandingTheme());
+        BrandingTheme bt1 = new BrandingTheme("WRTS NC Factoring");
+        btService.save(bt1, true);
+
+        brandingthemes = new ArrayList<>();
+        brandingthemes.add(new BrandingTheme());
+        BrandingTheme bt2 = new BrandingTheme("WRTS NC 100 Deposit");
+        btService.save(bt2, true);
+
+        brandingthemes = new ArrayList<>();
+        brandingthemes.add(new BrandingTheme());
+        BrandingTheme bt3 = new BrandingTheme("WRTS C 50 Deposit Filed NONBK");
+        btService.save(bt3, true);
+
+        brandingthemes = new ArrayList<>();
+        brandingthemes.add(new BrandingTheme());
+        BrandingTheme bt4 = new BrandingTheme("WRTS C 50 Deposit Filed BK");
+        btService.save(bt4, true);
+
+        brandingthemes = new ArrayList<>();
+        brandingthemes.add(new BrandingTheme());
+        BrandingTheme bt5 = new BrandingTheme("WRTS C 50 Deposit Not Filed");
+        btService.save(bt5, true);
+
+        brandingthemes = new ArrayList<>();
+        brandingthemes.add(new BrandingTheme());
+        BrandingTheme bt6 = new BrandingTheme("WRTS C Factoring Filed");
+        btService.save(bt6, true);
+
+        brandingthemes = new ArrayList<>();
+        brandingthemes.add(new BrandingTheme());
+        BrandingTheme bt7 = new BrandingTheme("WRTS C Factoring Not Filed");
+        btService.save(bt7, true);
+
+        brandingthemes = new ArrayList<>();
+        brandingthemes.add(new BrandingTheme());
+        BrandingTheme bt8 = new BrandingTheme("WRTS C 100 Deposit Filed");
+        btService.save(bt8, true);
+
+        brandingthemes = new ArrayList<>();
+        brandingthemes.add(new BrandingTheme());
+        BrandingTheme bt9 = new BrandingTheme("WRTS C 100 Deposit Not Filed");
+        btService.save(bt9, true);
+
+        brandingthemes = new ArrayList<>();
+        brandingthemes.add(new BrandingTheme());
+        BrandingTheme bt10 = new BrandingTheme("WRTS JJ Factoring");
+        btService.save(bt10, true);
+
+        brandingthemes = new ArrayList<>();
+        brandingthemes.add(new BrandingTheme());
+        BrandingTheme bt11 = new BrandingTheme("WRTS Tabula Not Factored/Filed");
+        btService.save(bt11, true);
+
+        brandingthemes = new ArrayList<>();
+        brandingthemes.add(new BrandingTheme());
+        BrandingTheme bt12 = new BrandingTheme("WRTS AMOR Factoring");
+        btService.save(bt12, true);
+
 
         // using JavaFaker create a bunch of regular users
         // https://www.baeldung.com/java-faker

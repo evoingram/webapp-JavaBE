@@ -540,7 +540,7 @@ public class SeedData
         packagetypes.add(new PackageType());
         PackageType pt8 = new PackageType("FLAT", "Flat rate (only affects rate for FC mail)");
         ptService.save(pt8, true);
-        
+
         // using JavaFaker create a bunch of regular users
         // https://www.baeldung.com/java-faker
         // https://www.baeldung.com/regular-expressions-java

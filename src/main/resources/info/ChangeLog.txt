@@ -55,6 +55,7 @@ September 13, 2020
 - added endpoint:  POST endpoint one mailclass (admin)
 - added endpoint:  PUT endpoint one mailclass (admin)
 - added endpoint:  DELETE endpoint one mailclass (admin)
+- added seed data:  packagetypes table
 
 TODO:  Figure out decimal/double endpoints
     rates/rateamount/like/da?sort=rate
@@ -66,7 +67,6 @@ TODO:  fix turnaroundtimes/turnaroundtime/time/45
 
 FOLDER:  Shipping
     FOLDER:  Packagetypes
-TODO:  added seed data:  packagetypes table
 TODO:  GET endpoint all packagetypes (admin)
 TODO:  GET endpoint one packagetype (admin)
 TODO:  GET endpoint search partial or full by packagetype (admin)

@@ -12,7 +12,7 @@ public interface PackageTypeService {
 
     List<PackageType> findAll(Pageable pageable);
 
-    List<PackageType> findByPackagetypeContaining(String packagetype, Pageable pageable);
+    List<PackageType> findByPackageTypeContaining(String packagetype, Pageable pageable);
 
     List<PackageType> findByPackagetypeContainingIgnoreCase(String packagetype, Pageable pageable);
 

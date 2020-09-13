@@ -45,9 +45,16 @@ September 12, 2020
 - added endpoint:  POST endpoint one turnaroundtime (admin)
 - added endpoint:  PUT endpoint one turnaroundtime (admin)
 - added endpoint:  DELETE endpoint one turnaroundtime (admin)
-- added seed data:  mailclasses table
 
 September 13, 2020
+- added seed data:  mailclasses table
+- added endpoint:  GET endpoint all mailclasses (admin)
+- added endpoint:  GET endpoint one mailclass (admin)
+- added endpoint:  GET endpoint search partial or full by mailclass (admin)
+- added endpoint:  GET endpoint search partial or full by description (admin)
+- added endpoint:  POST endpoint one mailclass (admin)
+- added endpoint:  PUT endpoint one mailclass (admin)
+- added endpoint:  DELETE endpoint one mailclass (admin)
 
 TODO:  Figure out decimal/double endpoints
     rates/rateamount/like/da?sort=rate
@@ -56,17 +63,6 @@ TODO:  change role endpoints to admin only
 TODO:  fix brandingthemes/brandingtheme/name/'WRTS JJ Factoring'
 TODO:  add bodies to each post/update endpoint in Postman
 TODO:  fix turnaroundtimes/turnaroundtime/time/45
-
-FOLDER:  Production
-    FOLDER:  Shipping
-        FOLDER:  Mailclasses
-TODO:  GET endpoint all mailclasses (admin)
-TODO:  GET endpoint one mailclass (admin)
-TODO:  GET endpoint search partial or full by mailclass (admin)
-TODO:  GET endpoint search partial or full by description (admin)
-TODO:  POST endpoint one mailclass (admin)
-TODO:  PUT endpoint one mailclass (admin)
-TODO:  DELETE endpoint one mailclass (admin)
 
 FOLDER:  Shipping
     FOLDER:  Packagetypes

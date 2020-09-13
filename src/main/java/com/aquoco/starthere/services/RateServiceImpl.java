@@ -10,7 +10,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +32,7 @@ public class RateServiceImpl
     }
 
     @Override
-    public Rate findByRate(DecimalFormat rate) throws
+    public Rate findByRate(Double rate) throws
             ResourceNotFoundException {
 
         if (raterepo.findByRate(rate) == null) {
@@ -106,7 +105,7 @@ public class RateServiceImpl
     }
 
     @Override
-    public List<Rate> findByRateContaining(DecimalFormat rate,
+    public List<Rate> findByRateContaining(Double rate,
                                            Pageable pageable) {
         return raterepo.findByRateContaining(rate, pageable);
     }

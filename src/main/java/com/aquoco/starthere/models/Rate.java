@@ -3,7 +3,6 @@ package com.aquoco.starthere.models;
 import com.aquoco.starthere.logging.Loggable;
 
 import javax.persistence.*;
-import java.text.DecimalFormat;
 import java.util.List;
 
 /*
@@ -32,7 +31,7 @@ public class Rate
     private String description;
 
     @Column(nullable = false, unique = true)
-    private DecimalFormat rate;
+    private Double rate;
 
     public Rate() {
     }
@@ -41,7 +40,7 @@ public class Rate
                 String inventoryratecode,
                 String productname,
                 String description,
-                DecimalFormat rate) {
+                Double rate) {
         this.code = code;
         this.inventoryratecode = inventoryratecode;
         this.productname = productname;
@@ -89,11 +88,11 @@ public class Rate
         this.description = description;
     }
 
-    public DecimalFormat getRate() {
+    public Double getRate() {
         return rate;
     }
 
-    public void setRate(DecimalFormat rate) {
+    public void setRate(Double rate) {
         this.rate = rate;
     }
 

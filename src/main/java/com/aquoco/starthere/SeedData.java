@@ -1,13 +1,11 @@
 package com.aquoco.starthere;
 
+import com.aquoco.starthere.models.*;
+import com.aquoco.starthere.services.RateService;
 import com.aquoco.starthere.services.RoleService;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
-import com.aquoco.starthere.models.Role;
-import com.aquoco.starthere.models.User;
-import com.aquoco.starthere.models.UserRoles;
-import com.aquoco.starthere.models.Useremail;
 import com.aquoco.starthere.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -27,6 +25,8 @@ public class SeedData
     @Autowired
     UserService userService;
 
+    @Autowired
+    RateService rateService;
 
     @Override
     public void run(String[] args) throws
@@ -156,8 +156,7 @@ public class SeedData
         userService.save(u4);
 
         users = new ArrayList<>();
-        users.add(new UserRoles(new User(),
-                                r2));
+        users.add(new UserRoles(new User(), r2));
         User u5 = new User("misskitty",
                            "password",
                            "misskitty@school.lambda",
@@ -176,6 +175,135 @@ public class SeedData
                            "",
                            users);
         userService.save(u5);
+
+        ArrayList<Rate> rates;
+        // rates data
+        rates = new ArrayList<>();
+        rates.add(new Rate());
+        Rate rate1 = new Rate("CNB45",
+                              "CNB45",
+                              "45 calendar-day turnaround",
+                              "45 calendar-day turnaround",
+                              2.5);
+        rateService.save(rate1, true);
+
+        rates = new ArrayList<>();
+        rates.add(new Rate());
+        Rate rate2 = new Rate("CNB30",
+                              "CNB30",
+                              "30 calendar-day turnaround",
+                              "30 calendar-day turnaround",
+                              2.65);
+        rateService.save(rate2, true);
+
+        rates = new ArrayList<>();
+        rates.add(new Rate());
+        Rate rate3 = new Rate("CNB14",
+                              "CNB14",
+                              "14 calendar-day turnaround",
+                              "14 calendar-day turnaround",
+                              3.25);
+        rateService.save(rate3, true);
+
+        // rates data
+        rates = new ArrayList<>();
+        rates.add(new Rate());
+        Rate rate4 = new Rate("CNB07",
+                              "CNB07",
+                              "07 calendar-day turnaround",
+                              "07 calendar-day turnaround",
+                              3.75);
+        rateService.save(rate4, true);
+
+        // rates data
+        rates = new ArrayList<>();
+        rates.add(new Rate());
+        Rate rate5 = new Rate("CNB03",
+                              "CNB03",
+                              "03 calendar-day turnaround",
+                              "03 calendar-day turnaround",
+                              4.25);
+        rateService.save(rate5, true);
+
+        // rates data
+        rates = new ArrayList<>();
+        rates.add(new Rate());
+        Rate rate6 = new Rate("CNB01",
+                              "CNB01",
+                              "01 calendar-day turnaround",
+                              "01 calendar-day turnaround",
+                              5.25);
+        rateService.save(rate6, true);
+
+        // rates data
+        rates = new ArrayList<>();
+        rates.add(new Rate());
+        Rate rate7 = new Rate("MC",
+                              "MC",
+                              "minimum charge",
+                              "minimum charge",
+                              50.0);
+        rateService.save(rate7, true);
+
+        // rates data
+        rates = new ArrayList<>();
+        rates.add(new Rate());
+        Rate rate8 = new Rate("KCI",
+                              "KCI",
+                              "king county rate",
+                              "king county rate",
+                              3.65);
+        rateService.save(rate8, true);
+
+        // rates data
+        rates = new ArrayList<>();
+        rates.add(new Rate());
+        Rate rate9 = new Rate("NC10",
+                              "NC10",
+                              "noncourt regular",
+                              "noncourt regular",
+                              2.0);
+        rateService.save(rate9, true);
+
+        // rates data
+        rates = new ArrayList<>();
+        rates.add(new Rate());
+        Rate rate10 = new Rate("NC1",
+                               "NC1",
+                               "noncourt overnight",
+                               "noncourt overnight",
+                               5.25);
+        rateService.save(rate10, true);
+
+        // rates data
+        rates = new ArrayList<>();
+        rates.add(new Rate());
+        Rate rate11 = new Rate("AMOR",
+                               "AMOR",
+                               "janet evans rate",
+                               "janet evans rate",
+                               2.2);
+        rateService.save(rate11, true);
+
+        // rates data
+        rates = new ArrayList<>();
+        rates.add(new Rate());
+        Rate rate12 = new Rate("COPY",
+                               "COPY",
+                               "copy rate",
+                               "copy rate",
+                               0.4);
+        rateService.save(rate12, true);
+
+        // rates data
+        rates = new ArrayList<>();
+        rates.add(new Rate());
+        Rate rate13 = new Rate("JJ",
+                               "JJ",
+                               "generic subcontractor rate",
+                               "generic subcontractor rate",
+                               1.75);
+        rateService.save(rate13, true);
 
         // using JavaFaker create a bunch of regular users
         // https://www.baeldung.com/java-faker

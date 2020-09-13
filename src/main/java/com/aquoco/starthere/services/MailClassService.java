@@ -25,5 +25,5 @@ public interface MailClassService {
     MailClass save(MailClass mailclass, boolean isAdmin);
 
     MailClass update(MailClass mailclass, long id, boolean isAdmin);
-    
+
 }

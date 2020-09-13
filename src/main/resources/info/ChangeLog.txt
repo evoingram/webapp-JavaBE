@@ -27,24 +27,31 @@ September 11, 2020
 - added endpoint:  POST endpoint one rate (admin)
 - added endpoint:  PUT endpoint one rate (admin)
 - added endpoint:  DELETE endpoint one rate (admin)
+- added endpoint:  GET endpoint all brandingthemes (admin)
+- added endpoint:  GET endpoint one brandingtheme (admin)
+- added endpoint:  GET endpoint search partial or full by brandingtheme (admin)
+- added endpoint:  POST endpoint one brandingtheme (admin)
+- added endpoint:  PUT endpoint one brandingtheme (admin)
+- added endpoint:  DELETE endpoint one brandingtheme (admin)
 
 
 TODO:  Figure out decimal/double endpoints
     rates/rateamount/like/da?sort=rate
     rates/rate/1.60
-- TODO:  change role endpoints to admin only
+TODO:  change role endpoints to admin only
+TODO:  fix brandingthemes/brandingtheme/name/'WRTS JJ Factoring'
 
 /*
     * brandingtheme table fields: btid, brandingtheme
 */
 FOLDER:  Financials
     FOLDER:  BrandingThemes
-TODO:  GET endpoint all brandingthemes (admin)
-TODO:  GET endpoint one brandingtheme (admin)
-TODO:  GET endpoint search partial or full by brandingtheme (admin)
-TODO:  POST endpoint one brandingtheme (admin)
-TODO:  PUT endpoint one brandingtheme (admin)
-TODO:  DELETE endpoint one brandingtheme (admin)
+TODO:
+TODO:
+TODO:
+TODO:
+TODO:
+TODO:
 
 FOLDER:  Production
     FOLDER:  Formatting

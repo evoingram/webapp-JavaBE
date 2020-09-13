@@ -18,7 +18,7 @@ public class TurnaroundTime
 
     @Column(nullable = false,
             unique = true)
-    private int turnaroundtime;
+    private long turnaroundtime;
 
 
     public TurnaroundTime() {
@@ -36,11 +36,11 @@ public class TurnaroundTime
         this.ttid = ttid;
     }
 
-    public int getTurnaroundtime() {
+    public long getTurnaroundtime() {
         return turnaroundtime;
     }
 
-    public void setTurnaroundtime(int turnaroundtime) {
+    public void setTurnaroundtime(long turnaroundtime) {
         this.turnaroundtime = turnaroundtime;
     }
 

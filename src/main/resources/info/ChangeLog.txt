@@ -78,7 +78,18 @@ September 13, 2020
 - added endpoint:  PUT endpoint one case (user or admin)
 - added endpoint:  DELETE endpoint one case (user or admin)
 - added 'exact' to appropriate endpoints urls (as opposed to 'like')
-
+- added endpoint:  GET endpoint all citationhyperlinks (admin)
+- added endpoint:  GET endpoint one citationhyperlink (admin)
+- added endpoint:  GET endpoints search partial or full by findcitation (admin)
+- added endpoint:  GET endpoints search partial or full by replacehyperlink (admin)
+- added endpoint:  GET endpoints search partial or full by longcitation (admin)
+- added endpoint:  GET endpoints search partial or full by chcategory (admin)
+- added endpoint:  GET endpoints search partial or full by webaddress (admin)
+- added endpoint:  POST endpoint one citationhyperlink (admin)
+- added endpoint:  PUT endpoint one citationhyperlink (admin)
+- added endpoint:  DELETE endpoint one citationhyperlink (admin)
+- added endpoint:  added seed data:  citationhyperlinks table
+53 endpoints
 
 
 TODO:  fix endpoint rates/rateamount/like/da?sort=rate
@@ -93,21 +104,6 @@ TODO:  testing
 TODO:  postman documentation
 TODO:  fix comments for get 'GET endpoint search full one citationhyperlink by findcitation (admin)'
 
-
-FOLDER:  Production
-    FOLDER:  Authorities
-        FOLDER:  CitationHyperlinks
-TODO:  GET endpoint all citationhyperlinks (admin)
-TODO:  GET endpoint one citationhyperlink (admin)
-TODO:  GET endpoint search partial or full by findcitation (admin)
-TODO:  GET endpoint search partial or full by replacehyperlink (admin)
-TODO:  GET endpoint search partial or full by longcitation (admin)
-TODO:  GET endpoint search partial or full by chcategory (admin)
-TODO:  GET endpoint search partial or full by webaddress (admin)
-TODO:  POST endpoint one citationhyperlink (admin)
-TODO:  PUT endpoint one citationhyperlink (admin)
-TODO:  DELETE endpoint one citationhyperlink (admin)
-TODO:  added seed data:  citationhyperlinks table
 
 FOLDER:  Production
     FOLDER:  Formatting

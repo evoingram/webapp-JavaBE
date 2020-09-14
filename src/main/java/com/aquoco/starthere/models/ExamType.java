@@ -1,13 +1,16 @@
 package com.aquoco.starthere.models;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.aquoco.starthere.logging.Loggable;
+
+import javax.persistence.*;
 
 /*
  * examtypes table fields: eid, examination, ecode
  */
+
+@Loggable
+@Entity
+@Table(name = "examtypes")
 public class ExamType extends Auditable {
 
     @Id

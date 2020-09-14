@@ -51,6 +51,12 @@ public class SeedData
     @Autowired
     ExamTypeService examtypeService;
 
+    @Autowired
+    USCService uscService;
+
+    @Autowired
+    CitationService citationService;
+
     @Override
     public void run(String[] args) throws
             Exception {
@@ -748,6 +754,66 @@ public class SeedData
         examtypes.add(new ExamType());
         ExamType et13 = new ExamType("Voir Dire Examination", "vdex");
         examtypeService.save(et13, true);
+
+
+        ArrayList<USC> usccites;
+
+        // usc data
+        usccites = new ArrayList<>();
+        usccites.add(new USC());
+        USC usc1 = new USC("50 U.S.C. 2601", "50 U.S.C. 2601", "1", "https://www.courtlistener.com/1");
+        uscService.save(usc1, true);
+
+        usccites = new ArrayList<>();
+        usccites.add(new USC());
+        USC usc2 = new USC("50 U.S.C. 2602", "50 U.S.C. 2602", "2", "https://www.courtlistener.com/2");
+        uscService.save(usc2, true);
+
+        usccites = new ArrayList<>();
+        usccites.add(new USC());
+        USC usc3 = new USC("50 U.S.C. 2603", "50 U.S.C. 2603", "1", "https://www.courtlistener.com/3");
+        uscService.save(usc3, true);
+
+        usccites = new ArrayList<>();
+        usccites.add(new USC());
+        USC usc4 = new USC("50 U.S.C. 2604", "50 U.S.C. 2604", "2", "https://www.courtlistener.com/4");
+        uscService.save(usc4, true);
+
+        usccites = new ArrayList<>();
+        usccites.add(new USC());
+        USC usc5 = new USC("50 U.S.C. 2605", "50 U.S.C. 2605", "1", "https://www.courtlistener.com/5");
+        uscService.save(usc5, true);
+
+        /*
+        ArrayList<Citation> citations;
+
+        // citations data
+        citations = new ArrayList<>();
+        citations.add(new Citation());
+        Citation citations1 = new Citation(1, null, 1);
+        citationService.save(citations1, true);
+
+        citations = new ArrayList<>();
+        citations.add(new Citation());
+        Citation citations2 = new Citation(null, 2, 1);
+        citationService.save(citations2, true);
+
+        citations = new ArrayList<>();
+        citations.add(new Citation());
+        Citation citations3 = new Citation(1, null, 2);
+        citationService.save(citations3, true);
+
+        citations = new ArrayList<>();
+        citations.add(new Citation());
+        Citation citations4 = new Citation(null, 1, 3);
+        citationService.save(citations4, true);
+
+        citations = new ArrayList<>();
+        citations.add(new Citation());
+        Citation citations5 = new Citation(1, null, 4);
+        citationService.save(citations5, true);
+
+         */
 
         // using JavaFaker create a bunch of regular users
         // https://www.baeldung.com/java-faker

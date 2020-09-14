@@ -88,6 +88,9 @@ TODO:  fix brandingthemes/brandingtheme/name/'WRTS JJ Factoring'
 TODO:  add bodies to each post/update endpoint in Postman
 TODO:  fix turnaroundtimes/turnaroundtime/time/45
 TODO:  fix endpoints for cases post, put, delete to self-user or admin only
+TODO:  add rates endpoints for exact search /exact
+TODO:  testing
+TODO:  postman documentation
 
 
 FOLDER:  Production

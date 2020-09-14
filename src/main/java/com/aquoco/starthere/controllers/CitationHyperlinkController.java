@@ -1,7 +1,6 @@
 package com.aquoco.starthere.controllers;
 
 import com.aquoco.starthere.logging.Loggable;
-import com.aquoco.starthere.models.BrandingTheme;
 import com.aquoco.starthere.models.CitationHyperlink;
 import com.aquoco.starthere.services.CitationHyperlinkService;
 import io.swagger.annotations.ApiImplicitParam;

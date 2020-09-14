@@ -1,6 +1,5 @@
 package com.aquoco.starthere.repository;
 
-import com.aquoco.starthere.models.BrandingTheme;
 import com.aquoco.starthere.models.PackageType;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;

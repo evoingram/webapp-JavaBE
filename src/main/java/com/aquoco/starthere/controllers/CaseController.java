@@ -1,7 +1,6 @@
 package com.aquoco.starthere.controllers;
 
 import com.aquoco.starthere.logging.Loggable;
-import com.aquoco.starthere.models.BrandingTheme;
 import com.aquoco.starthere.models.Case;
 import com.aquoco.starthere.services.CaseService;
 import io.swagger.annotations.ApiImplicitParam;

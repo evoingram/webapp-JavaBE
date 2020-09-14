@@ -1,9 +1,7 @@
 package com.aquoco.starthere.services;
 
-import com.aquoco.starthere.exceptions.ResourceFoundException;
 import com.aquoco.starthere.exceptions.ResourceNotFoundException;
 import com.aquoco.starthere.logging.Loggable;
-import com.aquoco.starthere.models.BrandingTheme;
 import com.aquoco.starthere.models.Case;
 import com.aquoco.starthere.repository.CaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;

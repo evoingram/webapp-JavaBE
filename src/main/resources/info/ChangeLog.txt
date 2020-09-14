@@ -96,8 +96,16 @@ September 13, 2020
 - added endpoint:  PUT endpoint one style (admin)
 - added endpoint:  DELETE endpoint one style (admin)
 - added seed data:  styles table
+- added endpoint:  GET endpoint all examtypes (admin)
+- added endpoint:  GET endpoint one examtype (admin)
+- added endpoint:  GET endpoints search partial or full by examination (admin)
+- added endpoint:  GET endpoints search partial or full by ecode (admin)
+- added endpoint:  POST endpoint one examtype (admin)
+- added endpoint:  PUT endpoint one examtype (admin)
+- added endpoint:  DELETE endpoint one examtype (admin)
+- added seed data:  examtypes table
 
-60 endpoints
+69 endpoints
 
 TODO:  fix comments for get 'GET endpoint search full one citationhyperlink by findcitation (admin)'
 TODO:  fix brandingthemes/brandingtheme/name/'WRTS JJ Factoring'
@@ -111,18 +119,6 @@ TODO:  add remaining rates endpoints for exact search /exact
 TODO:  add remaining users endpoints for exact search /exact
 TODO:  testing
 TODO:  postman documentation
-
-FOLDER:  Production
-    FOLDER:  Formatting
-        FOLDER:  ExamTypes
-TODO:  GET endpoint all examtypes (admin)
-TODO:  GET endpoint one examtype (admin)
-TODO:  GET endpoint search partial or full by examination (admin)
-TODO:  GET endpoint search partial or full by ecode (admin)
-TODO:  POST endpoint one examtype (admin)
-TODO:  PUT endpoint one examtype (admin)
-TODO:  DELETE endpoint one examtype (admin)
-TODO:  added seed data:  examtypes table
 
 FOLDER:  Production
     FOLDER:  Authorities

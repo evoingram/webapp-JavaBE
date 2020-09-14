@@ -757,7 +757,7 @@ public class SeedData
                                                                     new RandomService());
         Faker nameFaker = new Faker(new Locale("en-US"));
 
-        for (int i = 10; i < 100; i++) {
+        for (int i = 10; i < 30; i++) {
             new User();
             User fakeUser;
 

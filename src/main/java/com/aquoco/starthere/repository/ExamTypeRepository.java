@@ -9,8 +9,7 @@ import java.util.List;
 /*
  * examtypes table fields: eid, examination, ecode
  */
-public interface ExamTypeRepository
-        extends PagingAndSortingRepository<ExamType, Long> {
+public interface ExamTypeRepository extends PagingAndSortingRepository<ExamType, Long> {
 
     ExamType findByExamination(String examination);
 

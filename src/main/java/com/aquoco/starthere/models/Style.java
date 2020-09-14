@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Loggable
 @Entity
 @Table(name = "stylenames")
-public class Style extends Auditable{
+public class Style extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long sid;

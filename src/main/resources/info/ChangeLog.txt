@@ -89,32 +89,28 @@ September 13, 2020
 - added endpoint:  PUT endpoint one citationhyperlink (admin)
 - added endpoint:  DELETE endpoint one citationhyperlink (admin)
 - added endpoint:  added seed data:  citationhyperlinks table
-53 endpoints
+- added endpoint:  GET endpoint all styles (admin)
+- added endpoint:  GET endpoint one style (admin)
+- added endpoint:  GET endpoints search partial or full by stylename (admin)
+- added endpoint:  POST endpoint one style (admin)
+- added endpoint:  PUT endpoint one style (admin)
+- added endpoint:  DELETE endpoint one style (admin)
+- added seed data:  styles table
 
+60 endpoints
 
-TODO:  fix endpoint rates/rateamount/like/da?sort=rate
-TODO:  fix endpoint rates/rate/1.60
-TODO:  change role endpoints to admin only
+TODO:  fix comments for get 'GET endpoint search full one citationhyperlink by findcitation (admin)'
 TODO:  fix brandingthemes/brandingtheme/name/'WRTS JJ Factoring'
+TODO:  fix endpoint rates/rateamount/like/da?sort=rate (decimal/long/float/period in endpoint)
+TODO:  fix endpoint rates/rate/1.60 (decimal/long/float/period in endpoint)
+TODO:  change role endpoints to admin only
+TODO:  change cases endpoints post, put, delete to self-user or admin only
 TODO:  add bodies to each post/update endpoint in Postman
 TODO:  fix turnaroundtimes/turnaroundtime/time/45
-TODO:  fix endpoints for cases post, put, delete to self-user or admin only
-TODO:  add rates endpoints for exact search /exact
+TODO:  add remaining rates endpoints for exact search /exact
+TODO:  add remaining users endpoints for exact search /exact
 TODO:  testing
 TODO:  postman documentation
-TODO:  fix comments for get 'GET endpoint search full one citationhyperlink by findcitation (admin)'
-
-
-FOLDER:  Production
-    FOLDER:  Formatting
-        FOLDER:  Styles
-TODO:  GET endpoint all styles (admin)
-TODO:  GET endpoint one style (admin)
-TODO:  GET endpoint search partial or full by stylename (admin)
-TODO:  POST endpoint one style (admin)
-TODO:  PUT endpoint one style (admin)
-TODO:  DELETE endpoint one style (admin)
-TODO:  added seed data:  styles table
 
 FOLDER:  Production
     FOLDER:  Formatting
@@ -384,6 +380,7 @@ TODO:  DELETE endpoint one ccc (admin)
 
 FOLDER:  Users
 TODO:  GET endpoint one user's cases (admin)
+
     case {
         general {
             caseinfo
@@ -412,7 +409,9 @@ TODO:  GET endpoint one user's cases (admin)
             payments
         }
     }
+
 TODO:  GET endpoint one user's invoices (admin)
+
     invoices w/ courtdates w/ cases
         invoices {
             financial{
@@ -440,7 +439,9 @@ TODO:  GET endpoint one user's invoices (admin)
                 tasks {}
             }
         }
+
 TODO:  GET endpoint one user's courtdates (admin)
+
     courtdates {
         general {
             courtdates

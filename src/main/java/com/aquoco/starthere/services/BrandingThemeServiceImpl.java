@@ -32,7 +32,11 @@ public class BrandingThemeServiceImpl implements BrandingThemeService {
 
     @Override
     public BrandingTheme findByBrandingtheme(String brandingtheme) {
-        return null;
+
+        if (btrepo.findByBrandingtheme(brandingtheme.toLowerCase()) == null) {
+            throw new ResourceNotFoundException("Brandingtheme " + brandingtheme + " not found!");
+        }
+        return btrepo.findByBrandingtheme(brandingtheme.toLowerCase());
     }
 
     @Override

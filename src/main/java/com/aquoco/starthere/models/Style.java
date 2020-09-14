@@ -4,6 +4,9 @@ import com.aquoco.starthere.logging.Loggable;
 
 import javax.persistence.*;
 
+/*
+ * style table fields: sid, stylename
+ */
 @Loggable
 @Entity
 @Table(name = "stylenames")

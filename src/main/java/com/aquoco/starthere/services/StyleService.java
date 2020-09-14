@@ -5,6 +5,9 @@ import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
+/*
+ * style table fields: sid, stylename
+ */
 public interface StyleService {
 
     List<Style> findAll(Pageable pageable);
@@ -13,7 +16,7 @@ public interface StyleService {
 
     Style findByStylename(String stylename);
 
-    List<Style> findByStylenameContaining(String stylename, Pageable pageable);
+    List<Style> findByStylenameContainingIgnoreCase(String stylename, Pageable pageable);
 
     void delete(long id, boolean isAdmin);
 

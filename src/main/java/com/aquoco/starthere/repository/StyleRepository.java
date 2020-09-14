@@ -6,11 +6,14 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
 
+/*
+ * style table fields: sid, stylename
+ */
 public interface StyleRepository
         extends PagingAndSortingRepository<Style, Long> {
 
     Style findByStylename(String stylename);
 
     List<Style> findByStylenameContainingIgnoreCase(String stylename, Pageable pageable);
-    
+
 }

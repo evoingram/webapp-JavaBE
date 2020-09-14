@@ -91,6 +91,7 @@ TODO:  fix endpoints for cases post, put, delete to self-user or admin only
 TODO:  add rates endpoints for exact search /exact
 TODO:  testing
 TODO:  postman documentation
+TODO:  fix comments for get 'GET endpoint search full one citationhyperlink by findcitation (admin)'
 
 
 FOLDER:  Production

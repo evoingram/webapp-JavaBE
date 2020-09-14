@@ -45,6 +45,9 @@ public class SeedData
     @Autowired
     CitationHyperlinkService chService;
 
+    @Autowired
+    StyleService styleService;
+
     @Override
     public void run(String[] args) throws
             Exception {
@@ -624,6 +627,55 @@ public class SeedData
                                                       "1",
                                                       "https://www.courtlistener.com/opinion/106761/new-york-times-co-v-sullivan/");
         chService.save(ch5, true);
+
+
+        ArrayList<Style> styles;
+
+        // styles data
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style1 = new Style("Heading 1");
+        styleService.save(style1, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style2 = new Style("Heading 2");
+        styleService.save(style2, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style3 = new Style("Heading 3");
+        styleService.save(style3, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style4 = new Style("AQC-CertBoA");
+        styleService.save(style4, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style5 = new Style("AQC-Colloquy");
+        styleService.save(style5, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style6 = new Style("AQC-Parenthesis");
+        styleService.save(style6, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style7 = new Style("AQC-QA");
+        styleService.save(style7, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style8 = new Style("AQC-TOC");
+        styleService.save(style8, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style9 = new Style("AQC-Working");
+        styleService.save(style9, true);
 
         // using JavaFaker create a bunch of regular users
         // https://www.baeldung.com/java-faker

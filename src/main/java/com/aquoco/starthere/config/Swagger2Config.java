@@ -1,6 +1,5 @@
 package com.aquoco.starthere.config;
 
-import com.aquoco.starthere.models.APIOpenLibrary;
 import com.aquoco.starthere.models.ErrorDetail;
 import com.aquoco.starthere.models.TokenModel;
 import com.fasterxml.classmate.TypeResolver;
@@ -39,8 +38,7 @@ public class Swagger2Config {
                                                       .ignoredParameterTypes(Pageable.class) // allows only my paging parameter list
                                                       .apiInfo(apiEndPointsInfo())
                                                       .pathMapping("/")
-                                                      .additionalModels(resolver.resolve(APIOpenLibrary.class),
-                                                                        resolver.resolve(TokenModel.class),
+                                                      .additionalModels(resolver.resolve(TokenModel.class),
                                                                         resolver.resolve(ErrorDetail.class))
                                                       .ignoredParameterTypes(SimpleGrantedAuthority.class);
     }

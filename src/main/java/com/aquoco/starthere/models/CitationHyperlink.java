@@ -3,7 +3,10 @@ package com.aquoco.starthere.models;
 import com.aquoco.starthere.logging.Loggable;
 
 import javax.persistence.*;
-
+/*
+* citationhyperlinks table fields:  chid, findcitation, longcitation,
+* chcategory, webaddress
+ */
 @Loggable
 @Entity
 @Table(name = "citationhyperlinks")

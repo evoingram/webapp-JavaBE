@@ -99,7 +99,7 @@ public class MailClassController {
     // GET endpoint one mailclass by mailclass (admin)
     // http://localhost:2019/mailclasses/mailclass/class/cinnamon
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @GetMapping(value = "/mailclass/class/{mailclass}",
+    @GetMapping(value = "/mailclass/class/exact/{mailclass}",
             produces = {"application/json"})
     public ResponseEntity<?> getMailclassByMailclass(HttpServletRequest request,
                                                     @PathVariable String mailclass) {
@@ -107,6 +107,20 @@ public class MailClassController {
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
         MailClass mc = mcService.findByMailclass(mailclass);
+        return new ResponseEntity<>(mc, HttpStatus.OK);
+    }
+
+    // GET endpoint one mailclass by description (admin)
+    // http://localhost:2019/mailclasses/mailclass/description/cinnamon
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @GetMapping(value = "/mailclass/class/exact/{description}",
+            produces = {"application/json"})
+    public ResponseEntity<?> getMailclassByDescription(HttpServletRequest request,
+                                                     @PathVariable String description) {
+        logger.trace(request.getMethod()
+                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
+        MailClass mc = mcService.findByDescription(description);
         return new ResponseEntity<>(mc, HttpStatus.OK);
     }
 

@@ -66,78 +66,55 @@ September 13, 2020
 - added seed data:  cases table
 - added endpoint:  GET endpoint all cases (admin)
 - added endpoint:  GET endpoint one case (admin)
-- added endpoints:  GET endpoints search partial or full by party1 (user or admin)
-- added endpoints:  GET endpoints search partial or full by party1name (user or admin)
-- added endpoints:  GET endpoints search partial or full by party2 (user or admin)
-- added endpoints:  GET endpoints search partial or full by party2name (user or admin)
-- added endpoints:  GET endpoints search partial or full by casenumber1 (user or admin)
-- added endpoints:  GET endpoints search partial or full by casenumber2 (user or admin)
-- added endpoints:  GET endpoints search partial or full by jurisdiction (user or admin)
-- added endpoints:  GET endpoints search partial or full by notes (user or admin)
+- added endpoints:  GET endpoints search partial or full by party1 (admin)
+- added endpoints:  GET endpoints search partial or full by party1name (admin)
+- added endpoints:  GET endpoints search partial or full by party2 (admin)
+- added endpoints:  GET endpoints search partial or full by party2name (admin)
+- added endpoints:  GET endpoints search partial or full by casenumber1 (admin)
+- added endpoints:  GET endpoints search partial or full by casenumber2 (admin)
+- added endpoints:  GET endpoints search partial or full by jurisdiction (admin)
+- added endpoints:  GET endpoints search partial or full by notes (admin)
 - added endpoint:  POST endpoint one case (user or admin)
 - added endpoint:  PUT endpoint one case (user or admin)
 - added endpoint:  DELETE endpoint one case (user or admin)
 - added 'exact' to appropriate endpoints urls (as opposed to 'like')
+- added endpoint:  GET endpoint all citationhyperlinks (admin)
+- added endpoint:  GET endpoint one citationhyperlink (admin)
+- added endpoint:  GET endpoints search partial or full by findcitation (admin)
+- added endpoint:  GET endpoints search partial or full by replacehyperlink (admin)
+- added endpoint:  GET endpoints search partial or full by longcitation (admin)
+- added endpoint:  GET endpoints search partial or full by chcategory (admin)
+- added endpoint:  GET endpoints search partial or full by webaddress (admin)
+- added endpoint:  POST endpoint one citationhyperlink (admin)
+- added endpoint:  PUT endpoint one citationhyperlink (admin)
+- added endpoint:  DELETE endpoint one citationhyperlink (admin)
+- added endpoint:  added seed data:  citationhyperlinks table
+- added endpoint:  GET endpoint all styles (admin)
+- added endpoint:  GET endpoint one style (admin)
+- added endpoint:  GET endpoints search partial or full by stylename (admin)
+- added endpoint:  POST endpoint one style (admin)
+- added endpoint:  PUT endpoint one style (admin)
+- added endpoint:  DELETE endpoint one style (admin)
+- added seed data:  styles table
 
-TODO:  fix endpoint rates/rateamount/like/da?sort=rate
-TODO:  fix endpoint rates/rate/1.60
-TODO:  change role endpoints to admin only
+60 endpoints
+
+TODO:  fix comments for get 'GET endpoint search full one citationhyperlink by findcitation (admin)'
 TODO:  fix brandingthemes/brandingtheme/name/'WRTS JJ Factoring'
+TODO:  fix endpoint rates/rateamount/like/da?sort=rate (decimal/long/float/period in endpoint)
+TODO:  fix endpoint rates/rate/1.60 (decimal/long/float/period in endpoint)
+TODO:  change role endpoints to admin only
+TODO:  change cases endpoints post, put, delete to self-user or admin only
 TODO:  add bodies to each post/update endpoint in Postman
 TODO:  fix turnaroundtimes/turnaroundtime/time/45
-TODO:  fix endpoints for cases post, put, delete to self-user or admin only
-
-
-FOLDER:  Production
-    FOLDER:  Authorities
-        FOLDER:  CitationHyperlinks
-TODO:  added seed data:  citationhyperlinks table
-TODO:  GET endpoint all citationhyperlinks (admin)
-TODO:  GET endpoint one citationhyperlink (admin)
-TODO:  GET endpoint search partial or full by findcitation (admin)
-TODO:  GET endpoint search partial or full by replacehyperlink (admin)
-TODO:  GET endpoint search partial or full by longcitation (admin)
-TODO:  GET endpoint search partial or full by chcategory (admin)
-TODO:  GET endpoint search partial or full by webaddress (admin)
-TODO:  POST endpoint one citationhyperlink (admin)
-TODO:  PUT endpoint one citationhyperlink (admin)
-TODO:  DELETE endpoint one citationhyperlink (admin)
-
-FOLDER:  Financials
-    FOLDER:  Invoices
-TODO:  added seed data:  invoices table
-TODO:  GET endpoint all invoices (admin)
-TODO:  GET endpoint one invoice (admin)
-TODO:  GET endpoint search partial or full by invoiceno (admin)
-TODO:  GET endpoint search partial or full by userid (admin)
-TODO:  GET endpoint search partial or full by btid (admin)
-TODO:  GET endpoint search partial or full by ratesid (admin)
-TODO:  GET endpoint search partial or full by reference (admin)
-TODO:  GET endpoint search partial or full by invoicedate (admin)
-TODO:  GET endpoint search partial or full by duedate (admin)
-TODO:  GET endpoint search partial or full by itemcode (admin)
-TODO:  GET endpoint search partial or full by description (admin)
-TODO:  GET endpoint search partial or full by accountcode (admin)
-TODO:  GET endpoint search partial or full by taxtype (admin)
-TODO:  POST endpoint one invoice (admin)
-TODO:  PUT endpoint one invoice (admin)
-TODO:  DELETE endpoint one invoice (admin)
-
-FOLDER:  Production
-    FOLDER:  Formatting
-        FOLDER:  Styles
-TODO:  added seed data:  styles table
-TODO:  GET endpoint all styles (admin)
-TODO:  GET endpoint one style (admin)
-TODO:  GET endpoint search partial or full by stylename (admin)
-TODO:  POST endpoint one style (admin)
-TODO:  PUT endpoint one style (admin)
-TODO:  DELETE endpoint one style (admin)
+TODO:  add remaining rates endpoints for exact search /exact
+TODO:  add remaining users endpoints for exact search /exact
+TODO:  testing
+TODO:  postman documentation
 
 FOLDER:  Production
     FOLDER:  Formatting
         FOLDER:  ExamTypes
-TODO:  added seed data:  examtypes table
 TODO:  GET endpoint all examtypes (admin)
 TODO:  GET endpoint one examtype (admin)
 TODO:  GET endpoint search partial or full by examination (admin)
@@ -145,18 +122,7 @@ TODO:  GET endpoint search partial or full by ecode (admin)
 TODO:  POST endpoint one examtype (admin)
 TODO:  PUT endpoint one examtype (admin)
 TODO:  DELETE endpoint one examtype (admin)
-
-FOLDER:  Financials
-    FOLDER:  Payments
-TODO:  added seed data:  payments table
-TODO:  GET endpoint all payments (admin)
-TODO:  GET endpoint one payment (admin)
-TODO:  GET endpoint search partial or full by invoiceno (admin)
-TODO:  GET endpoint search partial or full by amount (admin)
-TODO:  GET endpoint search partial or full by remitdate (admin)
-TODO:  POST endpoint one payment (admin)
-TODO:  PUT endpoint one payment (admin)
-TODO:  DELETE endpoint one payment (admin)
+TODO:  added seed data:  examtypes table
 
 FOLDER:  Production
     FOLDER:  Authorities
@@ -187,6 +153,38 @@ TODO:  GET endpoint search partial or full by webaddress (admin)
 TODO:  POST endpoint one citation (admin)
 TODO:  PUT endpoint one citation (admin)
 TODO:  DELETE endpoint one citation (admin)
+
+FOLDER:  Financials
+    FOLDER:  Invoices
+TODO:  GET endpoint all invoices (admin)
+TODO:  GET endpoint one invoice (admin)
+TODO:  GET endpoint search partial or full by invoiceno (admin)
+TODO:  GET endpoint search partial or full by userid (admin)
+TODO:  GET endpoint search partial or full by btid (admin)
+TODO:  GET endpoint search partial or full by ratesid (admin)
+TODO:  GET endpoint search partial or full by reference (admin)
+TODO:  GET endpoint search partial or full by invoicedate (admin)
+TODO:  GET endpoint search partial or full by duedate (admin)
+TODO:  GET endpoint search partial or full by itemcode (admin)
+TODO:  GET endpoint search partial or full by description (admin)
+TODO:  GET endpoint search partial or full by accountcode (admin)
+TODO:  GET endpoint search partial or full by taxtype (admin)
+TODO:  POST endpoint one invoice (admin)
+TODO:  PUT endpoint one invoice (admin)
+TODO:  DELETE endpoint one invoice (admin)
+TODO:  added seed data:  invoices table
+
+FOLDER:  Financials
+    FOLDER:  Payments
+TODO:  added seed data:  payments table
+TODO:  GET endpoint all payments (admin)
+TODO:  GET endpoint one payment (admin)
+TODO:  GET endpoint search partial or full by invoiceno (admin)
+TODO:  GET endpoint search partial or full by amount (admin)
+TODO:  GET endpoint search partial or full by remitdate (admin)
+TODO:  POST endpoint one payment (admin)
+TODO:  PUT endpoint one payment (admin)
+TODO:  DELETE endpoint one payment (admin)
 
 FOLDER:  Production
     FOLDER:  Info
@@ -382,6 +380,7 @@ TODO:  DELETE endpoint one ccc (admin)
 
 FOLDER:  Users
 TODO:  GET endpoint one user's cases (admin)
+
     case {
         general {
             caseinfo
@@ -410,7 +409,9 @@ TODO:  GET endpoint one user's cases (admin)
             payments
         }
     }
+
 TODO:  GET endpoint one user's invoices (admin)
+
     invoices w/ courtdates w/ cases
         invoices {
             financial{
@@ -438,7 +439,9 @@ TODO:  GET endpoint one user's invoices (admin)
                 tasks {}
             }
         }
+
 TODO:  GET endpoint one user's courtdates (admin)
+
     courtdates {
         general {
             courtdates

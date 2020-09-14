@@ -42,6 +42,15 @@ public class SeedData
     @Autowired
     CaseService caseService;
 
+    @Autowired
+    CitationHyperlinkService chService;
+
+    @Autowired
+    StyleService styleService;
+
+    @Autowired
+    ExamTypeService examtypeService;
+
     @Override
     public void run(String[] args) throws
             Exception {
@@ -577,6 +586,168 @@ public class SeedData
         cases.add(new Case());
         Case case6 = new Case("Illidan Stormrage", "Plaintiff", "Malfurian Stormrage", "Defendant", "123456", "987564123", "Yakima County Superior Court", "");
         caseService.save(case6);
+
+
+        ArrayList<CitationHyperlink> chs;
+
+        // citation hyperlink data
+        chs = new ArrayList<>();
+        chs.add(new CitationHyperlink());
+        CitationHyperlink ch1 = new CitationHyperlink("50 U.S.C. 2344",
+                                                      "50 U.S.C. 2344#http://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title50-section2344&num=0&edition=prelim#",
+                                                       "2",
+                                                      "http://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title50-section2344&num=0&edition=prelim#");
+        chService.save(ch1, true);
+
+        chs = new ArrayList<>();
+        chs.add(new CitationHyperlink());
+        CitationHyperlink ch2 = new CitationHyperlink("Landmark Communication v. Virginia",
+                                                      "Landmark Communications, Inc. v. Virginia, 1978 U.S. LEXIS 84, 56 L. Ed. 2d 1, 98 S. Ct. 1535, 435 U.S. 829",
+                                                      "2",
+                                                      "https://www.courtlistener.com/opinion/109837/landmark-communications-inc-v-virginia/");
+        chService.save(ch2, true);
+
+        chs = new ArrayList<>();
+        chs.add(new CitationHyperlink());
+        CitationHyperlink ch3 = new CitationHyperlink("Graham v. Connor",
+                                                      "Graham v. Connor, 1989 U.S. LEXIS 2467, 104 L. Ed. 2d 443, 109 S. Ct. 1865, 490 U.S. 386",
+                                                      "1",
+                                                      "https://www.courtlistener.com/opinion/112257/graham-v-connor/");
+        chService.save(ch3, true);
+
+        chs = new ArrayList<>();
+        chs.add(new CitationHyperlink());
+        CitationHyperlink ch4 = new CitationHyperlink("Miranda",
+                                                      "Miranda v. Arizona, 1966 U.S. LEXIS 2817, 16 L. Ed. 2d 694, 86 S. Ct. 1602, 384 U.S. 436",
+                                                      "1",
+                                                      "https://www.courtlistener.com/opinion/107252/miranda-v-arizona/");
+        chService.save(ch4, true);
+
+        chs = new ArrayList<>();
+        chs.add(new CitationHyperlink());
+        CitationHyperlink ch5 = new CitationHyperlink("Sullivan v. New York Times",
+                                                      "New York Times Co. v. Sullivan, 1964 U.S. LEXIS 1655, 11 L. Ed. 2d 686, 84 S. Ct. 710, 376 U.S. 254",
+                                                      "1",
+                                                      "https://www.courtlistener.com/opinion/106761/new-york-times-co-v-sullivan/");
+        chService.save(ch5, true);
+
+
+        ArrayList<Style> styles;
+
+        // styles data
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style1 = new Style("Heading 1");
+        styleService.save(style1, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style2 = new Style("Heading 2");
+        styleService.save(style2, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style3 = new Style("Heading 3");
+        styleService.save(style3, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style4 = new Style("AQC-CertBoA");
+        styleService.save(style4, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style5 = new Style("AQC-Colloquy");
+        styleService.save(style5, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style6 = new Style("AQC-Parenthesis");
+        styleService.save(style6, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style7 = new Style("AQC-QA");
+        styleService.save(style7, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style8 = new Style("AQC-TOC");
+        styleService.save(style8, true);
+
+        styles = new ArrayList<>();
+        styles.add(new Style());
+        Style style9 = new Style("AQC-Working");
+        styleService.save(style9, true);
+
+
+        ArrayList<ExamType> examtypes;
+
+        // examtypes data
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et1 = new ExamType("Direct Examination", "ee1");
+        examtypeService.save(et1, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et2 = new ExamType("Cross-Examination", "ee2");
+        examtypeService.save(et2, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et3 = new ExamType("redirect Examination", "ee3");
+        examtypeService.save(et3, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et4 = new ExamType("Recross-Examination", "ee4");
+        examtypeService.save(et4, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et5 = new ExamType("Further Redirect Examination", "ee5");
+        examtypeService.save(et5, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et6 = new ExamType("Further Recross-Examination", "ee6");
+        examtypeService.save(et6, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et7 = new ExamType("Direct Examination Continued", "e1c");
+        examtypeService.save(et7, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et8 = new ExamType("Cross-Examination Continued", "e2c");
+        examtypeService.save(et8, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et9 = new ExamType("Redirect Examination Continued", "e3c");
+        examtypeService.save(et9, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et10 = new ExamType("Recross-Examination Continued", "e4c");
+        examtypeService.save(et10, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et11 = new ExamType("Further Redirect Examination Continued", "e5c");
+        examtypeService.save(et11, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et12 = new ExamType("Further Recross-Examination Continued", "e6c");
+        examtypeService.save(et12, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et13 = new ExamType("Voir Dire Examination", "vdex");
+        examtypeService.save(et13, true);
 
         // using JavaFaker create a bunch of regular users
         // https://www.baeldung.com/java-faker

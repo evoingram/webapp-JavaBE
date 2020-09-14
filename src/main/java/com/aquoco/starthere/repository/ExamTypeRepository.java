@@ -15,7 +15,7 @@ public interface ExamTypeRepository
     ExamType findByExamination(String examination);
 
     List<ExamType> findByExaminationContainingIgnoreCase(String examination, Pageable pageable);
-    
+
     ExamType findByEcode(String ecode);
 
     List<ExamType> findByEcodeContainingIgnoreCase(String ecode, Pageable pageable);

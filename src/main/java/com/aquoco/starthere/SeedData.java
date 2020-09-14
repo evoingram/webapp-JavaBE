@@ -48,6 +48,9 @@ public class SeedData
     @Autowired
     StyleService styleService;
 
+    @Autowired
+    ExamTypeService examtypeService;
+
     @Override
     public void run(String[] args) throws
             Exception {
@@ -676,6 +679,75 @@ public class SeedData
         styles.add(new Style());
         Style style9 = new Style("AQC-Working");
         styleService.save(style9, true);
+
+
+        ArrayList<ExamType> examtypes;
+
+        // examtypes data
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et1 = new ExamType("Direct Examination", "ee1");
+        examtypeService.save(et1, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et2 = new ExamType("Cross-Examination", "ee2");
+        examtypeService.save(et2, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et3 = new ExamType("redirect Examination", "ee3");
+        examtypeService.save(et3, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et4 = new ExamType("Recross-Examination", "ee4");
+        examtypeService.save(et4, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et5 = new ExamType("Further Redirect Examination", "ee5");
+        examtypeService.save(et5, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et6 = new ExamType("Further Recross-Examination", "ee6");
+        examtypeService.save(et6, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et7 = new ExamType("Direct Examination Continued", "e1c");
+        examtypeService.save(et7, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et8 = new ExamType("Cross-Examination Continued", "e2c");
+        examtypeService.save(et8, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et9 = new ExamType("Redirect Examination Continued", "e3c");
+        examtypeService.save(et9, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et10 = new ExamType("Recross-Examination Continued", "e4c");
+        examtypeService.save(et10, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et11 = new ExamType("Further Redirect Examination Continued", "e5c");
+        examtypeService.save(et11, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et12 = new ExamType("Further Recross-Examination Continued", "e6c");
+        examtypeService.save(et12, true);
+
+        examtypes = new ArrayList<>();
+        examtypes.add(new ExamType());
+        ExamType et13 = new ExamType("Voir Dire Examination", "vdex");
+        examtypeService.save(et13, true);
 
         // using JavaFaker create a bunch of regular users
         // https://www.baeldung.com/java-faker

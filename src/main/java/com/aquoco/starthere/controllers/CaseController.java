@@ -76,8 +76,8 @@ public class CaseController {
     @GetMapping(value = "/cases/all",
             produces = {"application/json"})
     public ResponseEntity<?> reallyListAllCases(HttpServletRequest request) {
-        logger.trace(request.getMethod()
-                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
+        logger.trace(request.getMethod().toUpperCase() + " " + request.getRequestURI() + " accessed");
 
         List<Case> myCases = caseService.findAll(Pageable.unpaged());
         return new ResponseEntity<>(myCases,

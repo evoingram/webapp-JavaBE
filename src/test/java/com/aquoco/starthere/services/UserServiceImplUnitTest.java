@@ -202,23 +202,13 @@ public class UserServiceImplUnitTest {
                            "98101",
                            "",
                            datas);
-        u2.getUseremails()
-          .add(new Useremail(u2,
-                             "cinnamon@mymail.thump"));
-        u2.getUseremails()
-          .add(new Useremail(u2,
-                             "hops@mymail.thump"));
-        u2.getUseremails()
-          .add(new Useremail(u2,
-                             "bunny@email.thump"));
+        u2.getUseremails().add(new Useremail(u2, "cinnamon@mymail.thump"));
+        u2.getUseremails().add(new Useremail(u2, "hops@mymail.thump"));
+        u2.getUseremails().add(new Useremail(u2, "bunny@email.thump"));
 
         User updatedu2 = userService.update(u2,
                                             7,
                                             false);
-
-        System.out.println("*** DATA ***");
-        System.out.println(updatedu2);
-        System.out.println("*** DATA ***");
 
         int checking = updatedu2.getUseremails()
                                 .size() - 1;
@@ -254,23 +244,13 @@ public class UserServiceImplUnitTest {
                            datas);
         datas.add(new UserRoles(u2,
                                 r2));
-        u2.getUseremails()
-          .add(new Useremail(u2,
-                             "cinnamon@mymail.thump"));
-        u2.getUseremails()
-          .add(new Useremail(u2,
-                             "hops@mymail.thump"));
-        u2.getUseremails()
-          .add(new Useremail(u2,
-                             "bunny@email.thump"));
+        u2.getUseremails().add(new Useremail(u2, "cinnamon@mymail.thump"));
+        u2.getUseremails().add(new Useremail(u2, "hops@mymail.thump"));
+        u2.getUseremails().add(new Useremail(u2, "bunny@email.thump"));
 
         User updatedu2 = userService.update(u2,
                                             7,
                                             false);
-
-        System.out.println("*** DATA ***");
-        System.out.println(updatedu2);
-        System.out.println("*** DATA ***");
 
         int checking = updatedu2.getUseremails()
                                 .size() - 1;
@@ -317,10 +297,6 @@ public class UserServiceImplUnitTest {
         User updatedu2 = userService.update(u2,
                                             8,
                                             false);
-
-        System.out.println("*** DATA ***");
-        System.out.println(updatedu2);
-        System.out.println("*** DATA ***");
 
         int checking = updatedu2.getUseremails()
                                 .size() - 1;

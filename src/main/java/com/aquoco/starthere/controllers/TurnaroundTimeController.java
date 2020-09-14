@@ -61,8 +61,7 @@ public class TurnaroundTimeController {
     public ResponseEntity<?> listAllTurnaroundTimes(HttpServletRequest request,
                                                    @PageableDefault(page = 0, size = 5)
                                                            Pageable pageable) {
-        logger.trace(request.getMethod()
-                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+        logger.trace(request.getMethod().toUpperCase() + " " + request.getRequestURI() + " accessed");
 
         List<TurnaroundTime> myTurnaroundTimes = ttService.findAll(pageable);
         return new ResponseEntity<>(myTurnaroundTimes,
@@ -75,8 +74,7 @@ public class TurnaroundTimeController {
     @GetMapping(value = "/turnaroundtimes/all",
             produces = {"application/json"})
     public ResponseEntity<?> reallyListAllTurnaroundTimes(HttpServletRequest request) {
-        logger.trace(request.getMethod()
-                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+        logger.trace(request.getMethod().toUpperCase() + " " + request.getRequestURI() + " accessed");
 
         List<TurnaroundTime> myTurnaroundTimes = ttService.findAll(Pageable.unpaged());
         return new ResponseEntity<>(myTurnaroundTimes,
@@ -92,8 +90,7 @@ public class TurnaroundTimeController {
     public ResponseEntity<?> getTurnaroundtimeById(HttpServletRequest request,
                                                   @PathVariable
                                                           Long ttid) {
-        logger.trace(request.getMethod()
-                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+        logger.trace(request.getMethod().toUpperCase() + " " + request.getRequestURI() + " accessed");
 
         TurnaroundTime tt = ttService.findTurnaroundtimeById(ttid);
         return new ResponseEntity<>(tt, HttpStatus.OK);
@@ -107,44 +104,13 @@ public class TurnaroundTimeController {
     public ResponseEntity<?> getTurnaroundtimeByName(HttpServletRequest request,
                                                     @PathVariable
                                                             long turnaroundtime) {
-        logger.trace(request.getMethod()
-                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
+        logger.trace(request.getMethod().toUpperCase() + " " + request.getRequestURI() + " accessed");
 
         TurnaroundTime tt = ttService.findByTurnaroundtime(turnaroundtime);
         return new ResponseEntity<>(tt, HttpStatus.OK);
     }
 
-    // GET endpoint search partial or full by turnaroundtime (admin)
-    // http://localhost:2019/turnaroundtimes/turnaroundtime/time/like/da?sort=turnaroundtime
-    @ApiOperation(value = "returns all turnaround times with names containing a given string",
-            response = TurnaroundTime.class,
-            responseContainer = "List")
-    @ApiImplicitParams({@ApiImplicitParam(name = "page",
-            dataType = "integer",
-            paramType = "query",
-            value = "Results page you want to retrieve (0..N)"),
-            @ApiImplicitParam(name = "size",
-                    dataType = "integer",
-                    paramType = "query",
-                    value = "Number of records per page."),
-            @ApiImplicitParam(name = "sort",
-                    allowMultiple = true,
-                    dataType = "string",
-                    paramType = "query",
-                    value = "Sorting criteria in the format: property(,asc|desc). " + "Default sort order is ascending. " + "Multiple sort criteria are supported.")})
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    @GetMapping(value = "/turnaroundtime/time/like/{turnaroundtime}",
-            produces = {"application/json"})
-    public ResponseEntity<?> getTurnaroundtimeLikeName(HttpServletRequest request,
-                                                      @PathVariable long turnaroundtime,
-                                                      @PageableDefault(page = 0, size = 5)
-                                                              Pageable pageable) {
-        logger.trace(request.getMethod()
-                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
-
-        TurnaroundTime tt = ttService.findByTurnaroundtime(turnaroundtime);
-        return new ResponseEntity<>(tt, HttpStatus.OK);
-    }
 
     // POST endpoint one turnaroundtime (admin)
     // http://localhost:2019/turnaroundtimes/turnaroundtime
@@ -152,19 +118,18 @@ public class TurnaroundTimeController {
     @PostMapping(value = "/turnaroundtime",
             consumes = {"application/json"},
             produces = {"application/json"})
-    public ResponseEntity<?> addNewTurnaroundTime(HttpServletRequest request,
-                                                 @Valid
-                                                 @RequestBody
-                                                         TurnaroundTime newTurnaroundtime) throws
-            URISyntaxException {
-        logger.trace(request.getMethod()
-                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+    public ResponseEntity<?> addNewTurnaroundTime(HttpServletRequest request, @Valid
+                                                  @RequestBody TurnaroundTime newTurnaroundtime)
+                                                  throws URISyntaxException {
+
+        logger.trace(request.getMethod().toUpperCase() + " " + request.getRequestURI() + " accessed");
 
         newTurnaroundtime = ttService.save(newTurnaroundtime, request.isUserInRole("ADMIN"));
 
         // set the location header for the newly created resource
         HttpHeaders responseHeaders = new HttpHeaders();
-        URI newTurnaroundTimeURI = ServletUriComponentsBuilder.fromCurrentRequest()
+        URI newTurnaroundTimeURI = ServletUriComponentsBuilder
+                                                             .fromCurrentRequest()
                                                              .path("/{ttid}")
                                                              .buildAndExpand(newTurnaroundtime.getTtid())
                                                              .toUri();
@@ -181,8 +146,8 @@ public class TurnaroundTimeController {
     public ResponseEntity<?> updateTurnaroundTime(HttpServletRequest request,
                                                  @RequestBody TurnaroundTime updateTurnaroundTime,
                                                  @PathVariable long ttid) {
-        logger.trace(request.getMethod()
-                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
+        logger.trace(request.getMethod().toUpperCase() + " " + request.getRequestURI() + " accessed");
 
         ttService.update(updateTurnaroundTime,
                          ttid,
@@ -196,8 +161,8 @@ public class TurnaroundTimeController {
     @DeleteMapping("/turnaroundtime/{ttid}")
     public ResponseEntity<?> deleteTurnaroundtimeById(HttpServletRequest request,
                                                      @PathVariable long ttid) {
-        logger.trace(request.getMethod()
-                            .toUpperCase() + " " + request.getRequestURI() + " accessed");
+
+        logger.trace(request.getMethod().toUpperCase() + " " + request.getRequestURI() + " accessed");
 
         ttService.delete(ttid, request.isUserInRole("ADMIN"));
         return new ResponseEntity<>(HttpStatus.OK);

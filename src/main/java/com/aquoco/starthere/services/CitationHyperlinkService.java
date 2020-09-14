@@ -23,14 +23,13 @@ public interface CitationHyperlinkService {
 
     CitationHyperlink findByWebaddress(String webaddress);
 
-    List<CitationHyperlink> findByFindcitationdContainingIgnoreCase(String findcitation, Pageable pageable);
+    List<CitationHyperlink> findByFindcitationContainingIgnoreCase(String findcitation, Pageable pageable);
 
     List<CitationHyperlink> findByLongcitationContainingIgnoreCase(String longcitation, Pageable pageable);
 
     List<CitationHyperlink> findByChcategoryContainingIgnoreCase(String chcategory, Pageable pageable);
 
     List<CitationHyperlink> findByWebaddressContainingIgnoreCase(String webaddress, Pageable pageable);
-
 
     void delete(long id, boolean isAdmin);
 

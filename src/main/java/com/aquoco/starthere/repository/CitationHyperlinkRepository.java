@@ -1,6 +1,5 @@
 package com.aquoco.starthere.repository;
 
-import com.aquoco.starthere.models.BrandingTheme;
 import com.aquoco.starthere.models.CitationHyperlink;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
@@ -21,7 +20,6 @@ public interface CitationHyperlinkRepository
     CitationHyperlink findByChcategory(String chcategory);
 
     CitationHyperlink findByWebaddress(String webaddress);
-
 
     List<CitationHyperlink> findByFindcitationContainingIgnoreCase(String findcitation, Pageable pageable);
 

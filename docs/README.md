@@ -43,10 +43,10 @@ Back end deployed to `Heroku` and built using:
 
 ## Testing
 
-- All endpoints have been tested and documented via Postman.
-- The endpoints in the Java back end are also being tested in JUnit 4.
+- The endpoints in the Java back end are being tested with JUnit 4.
 
 ## Documentation
+
 
 ### [DB SCHEMA](https://dbdesigner.page.link/gbEtfTr1XjgwDa2C7)   |   [BASE URL](https://transcript-javabe.herokuapp.com/)   |   [PRODUCT VISION](https://aquoco-my.sharepoint.com/:w:/g/personal/evoingram_aquoco_onmicrosoft_com/ES9-HPl3otdAjjtMrqpWIrkBMTrLyRDvxVEtYGkOMWLDUQ?e=fXTfhK)   |   [ENDPOINTS](https://github.com/evoingram/webapp-javabe/blob/master/docs/endpoints.md)   |   [FRONT END](https://github.com/evoingram/webapp-frontend/) (still in planning stages)
 ### [POSTMAN DOCUMENTATION](https://documenter.getpostman.com/view/6401823/TVCh1Td9?version=latest)   |   [SWAGGER DOCUMENTATION](https://transcript-javabe.herokuapp.com/swagger-ui.html)   |   [SAMPLE RESPONSE](sample-response.json)
@@ -54,5 +54,6 @@ Back end deployed to `Heroku` and built using:
 
 ### See also [a Node version](https://github.com/evoingram/webapp-backend/) of this API.
 
+- All endpoints have been documented via Postman and Swagger.
 - Postman Docs were last published on 09/05/2020.
 - Postman docs contain examples of all get, post, and put endpoint body submissions AND responses.
